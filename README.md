@@ -1,14 +1,87 @@
-# Project Title
+# Run Wild
 
 ## Overview
 
 ### Purpose
-A brief description of the project's purpose, what it aims to achieve, and the value it provides to the users.  
-**Guidance:** Begin filling out this section during Phase 1: Ideation & Initial Setup. Clearly articulate the main goal of your project, what it aims to achieve, and how it will provide value to your target audience.
+Run Wild is a web-based platform designed to gamify the running experience and foster a community of active runners through a token-based reward system. The platform transforms everyday runs into rewarding achievements by allowing runners to earn tokens based on their performance, creating an engaging and motivating environment for consistent physical activity.
+
+#### Objectives:
+
+1. **Motivate Regular Exercise**: By implementing a token reward system, the platform encourages users to maintain consistent running haibits.
+2. **Track Progress**: Provide runners with a clear view of their improvement over time through detailed run history and statistics.
+3. **Foster Competition**: Create healthy competition through a global leaderboard system that recognises both dedication and performance.
+4. **Build Community**: Develop a space where runners can compete and compare their achievements with others, creating a sense of belonging and mutual motivation.
+
+#### Value Proposition:
+
+- Transforms routine running activities into rewarding experiences
+- Provides immediate feedback and recognition for running achievements
+- Creates a structured system for tracking progress and improvement
+- Offers a competitive element that maintains long-term engagement
+- Delivers a simple, streamlined experience focused on running metrics that matter
 
 ### Target Audience
-Identify the target audience for your website and explain why this audience will benefit from the project.  
-**Guidance:** Use this section to identify who will benefit from your project and why. This should be informed by your user stories and overall project objectives.
+
+#### Primary Audience: Recreational Runners
+
+- Age Range: 18-45 years old
+- Running Experience: Beginner to intermediate runners
+- Technology Usage: Comfortable with digital fitness tracking
+- Motivation: Seeking additional motivation and structure in their running routine
+
+#### 1. Beginner Runners
+- Looking for motivation to establish consistent running habits
+- Interested in tracking progress and improvement
+- Need positive reinforcement to maintain commitment
+- Value clear metrics and achievable goals
+  
+#### 2. Regular Runners
+- Seeking new ways to stay motivated
+- Interested in competing with others
+- Want to track their performance metrics
+- Looking for recognition of their efforts
+
+#### 3. Challenge-Driven Individuals
+- Motivated by competition and achievements
+- Enjoy collecting rewards and tracking statistics
+- Like to compare their performance with others
+- Appreciate structured goal systems
+
+### Why They Will Benefit:
+
+#### Motivation Through Rewards
+
+- Immediate gratification through token earnings
+- Visual representation of progress
+- Clear connection between effort and rewards
+
+#### Progress Tracking
+
+- Detailed run history
+- Performance metrics tracking
+- Clear visibility of improvement over time
+
+#### Community Engagement
+
+- Global leaderboard participation
+- Competitive element
+- Sense of belonging to a running community
+
+#### Accessibility
+
+- Simple, user-friendly interface
+- Clear token earning structure
+- Easy submission process for runs
+
+### User Needs Addressed:
+
+- Need for motivation to maintain regular running habits
+- Desire for recognition of running achievements
+- Want for structured progress tracking
+- Interest in competing with other runners
+- Requirement for simple, straightforward run logging
+
+This platform specifically addresses the growing trend of gamification in fitness applications whilst maintaining a focus on simplicity and user engagement. By combining traditional run tracking with a reward system, Run Wild creates a unique value proposition for runners who are looking for additional motivation and structure in their running routine.
 
 ## User Stories
 
