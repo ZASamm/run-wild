@@ -1,5 +1,8 @@
 {% load static %}
 
+{% url 'account_login' as login_url %}
+{% url 'account_signup' as signup_url %}
+{% url 'account_logout' as logout_url %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -66,21 +69,21 @@
                             <a class="nav-link {% if request.path == about_url %}active" aria-current="page{% endif %}"
                                 href="#">About</a>
                         </li>
-                        <!-- {% if user.is_authenticated %} -->
+                        {% if user.is_authenticated %}
                         <li class="nav-item">
                             <a class="nav-link {% if request.path == logout_url %}active" aria-current="page{% endif %}"
-                                href="#">Logout</a>
+                                href="{% url 'account_logout' %}">Logout</a>
                         </li>
-                        <!-- {% else %} -->
+                        {% else %}
                         <li class="nav-item">
                             <a class="nav-link {% if request.path == signup_url %}active" aria-current="page{% endif %}"
-                                href="#">Register</a>
+                                href="{% url 'account_signup' %}">Register</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link {% if request.path == login_url %}active" aria-current="page{% endif %}"
-                                href="#">Login</a>
+                                href="{% url 'account_login' %}">Login</a>
                         </li>
-                        <!-- {% endif %} -->
+                        {% endif %}
                     </ul>
                     <span class="navbar-text">
                         Run your story

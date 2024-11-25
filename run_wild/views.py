@@ -10,11 +10,13 @@ class HomePage(TemplateView):
     """
     template_name = 'index.html'
     
+    
 class QuestList(generic.ListView):
     model = QuestPost
     template_name = 'quests.html'
     context_object_name = 'quests'
     paginate_by = 6
+    
     
 def quest_post(request, slug):
     
@@ -24,5 +26,4 @@ def quest_post(request, slug):
         request,
         "quests/quest_post.html",
         {"quest": quest}
-        
     )

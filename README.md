@@ -8,9 +8,8 @@ Run Wild is a web-based platform designed to gamify the running experience and f
 #### Objectives:
 
 1. **Motivate Regular Exercise**: By implementing a token reward system, the platform encourages users to maintain consistent running haibits.
-2. **Track Progress**: Provide runners with a clear view of their improvement over time through detailed run history and statistics.
-3. **Foster Competition**: Create healthy competition through a global leaderboard system that recognises both dedication and performance.
-4. **Build Community**: Develop a space where runners can compete and compare their achievements with others, creating a sense of belonging and mutual motivation.
+2. **Foster Competition**: Create healthy competition through a global leaderboard system that recognises both dedication and performance.
+3. **Build Community**: Develop a space where runners can compete and compare their achievements with others, creating a sense of belonging and mutual motivation.
 
 #### Value Proposition:
 
@@ -26,7 +25,6 @@ Run Wild is a web-based platform designed to gamify the running experience and f
 
 - Age Range: 18+ years old
 - Running Experience: Beginner to intermediate runners
-- Technology Usage: Comfortable with digital fitness tracking
 - Motivation: Seeking additional motivation and structure in their running routine
 
 #### 1. Beginner Runners
@@ -81,7 +79,7 @@ Run Wild is a web-based platform designed to gamify the running experience and f
 - Interest in competing with other runners
 - Requirement for simple, straightforward run logging
 
-This platform specifically addresses the growing trend of gamification in fitness applications whilst maintaining a focus on simplicity and user engagement. By combining traditional run tracking with a reward system, Run Wild creates a unique value proposition for runners who are looking for additional motivation and structure in their running routine.
+The aim of this web app is to specifically addresses the growing trend of gamification in fitness applications whilst maintaining a focus on simplicity and user engagement. By combining traditional run tracking with a reward system, Run Wild creates a unique value proposition for runners who are looking for additional motivation and structure in their running routine.
 
 ## User Stories
 
