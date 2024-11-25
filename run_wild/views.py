@@ -14,4 +14,5 @@ class QuestList(generic.ListView):
     model = QuestPost
     template_name = 'quests.html'
     context_object_name = 'quests'
+    paginate_by = 6
     
