@@ -33,7 +33,7 @@ h4 {
 html {
     scroll-behavior: smooth;
 }
-
+/* BASE HTML */
 /* Nav */
 #navbarText {
     color: var(--text);
@@ -171,6 +171,22 @@ footer {
 
 .fab {
     font-size: 1.5em;
+}
+
+/* Quest Page */
+
+.image-container {
+    position: relative;
+}
+
+.image-flash {
+    position: absolute;
+    bottom: 5%;
+    min-width: 30%;
+    background-color: var(--text);
+    color: var(--white);
+    left: -2%;
+    text-align: center;
 }
 
 /* Quest post */

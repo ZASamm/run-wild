@@ -2,4 +2,45 @@
 {% load static %}
 {% block content %}
 
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 mt-3 left">
+            <div class="row">
+                {% for quest in quests %}
+                <div class="col-md-4">
+                    <div class="card-body">
+                        <div class="image-container">
+                            {% if "placeholder" in post.featured_image.url %}
+                            <img class="card-img-top" src="{% static 'media/images/logofinal.svg' %}"
+                                alt="placeholder image">
+                            {% else %}
+                            <img class="card-img-top" src=" {{ quest.map_route.url }}" alt="{{ quest.title }}">
+                            {% endif %}
+
+                            <div class="image-flash">
+                                <h2 class="difficulty">{{ quest.difficulty}}
+                                </h2>
+                            </div>
+                            <a href="#" class="post-link">
+                                <h2 class="card-title">{{ quest.title }}</h2>
+                                <p class="card-text">{{ quest.description }}</p>
+                            </a>
+
+                            <hr />
+                            <p class="card-text text-muted h6">{{ post.distance}}
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+                {% if forloop.counter|divisibleby:3 %}
+            </div>
+            <div class="row">
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
 {% endblock %}
