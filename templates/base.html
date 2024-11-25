@@ -3,16 +3,110 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <title>RunWild</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Django-Setup</title>
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google Fonts CSS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        type="text/css">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
 </head>
+
 <body>
-    <h1>Hello Django From Heroku</h1>
-    
+    <header>
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-white p-4">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{% url 'home' %}"><span class="brand"><img class="logo"
+                            src="images\logofinal.svg" alt="logo"></span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarText">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == home_url %}active" aria-current="page{% endif %}"
+                                href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == home_url %}active" aria-current="page{% endif %}"
+                                href="#">Quests</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == about_url %}active" aria-current="page{% endif %}"
+                                href="#">About</a>
+                        </li>
+                        <!-- {% if user.is_authenticated %} -->
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == logout_url %}active" aria-current="page{% endif %}"
+                                href="#">Logout</a>
+                        </li>
+                        <!-- {% else %} -->
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == signup_url %}active" aria-current="page{% endif %}"
+                                href="#">Register</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == login_url %}active" aria-current="page{% endif %}"
+                                href="#">Login</a>
+                        </li>
+                        <!-- {% endif %} -->
+                    </ul>
+                    <span class="navbar-text">
+                        Run your story
+                    </span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    {% block content %}
+    <!-- Content Goes here -->
+    {% endblock content %}
+
+    <!-- Footer -->
+    <footer class="footer mt-auto py-3">
+        <p class="m-3 text-center">
+            <i class="fab fa-brand fa-facebook-f ms-4"></i>
+            <i class="fab fa-brands fa-x-twitter ms-4"></i>
+            <i class="fab fa-brands fa-linkedin-in ms-4"></i>
+            <i class="fab fa-brands fa-instagram ms-4"></i>
+        </p>
+        <div class="footer-img-container">
+            <img class="footer-img" src="images\runwild_footer_bk.png">
+        </div>
+        <div class="footer-hr"></div>
+        <p class="m-4 text-center">
+            {% block copyright %}
+            Made by Code Instituters
+            {% endblock copyright %}
+        </p>
+
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
+        </script>
+    <script src="script.js"></script>
 </body>
+
+{% block extras %}
+{% endblock %}
+
 </html>
