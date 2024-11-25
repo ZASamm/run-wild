@@ -1,5 +1,88 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
+<div class="main-container">
+    {% for quest in quests %}
+    <h1 class="quest-header">{{quest.title}}</h1>
+
+    <div class="map_wrapper">
+        {% if "placeholder" in post.featured_image.url %}
+        <img class="card-img-top" src="{% static 'media/images/logofinal.svg' %}" alt="placeholder image">
+        {% else %}
+        <img class="card-img-top" src=" {{ quest.map_route.url }}" alt="{{ quest.title }}">
+        {% endif %}
+    </div>
+    <hr class="spliter">
+    <div class="container-fluid stats-grid">
+        <!-- First Row -->
+        <div class="row d-flex justify-content-center">
+            <div class="col-sm-4 col-lg-3 stat-card p-3 m-3">
+                <h3>Total Distance</h3>
+                <p>{{ quest.distance }} km</p>
+            </div>
+            <div class="col-sm-4 col-lg-3 stat-card p-3 m-3">
+                <h3>Elevation Max</h3>
+                <p>{{ quest.elevation_max }} m</p>
+            </div>
+            <div class="col-sm-4 col-lg-3 stat-card p-3 m-3">
+                <h3>Elevation Gain</h3>
+                <p>{{ quest.elevation_gain }}</p>
+            </div>
+            <div class="col-sm-4 col-lg-3 stat-card p-3 m-3"></div>
+            <h3>Total Completed Quests</h3>
+            <p>5</p>
+        </div>
+    </div>
+    {% endfor %}
+    <!-- Second Row -->
+    <div class="row d-flex justify-content-center">
+        <div class="col-lg-6 col-md-7 leaderboard m-3">
+            <h2>Leaderboard</h2>
+            <div class="leaderboard-item">
+                <span>1. Sarah J.</span>
+                <span>2,450 pts</span>
+            </div>
+            <div class="leaderboard-item">
+                <span>2. Mike R.</span>
+                <span>2,120 pts</span>
+            </div>
+            <div class="leaderboard-item">
+                <span>3. You</span>
+                <span>1,250 pts</span>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-3 stat-card m-2 upload-section">
+            <h2>Upload Your Run</h2>
+            <p>Add your time and distance covered</p>
+            <button class="btn btn-primary run-upload" data-bs-toggle="modal" data-bs-target="#uploadRunModal">Upload
+                Run</button>
+        </div>
+    </div>
+</div>
+<div id="run-upload-modal">
+    <div class="modal fade" id="uploadRunModal" tabindex="-1" aria-labelledby="uploadRunModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="uploadRunModalLabel">Upload Your Run</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="uploadRunForm">
+                        <div class="mb-3">
+                            <label for="runTime" class="form-label">Time (minutes)</label>
+                            <input type="number" class="form-control" id="runTime" name="runTime" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="runDistance" class="form-label">Distance (km)</label>
+                            <input type="number" class="form-control" id="runDistance" name="runDistance" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 {% endblock %}
