@@ -1,12 +1,14 @@
 {% extends "base.html" %}
-{% load static %}
 {% block content %}
+{% load static %}
+
+
+
 <div class="main-container">
-    {% for quest in quests %}
     <h1 class="quest-header">{{quest.title}}</h1>
 
     <div class="map_wrapper">
-        {% if "placeholder" in post.featured_image.url %}
+        {% if "placeholder" in quest.map_route.url %}
         <img class="card-img-top" src="{% static 'media/images/logofinal.svg' %}" alt="placeholder image">
         {% else %}
         <img class="card-img-top" src=" {{ quest.map_route.url }}" alt="{{ quest.title }}">
@@ -33,7 +35,6 @@
             <p>5</p>
         </div>
     </div>
-    {% endfor %}
     <!-- Second Row -->
     <div class="row d-flex justify-content-center">
         <div class="col-lg-6 col-md-7 leaderboard m-3">

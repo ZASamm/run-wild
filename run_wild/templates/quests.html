@@ -10,7 +10,7 @@
                 <div class="col-md-4">
                     <div class="card-body">
                         <div class="image-container">
-                            {% if "placeholder" in post.featured_image.url %}
+                            {% if "placeholder" in quest.featured_image.url %}
                             <img class="card-img-top" src="{% static 'media/images/logofinal.svg' %}"
                                 alt="placeholder image">
                             {% else %}
@@ -21,7 +21,7 @@
                                 <h2 class="difficulty">{{ quest.difficulty}}
                                 </h2>
                             </div>
-                            <a href="#" class="post-link">
+                            <a href="{% url 'quest_post' quest.slug %}" class="post-link">
                                 <h2 class="card-title">{{ quest.title }}</h2>
                                 <p class="card-text">{{ quest.description }}</p>
                             </a>

@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.views import generic
 from .models import QuestPost
 from django.views.generic import TemplateView
@@ -16,3 +16,13 @@ class QuestList(generic.ListView):
     context_object_name = 'quests'
     paginate_by = 6
     
+def quest_post(request, slug):
+    
+    quest = get_object_or_404(QuestPost, slug=slug)
+    
+    return render(
+        request,
+        "quests/quest_post.html",
+        {"quest": quest}
+        
+    )
