@@ -115,7 +115,26 @@ This platform specifically addresses the growing trend of gamification in fitnes
 ## Design Decisions
 
 ### Wireframes
-Include wireframes for key sections of your website.  
+
+### Desktop
+![desktop wireframes](assets/README_images/WF_desktop_home.png)
+![desktop wireframes](assets/README_images/WF_desktop_quest_about_leader.png)
+![desktop wireframes](assets/README_images/WF_desktop_quest_page.png)
+
+ ### Mobile
+![mobile wireframes](assets/README_images/WF_mobile_index.png)
+![mobile wireframes](assets/README_images/WF_mobile_quest_post.png)
+![mobile wireframes](assets/README_images/WF_mobile_quest_page.png)
+![mobile wireframes](assets/README_images/WF_mobile_about_leader.png)
+
+### Tablet
+![tablet wireframes](assets/README_images/WF_tablet_home.png)
+![tablet wireframes](assets/README_images/WF_tablet_quest_post.png)
+![tablet wireframes](assets/README_images/WF_tablet_about_quest_leader.png)
+
+
+
+
 Briefly describe the design choices, including layout, colour schemes, and fonts.  
 **Guidance:** Start this section during Phase 1: Ideation & Initial Setup and update it throughout Phase 2 and Phase 3. Include digital wireframes created in Phase 1. Document the reasoning behind your layout choices, colour schemes, and font selections.
 
