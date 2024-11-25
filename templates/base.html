@@ -28,7 +28,7 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-white p-4">
             <div class="container-fluid">
                 <a class="navbar-brand" href="{% url 'home' %}"><span class="brand"><img class="logo"
-                            src="images\logofinal.svg" alt="logo"></span></a>
+                            src="{% static 'media/images/logofinal.svg' %}" alt="logo"></span></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                     aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -84,12 +84,12 @@
             <i class="fab fa-brands fa-instagram ms-4"></i>
         </p>
         <div class="footer-img-container">
-            <img class="footer-img" src="images\runwild_footer_bk.png">
+            <img class="footer-img" src="{% static 'media/images/runwild_footer_bk.png' %}">
         </div>
         <div class="footer-hr"></div>
         <p class="m-4 text-center">
             {% block copyright %}
-            Made by Code Instituters
+            Copyright RunWild 2024
             {% endblock copyright %}
         </p>
 
