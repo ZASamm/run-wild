@@ -24,7 +24,7 @@ Run Wild is a web-based platform designed to gamify the running experience and f
 
 #### Primary Audience: Recreational Runners
 
-- Age Range: 18-45 years old
+- Age Range: 18+ years old
 - Running Experience: Beginner to intermediate runners
 - Technology Usage: Comfortable with digital fitness tracking
 - Motivation: Seeking additional motivation and structure in their running routine
