@@ -165,6 +165,7 @@ html {
 footer {
     color: var(--white);
     background-color: var(--text);
+    bottom: 0;
     width: 100%;
     height: auto;
 }
@@ -315,6 +316,14 @@ footer {
     justify-content: space-between;
     padding: 0.8rem;
     border-bottom: 1px solid var(--text);
+}
+
+
+/* account templates */
+
+#account-container {
+    height: 75vh;
+    padding-top: 10vh;
 }
 
 
