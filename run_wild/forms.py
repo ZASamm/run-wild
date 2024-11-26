@@ -8,4 +8,4 @@ class QuestCompletionForm(forms.ModelForm):
     
     class Meta:
         model = QuestRecord
-        felids = ('completion_time')
+        fields = ('completion_time',)

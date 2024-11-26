@@ -71,16 +71,16 @@
                 </div>
                 <div class="modal-body">
                     <form id="uploadRunForm">
-                        {{ comment_form | crispy }}
+                        {{ quest_form }}
                         {% csrf_token %}
-                        <div class="mb-3">
+                        <!-- <div class="mb-3">
                             <label for="runTime" class="form-label">Time (minutes)</label>
                             <input type="number" class="form-control" id="runTime" name="runTime" required>
                         </div>
                         <div class="mb-3">
                             <label for="runDistance" class="form-label">Distance (km)</label>
                             <input type="number" class="form-control" id="runDistance" name="runDistance" required>
-                        </div>
+                        </div> -->
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
                 </div>

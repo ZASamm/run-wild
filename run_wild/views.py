@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, reverse 
 from django.views import generic
 from .models import QuestPost, QuestRecord
 from django.views.generic import TemplateView
@@ -22,8 +22,7 @@ class QuestList(generic.ListView):
 def quest_post(request, slug):
     
     quest = get_object_or_404(QuestPost, slug=slug)
-    
-    quest_record = quest.quest_record.all().order_by("tokens_earned").values()
+    quest_record = quest.quest_records.all().order_by("tokens_earned").values()
     
     if request.method == "POST":
         quest_form = QuestCompletionForm(data=request.POST)
@@ -32,7 +31,7 @@ def quest_post(request, slug):
            run_upload.user = request.user 
            run_upload.quest = quest
            run_upload.save()
-           message.add_message(
+           messages.add_message(
                request, messages.SUCCESS,
                'Run successfully uploaded!'
            )
@@ -44,7 +43,7 @@ def quest_post(request, slug):
         request,
         "quests/quest_post.html",
         {"quest": quest,
-         "run_uploads": run_upload,
+         "quest_record": quest_record,
          "quest_form": quest_form,
          }
     )

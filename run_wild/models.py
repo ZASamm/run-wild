@@ -22,7 +22,7 @@ class QuestPost(models.Model):
 
 class QuestRecord(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    quest = models.ForeignKey(QuestPost, on_delete=models.CASCADE)
+    quest = models.ForeignKey(QuestPost, on_delete=models.CASCADE, related_name='quest_records')
     completion_time = models.FloatField()
     tokens_earned = models.IntegerField()
     completion_date = models.DateTimeField(auto_now_add=True)
