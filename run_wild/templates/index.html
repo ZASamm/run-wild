@@ -14,7 +14,11 @@
                     <p class="introtext">Your running journey is about to become something extraordinary. This isn't
                         just another fitness app - this is where your personal legend begins.</p>
                     <p class="introtext">Are you ready to transform your runs into legendary journeys?</p>
-                    <button class="sign-up-button">Sign up</button>
+                    {% if user.is_authenticated %}
+                    <button class="sign-up-button"><a href="{% url 'quests' %}"></a>To Quests</button>
+                    {% else %}
+                    <button class="sign-up-button"><a href="{% url 'account_signup' %}"></a>Sign Up</button>
+                    {% endif %}
                 </div>
 
                 <div class="col-12 col-md-6 p-2 text-center">
