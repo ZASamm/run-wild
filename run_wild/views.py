@@ -54,5 +54,21 @@ def quest_post(request, slug):
     )
         
     
+def record_edit(request, slug, quest_record_id):
     
+    if request.method == "POST":
         
+        quest = get_object_or_404(QuestPost, slug=slug)
+        run_upload = get_object_or_404(QuestRecord, pk=quest_record_id)
+        quest_form = QuestCompletionForm(data=request.POST, instance=run_upload)
+
+        if quest_form.is_valid() and run_upload.user == request.user:
+            run_upload = quest_form.save(commit=False)
+            run_upload.quest = quest
+            run_upload.approved = False
+            run_upload.save()
+            messages.add_message(request, messages.SUCCESS, 'Run updated!')
+        else:
+            messages.add_message(request, messages.ERROR, 'Error updating run!')
+    
+    return HttpResponseRedirect(reverse('quest_post', args=[slug]))
