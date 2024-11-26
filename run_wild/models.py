@@ -18,5 +18,15 @@ class QuestPost(models.Model):
     elevation_gain = models.IntegerField()
     
     def __str__(self):
-        return f"{self.title} | distance - {self.distance} KM"
+        return f"{self.title} | distance - {self.distance} km"
 
+class QuestRecord(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    quest = models.ForeignKey(QuestPost, on_delete=models.CASCADE)
+    completion_time = models.FloatField()
+    tokens_earned = models.IntegerField()
+    completion_date = models.DateTimeField(auto_now_add=True)
+    is_personal_best = models.BooleanField(default=False)
+    
+    def __str__(self):
+        return f"{self:user} completed {self:quest} | total tokens earned: {self:tokens_earned}"
