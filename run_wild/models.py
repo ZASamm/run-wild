@@ -37,4 +37,4 @@ class QuestRecord(models.Model):
         super().save(*args, **kwargs)
     
     def __str__(self):
-        return f"{self:user} completed {self:quest} | total tokens earned: {self:tokens_earned}"
+        return f"{self.user} completed {self.quest.title} | total tokens earned: {self.tokens_earned}"

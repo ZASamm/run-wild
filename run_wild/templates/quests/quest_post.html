@@ -39,21 +39,17 @@
     <div class="row d-flex justify-content-center">
         <div class="col-lg-6 col-md-7 leaderboard m-3">
             <h2>Leaderboard</h2>
+            {% for record in quest_record %}
             <div class="leaderboard-item">
-                <span>1. Sarah J.</span>
-                <span>2,450 pts</span>
+                <span>{{record.user}}</span>
+                <span>{{record.tokens_earned}}</span>
             </div>
-            <div class="leaderboard-item">
-                <span>2. Mike R.</span>
-                <span>2,120 pts</span>
-            </div>
-            <div class="leaderboard-item">
-                <span>3. You</span>
-                <span>1,250 pts</span>
-            </div>
+            {% endfor %}
+      
         </div>
         <div class="col-lg-4 col-md-3 stat-card m-2 upload-section">
             <h2>Upload Your Run</h2>
+            {% if user.is_authenticated %}
             <p>Add your time and distance covered</p>
             <button class="btn btn-primary run-upload" data-bs-toggle="modal" data-bs-target="#uploadRunModal">Upload
                 Run</button>
@@ -65,12 +61,12 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    {% if user.is_authenticated %}
                     <h5 class="modal-title" id="uploadRunModalLabel">Upload Your Run</h5>
+                  
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form id="uploadRunForm">
+                    <form id="uploadRunForm" method="post">
                         {{ quest_form }}
                         {% csrf_token %}
                         <!-- <div class="mb-3">
@@ -85,7 +81,7 @@
                     </form>
                 </div>
                 {% else %}
-                <p>Log in to leave a comment</p>
+                <p>Log in to upload your run</p>
                 {% endif %}
             </div>
         </div>
