@@ -15,9 +15,9 @@
                         just another fitness app - this is where your personal legend begins.</p>
                     <p class="introtext">Are you ready to transform your runs into legendary journeys?</p>
                     {% if user.is_authenticated %}
-                    <button class="sign-up-button"><a href="{% url 'quests' %}"></a>To Quests</button>
+                    <a class="sign-up-button" href="{% url 'quests' %}">To Quests</a>
                     {% else %}
-                    <button class="sign-up-button"><a href="{% url 'account_signup' %}"></a>Sign Up</button>
+                    <a class="sign-up-button" href="{% url 'account_signup' %}">Sign Up</a>
                     {% endif %}
                 </div>
 

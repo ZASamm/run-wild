@@ -70,13 +70,14 @@ html {
     background-color: var(--text);
     color: var(--white);
     font-family: "Bebas Neue", sans-serif;
+    text-decoration: none;
     font-size: 1.5em;
     padding-right: 1em;
     padding-left: 1em;
     padding-top: 10px;
     padding-bottom: 10px;
-    margin-top: 1.2rem;
-    border-radius: 10%;
+    margin-top: 1.5rem;
+    border-radius: 5%;
     border: none;
 }
 
