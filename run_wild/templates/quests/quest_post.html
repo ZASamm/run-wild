@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 {% load static %}
-
+{% load crispy_forms_tags %}
 
 
 <div class="main-container">
@@ -16,7 +16,7 @@
     </div>
     <hr class="spliter">
     <div class="container-fluid stats-grid">
-        <!-- First Row -->
+        <!-- First Row displaying data from QuestPost -->
         <div class="row d-flex justify-content-center">
             <div class="col-sm-4 col-lg-3 stat-card p-3 m-3">
                 <h3>Total Distance</h3>
@@ -36,17 +36,17 @@
             </div>
         </div>
     </div>
-    <!-- Second Row -->
+    <!-- Second Row displaying data form QuestRecord -->
     <div class="row d-flex justify-content-center">
         <div class="col-lg-6 col-md-7 leaderboard m-3">
             <h2>Leaderboard</h2>
             {% for record in quest_record %}
             <div class="leaderboard-item">
-                <span>{{record.user}}</span>
-                <span>{{record.tokens_earned}}</span>
+                <span>{{ user.username }}</span>
+                <span>{{ record.tokens_earned }}</span>
             </div>
             {% endfor %}
-      
+
         </div>
         <div class="col-lg-4 col-md-3 stat-card m-2 upload-section">
             <h2>Upload Your Run</h2>
@@ -63,7 +63,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="uploadRunModalLabel">Upload Your Run</h5>
-                  
+
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -84,6 +84,34 @@
                 {% else %}
                 <p>Log in to upload your run</p>
                 {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h3>Completed Runs:</h3>
+            <div>
+                {% for run_upload in quest_record %}
+                <div
+                    class="{% if not run_upload.approved and comment.runner == user %} {% elif not run_upload.approved%} d-none{% endif %}">
+                    <p>
+                        {{ user.username }}|{{ run_upload.completion_date }}
+                    </p>
+                    <div id="run_upload{{ run_upload.id }}">
+                        Completed in: {{ run_upload.completion_time }} - Earning: {{ run_upload.tokens_earned }}
+                    </div>
+                    {% if not run_upload.approved and run_upload.runner == user %}
+                    <p class="approval">
+                        This quest completion is waiting for approval
+                    </p>
+                    {% endif %}
+                    {% if user.is_authenticated and run_upload.runner == user %}
+                    <button class="btn btn-edit" data-comment_id="{{ run_upload.id }}">Edit</button>
+                    {% endif %}
+                </div>
+                {% endfor %}
             </div>
         </div>
     </div>

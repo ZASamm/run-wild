@@ -21,12 +21,13 @@ class QuestPost(models.Model):
         return f"{self.title} | distance - {self.distance} km"
 
 class QuestRecord(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    runner = models.ForeignKey(User, on_delete=models.CASCADE)
     quest = models.ForeignKey(QuestPost, on_delete=models.CASCADE, related_name='quest_records')
     completion_time = models.FloatField()
     tokens_earned = models.IntegerField()
     completion_date = models.DateTimeField(auto_now_add=True)
     is_personal_best = models.BooleanField(default=False)
+    approved = models.BooleanField(default=False)
     
     def save(self, *args, **kwargs):
         """
@@ -37,4 +38,4 @@ class QuestRecord(models.Model):
         super().save(*args, **kwargs)
     
     def __str__(self):
-        return f"{self.user} completed {self.quest.title} | total tokens earned: {self.tokens_earned}"
+        return f"{self.runner} completed {self.quest.title} | total tokens earned: {self.tokens_earned}"

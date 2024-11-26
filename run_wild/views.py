@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, reverse 
 from django.views import generic
 from django.contrib import messages
+from django.http import HttpResponseRedirect
 from .models import QuestPost, QuestRecord
 from django.views.generic import TemplateView
 from .forms import QuestCompletionForm
@@ -33,7 +34,7 @@ def quest_post(request, slug):
         quest_form = QuestCompletionForm(data=request.POST)
         if quest_form.is_valid():
            run_upload = quest_form.save(commit=False)
-           run_upload.user = request.user 
+           run_upload.runner = request.user 
            run_upload.quest = quest
            run_upload.save()
            messages.add_message(
@@ -41,7 +42,10 @@ def quest_post(request, slug):
                'Run successfully uploaded!'
            )
            
-    quest_form = QuestCompletionForm(data=request.POST)
+        return HttpResponseRedirect(reverse('quest_post', args=[slug]))
+    else:
+        quest_form = QuestCompletionForm()
+    
             
     
     return render(
@@ -50,6 +54,7 @@ def quest_post(request, slug):
         {"quest": quest,
          "quest_record": quest_record,
          "quest_form": quest_form,
+         "quest_count": quest_count,
          }
     )
         
@@ -62,7 +67,7 @@ def record_edit(request, slug, quest_record_id):
         run_upload = get_object_or_404(QuestRecord, pk=quest_record_id)
         quest_form = QuestCompletionForm(data=request.POST, instance=run_upload)
 
-        if quest_form.is_valid() and run_upload.user == request.user:
+        if quest_form.is_valid() and run_upload.runner == request.user:
             run_upload = quest_form.save(commit=False)
             run_upload.quest = quest
             run_upload.approved = False
