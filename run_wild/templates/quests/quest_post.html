@@ -42,7 +42,7 @@
             <h2>Leaderboard</h2>
             {% for record in quest_record %}
             <div class="leaderboard-item">
-                <span>{{ user.username }}</span>
+                <span>{{ record.runner }}</span>
                 <span>{{ record.tokens_earned }}</span>
             </div>
             {% endfor %}
@@ -50,13 +50,15 @@
         </div>
         <div class="col-lg-4 col-md-3 stat-card m-2 upload-section">
             <h2>Upload Your Run</h2>
-            {% if user.is_authenticated %}
             <p>Add your time and distance covered</p>
             <button class="btn btn-primary run-upload" data-bs-toggle="modal" data-bs-target="#uploadRunModal">Upload
                 Run</button>
         </div>
     </div>
 </div>
+
+<!-- Run upload modal-->>
+
 <div id="run-upload-modal">
     <div class="modal fade" id="uploadRunModal" tabindex="-1" aria-labelledby="uploadRunModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -66,6 +68,7 @@
 
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
+                {% if user.is_authenticated %}
                 <div class="modal-body">
                     <form id="uploadRunForm" method="post">
                         {{ quest_form }}
@@ -78,7 +81,7 @@
                             <label for="runDistance" class="form-label">Distance (km)</label>
                             <input type="number" class="form-control" id="runDistance" name="runDistance" required>
                         </div> -->
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button id="submitButton" type="submit" class="btn btn-primary">Submit</button>
                     </form>
                 </div>
                 {% else %}
@@ -88,6 +91,31 @@
         </div>
     </div>
 </div>
+
+<!-- Delete modal -->
+
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="uploadRunModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel">Delete your run?</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to remove this run?
+                This action cannot be undone!
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <a id="deleteConfirm" href="#" class="btn
+              btn-danger">Delete</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Completed QuestRecord Details -->
 <div class="container">
     <div class="row">
         <div class="col">
@@ -95,10 +123,8 @@
             <div>
                 {% for run_upload in quest_record %}
                 <div
-                    class="{% if not run_upload.approved and comment.runner == user %} {% elif not run_upload.approved%} d-none{% endif %}">
-                    <p>
-                        {{ user.username }}|{{ run_upload.completion_date }}
-                    </p>
+                    class="{% if not run_upload.approved and run_upload.runner == user %}faded{% elif not run_upload.approved %}d-none{% endif %}">
+                    <p>{{ run_upload.runner }} | {{ run_upload.completion_date }}</p>
                     <div id="run_upload{{ run_upload.id }}">
                         Completed in: {{ run_upload.completion_time }} - Earning: {{ run_upload.tokens_earned }}
                     </div>
@@ -117,4 +143,8 @@
     </div>
 </div>
 
+{% endblock %}
+
+{% block extras %}
+<script src="{% static 'js/script.js' %}"></script>
 {% endblock %}

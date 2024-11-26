@@ -27,7 +27,7 @@ class QuestList(generic.ListView):
 def quest_post(request, slug):
     
     quest = get_object_or_404(QuestPost, slug=slug)
-    quest_record = quest.quest_records.all().order_by("tokens_earned").values()
+    quest_record = quest.quest_records.all().order_by("-tokens_earned")
     quest_count = quest.quest_records.count()
     
     if request.method == "POST":
@@ -57,9 +57,11 @@ def quest_post(request, slug):
          "quest_count": quest_count,
          }
     )
-        
-    
+ 
+ # adds view for editing run data       
+
 def record_edit(request, slug, quest_record_id):
+    
     
     if request.method == "POST":
         
@@ -77,3 +79,18 @@ def record_edit(request, slug, quest_record_id):
             messages.add_message(request, messages.ERROR, 'Error updating run!')
     
     return HttpResponseRedirect(reverse('quest_post', args=[slug]))
+
+# Add a view to get run data for editing
+
+def get_run_data(request, quest_record_id):
+    run_upload = get_object_or_404(QuestRecord, pk=quest_record_id)
+    
+    if run_upload.runner != request.user:
+        return JsonResponse({'error': 'Not authorized'}, status=403)
+        
+    data = {
+        'completion_time': run_upload.completion_time,
+        'tokens_earned': run_upload.tokens_earned,
+    }
+    
+    return JsonResponse(data)

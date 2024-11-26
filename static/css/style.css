@@ -319,6 +319,29 @@ footer {
     border-bottom: 1px solid var(--text);
 }
 
+.faded {
+    opacity: 0.7;
+}
+
+.btn-edit {
+    padding: 0.375rem 0.75rem;
+    margin: 0.25rem;
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 0.25rem;
+}
+
+.btn-edit:hover {
+    background-color: #5a6268;
+}
+
+.approval {
+    color: #dc3545;
+    font-style: italic;
+    margin-top: 0.5rem;
+}
+
 /* From stack overflow https://stackoverflow.com/questions/18422223/bootstrap-3-modal-vertical-position-center */
 .modal {
     text-align: center;
