@@ -2,7 +2,7 @@ from django import forms
 from .models import QuestRecord
 
 class QuestCompletionForm(forms.ModelForm):
-    completion_time = froms.FloatField(
+    completion_time = forms.FloatField(
         label = 'Completion Time (Mins)'
     )
     

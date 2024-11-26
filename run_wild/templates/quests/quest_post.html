@@ -65,11 +65,14 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
+                    {% if user.is_authenticated %}
                     <h5 class="modal-title" id="uploadRunModalLabel">Upload Your Run</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <form id="uploadRunForm">
+                        {{ comment_form | crispy }}
+                        {% csrf_token %}
                         <div class="mb-3">
                             <label for="runTime" class="form-label">Time (minutes)</label>
                             <input type="number" class="form-control" id="runTime" name="runTime" required>
@@ -81,6 +84,9 @@
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
                 </div>
+                {% else %}
+                <p>Log in to leave a comment</p>
+                {% endif %}
             </div>
         </div>
     </div>

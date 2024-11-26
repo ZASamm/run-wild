@@ -28,5 +28,13 @@ class QuestRecord(models.Model):
     completion_date = models.DateTimeField(auto_now_add=True)
     is_personal_best = models.BooleanField(default=False)
     
+    def save(self, *args, **kwargs):
+        """
+        Calculate the tokens based on the quest distance (calculated at 10 tokens per km)
+        """
+        self.tokens_earned = round(self.quest.distance * 10)
+        
+        super().save(*args, **kwargs)
+    
     def __str__(self):
         return f"{self:user} completed {self:quest} | total tokens earned: {self:tokens_earned}"
