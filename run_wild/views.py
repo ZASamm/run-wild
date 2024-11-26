@@ -12,6 +12,9 @@ class HomePage(TemplateView):
     """
     template_name = 'index.html'
     
+class QuestRecord(generic.ListView):
+    model = QuestRecord
+    context_object_name = 'quest_record'    
     
 class QuestList(generic.ListView):
     model = QuestPost
@@ -24,6 +27,7 @@ def quest_post(request, slug):
     
     quest = get_object_or_404(QuestPost, slug=slug)
     quest_record = quest.quest_records.all().order_by("tokens_earned").values()
+    quest_count = quest.quest_records.count()
     
     if request.method == "POST":
         quest_form = QuestCompletionForm(data=request.POST)
@@ -48,9 +52,7 @@ def quest_post(request, slug):
          "quest_form": quest_form,
          }
     )
+        
     
     
         
-class QuestRecord(generic.ListView):
-    model = QuestRecord
-    context_object_name = 'quest_record'
