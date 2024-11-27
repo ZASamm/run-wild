@@ -1,6 +1,7 @@
 {% extends "base.html" %}
-{% block content %}
 {% load static %}
+{% block content %}
+
 {% load crispy_forms_tags %}
 
 
@@ -135,6 +136,7 @@
                     {% endif %}
                     {% if user.is_authenticated and run_upload.runner == user %}
                     <button class="btn btn-edit" data-comment_id="{{ run_upload.id }}">Edit</button>
+                    <button class="btn btn-delete" data-comment_id="{{ run_upload.id }}">Delete</button>
                     {% endif %}
                 </div>
                 {% endfor %}
@@ -143,8 +145,4 @@
     </div>
 </div>
 
-{% endblock %}
-
-{% block extras %}
-<script src="{% static 'js/script.js' %}"></script>
 {% endblock %}
