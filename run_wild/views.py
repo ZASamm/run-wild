@@ -13,7 +13,7 @@ class HomePage(TemplateView):
     """
     template_name = 'index.html'
     
-class QuestRecord(generic.ListView):
+class QuestRecordList(generic.ListView):
     model = QuestRecord
     context_object_name = 'quest_record'    
     
