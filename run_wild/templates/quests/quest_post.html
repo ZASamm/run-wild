@@ -12,7 +12,7 @@
         {% if "placeholder" in quest.map_route.url %}
         <img class="card-img-top" src="{% static 'media/images/logofinal.svg' %}" alt="placeholder image">
         {% else %}
-        <img class="card-img-top" src=" {{ quest.map_route.url }}" alt="{{ quest.title }}">
+        <img class="card-img-top" src="{{ quest.map_route.url }}" alt="{{ quest.title }}">
         {% endif %}
     </div>
     <hr class="spliter">
