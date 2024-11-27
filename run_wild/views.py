@@ -61,12 +61,11 @@ def quest_post(request, slug):
  # adds view for editing run data       
 
 def record_edit(request, slug, quest_record_id):
-    
+    quest = get_object_or_404(QuestPost, slug=slug)
+    run_upload = get_object_or_404(QuestRecord, pk=quest_record_id) 
     
     if request.method == "POST":
         
-        quest = get_object_or_404(QuestPost, slug=slug)
-        run_upload = get_object_or_404(QuestRecord, pk=quest_record_id)
         quest_form = QuestCompletionForm(data=request.POST, instance=run_upload)
 
         if quest_form.is_valid() and run_upload.runner == request.user:
@@ -79,6 +78,22 @@ def record_edit(request, slug, quest_record_id):
             messages.add_message(request, messages.ERROR, 'Error updating run!')
     
     return HttpResponseRedirect(reverse('quest_post', args=[slug]))
+
+# add delete view
+
+def record_delete(request, slug, quest_record_id):
+    
+    quest = get_object_or_404(QuestPost, slug=slug)
+    run_upload = get_object_or_404(QuestRecord, pk=quest_record_id) 
+    
+    if run_upload.runner == request.user:
+        run_upload.delete()
+        messages.add_message(request, messages.SUCCESS, 'Run deleted!')
+    else:
+        messages.add_message(request, messages.ERROR, 'You can only delete your own run!')
+
+    return HttpResponseRedirect(reverse('quest_post', args=[slug]))
+
 
 # Add a view to get run data for editing
 
