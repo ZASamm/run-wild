@@ -1,6 +1,6 @@
-const editButtons = document.querySelectorAll(".btn-edit");
+const editButtons = document.getElementsByClassName("btn-edit");
+const runForm = document.getElementById("uploadRunForm");
 const uploadModal = new bootstrap.Modal(document.getElementById("uploadRunModal"));
-const questForm = document.querySelector("#uploadRunForm");
 const submitButton = document.getElementById("submitButton");
 const deleteModal = new bootstrap.Modal(document.getElementById("deleteModal"));
 const deleteButtons = document.getElementsByClassName("btn-delete");
@@ -8,87 +8,62 @@ const deleteConfirm = document.getElementById("deleteConfirm");
 const modalTitle = document.getElementById("uploadRunModalLabel");
 
 /**
- * Gets CSRF token from cookies
+ * Initializes edit functionality for the provided edit buttons.
+ * 
+ * For each button in the `editButtons` collection:
+ * - Retrieves the associated run's ID upon click
+ * - Gets the content of the corresponding run div
+ * - Shows the upload modal
+ * - Populates the form with the run's data
+ * - Updates the modal title and submit button
+ * - Sets the form's action for editing
  */
-function getCsrfToken() {
-    const name = 'csrftoken';
-    let cookieValue = null;
-    if (document.cookie && document.cookie !== '') {
-        const cookies = document.cookie.split(';');
-        for (let i = 0; i < cookies.length; i++) {
-            const cookie = cookies[i].trim();
-            if (cookie.substring(0, name.length + 1) === (name + '=')) {
-                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-                break;
-            }
-        }
-    }
-    return cookieValue;
+for (let button of editButtons) {
+  button.addEventListener("click", (e) => {
+    let runId = e.target.getAttribute("data-comment_id");
+    let runContent = document.getElementById(`run_upload${runId}`).innerText;
+    
+    // Extract data from run content
+    let timeMatch = runContent.match(/Completed in: ([\d.]+)/);
+    let tokensMatch = runContent.match(/Earning: (\d+)/);
+    
+    // Show modal and update form
+    uploadModal.show();
+    
+    const completionTimeInput = runForm.querySelector('input[name="completion_time"]');
+    const tokensEarnedInput = runForm.querySelector('input[name="tokens_earned"]');
+    
+    completionTimeInput.value = timeMatch[1];
+    tokensEarnedInput.value = tokensMatch[1];
+    
+    modalTitle.innerText = "Edit Your Run";
+    submitButton.innerText = "Update";
+    runForm.setAttribute("action", `${window.location.pathname}edit/${runId}/`);
+  });
 }
 
 /**
- * Initializes the edit functionality for the edit buttons
+ * Initializes deletion functionality for the provided delete buttons.
+ * 
+ * For each button in the `deleteButtons` collection:
+ * - Retrieves the associated run's ID upon click
+ * - Updates the deleteConfirm link's href to point to the deletion endpoint
+ * - Shows the confirmation modal
  */
-for (let button of editButtons) {
-    button.addEventListener("click", async (e) => {
-        e.preventDefault();
-        
-        // Get the quest record ID from the data attribute
-        let questRecordId = e.target.getAttribute("data-comment_id");
-        
-        try {
-            // Fetch the run data from the server
-            const response = await fetch(`/get-run-data/${questRecordId}/`);
-            if (!response.ok) {
-                throw new Error('Failed to fetch run data');
-            }
-            
-            const data = await response.json();
-            
-            // Update form fields
-            document.getElementById("id_completion_time").value = data.completion_time;
-            document.getElementById("id_tokens_earned").value = data.tokens_earned;
-            
-            // Update modal title and button
-            modalTitle.textContent = "Edit Your Run";
-            submitButton.textContent = "Update";
-            
-            // Get the current URL path and update form action
-            let pathArray = window.location.pathname.split('/');
-            let slug = pathArray[pathArray.length - 2]; // Get the slug from the URL
-            questForm.action = `/quest/${slug}/edit/${questRecordId}/`;
-            
-            // Show the modal
-            uploadModal.show();
-            
-        } catch (error) {
-            console.error('Error:', error);
-            alert('There was an error loading the run data. Please try again.');
-        }
-    });
+for (let button of deleteButtons) {
+  button.addEventListener("click", (e) => {
+    let runId = e.target.getAttribute("data-comment_id");
+    deleteConfirm.href = `${window.location.pathname}delete/${runId}/`;
+    deleteModal.show();
+  });
 }
 
-// Reset form when modal is closed
+/**
+ * Reset form when modal is closed
+ */
 document.getElementById("uploadRunModal").addEventListener('hidden.bs.modal', function () {
-    questForm.reset();
-    modalTitle.textContent = "Upload Your Run";
-    submitButton.textContent = "Submit";
-    // Reset form action to default upload URL
-    let pathArray = window.location.pathname.split('/');
-    let slug = pathArray[pathArray.length - 2];
-    questForm.action = `/quest/${slug}/`;
-});
-
-// Add CSRF token to all POST requests
-document.addEventListener('DOMContentLoaded', function() {
-    const csrfToken = getCsrfToken();
-    
-    // Add CSRF token to form if it doesn't exist
-    if (!questForm.querySelector('input[name="csrfmiddlewaretoken"]')) {
-        const csrfInput = document.createElement('input');
-        csrfInput.type = 'hidden';
-        csrfInput.name = 'csrfmiddlewaretoken';
-        csrfInput.value = csrfToken;
-        questForm.appendChild(csrfInput);
-    }
+    runForm.reset();
+    modalTitle.innerText = "Upload Your Run";
+    submitButton.innerText = "Submit";
+    runForm.setAttribute("action", window.location.pathname);
 });
