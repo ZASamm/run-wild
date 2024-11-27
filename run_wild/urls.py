@@ -9,4 +9,6 @@ urlpatterns = [
          views.record_edit, name='record_edit'),
     path('get-run-data/<int:quest_record_id>/', 
          views.get_run_data, name='get_run_data'),
+    path('quest/<slug:slug>/delete/<int:quest_record_id>/',
+         views.record_delete, name='record_delete'),
 ]
