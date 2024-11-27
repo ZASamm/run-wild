@@ -7,11 +7,14 @@ from django.views.generic import TemplateView
 from .forms import QuestCompletionForm
 
 # Create your views here.
-class HomePage(TemplateView):
+class HomePage(generic.ListView):
     """
     Displays home page
     """
+    model = QuestPost
     template_name = 'index.html'
+    context_object_name = 'quests'
+    
     
 class QuestRecordList(generic.ListView):
     model = QuestRecord
@@ -21,7 +24,7 @@ class QuestList(generic.ListView):
     model = QuestPost
     template_name = 'quests.html'
     context_object_name = 'quests'
-    paginate_by = 6
+    paginate_by = 4
 
     
 def quest_post(request, slug):
@@ -93,6 +96,7 @@ def record_delete(request, slug, quest_record_id):
         messages.add_message(request, messages.ERROR, 'You can only delete your own run!')
 
     return HttpResponseRedirect(reverse('quest_post', args=[slug]))
+
 
 
 # Add a view to get run data for editing
