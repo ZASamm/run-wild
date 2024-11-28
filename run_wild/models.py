@@ -33,6 +33,7 @@ class QuestRecord(models.Model):
         Calculate the total tokens for a challange earned
         - base token (10 per km)
         - personal best bonus
+        - pace bonus
         - difficulty multiplier
         """
         
@@ -68,10 +69,14 @@ class QuestRecord(models.Model):
         pace_tokens = 0
         
         # caculate pace bouns
-        if self.pace > 5:
-            pace_tokens = 4
-        else:
-            pace_tokens = 2
+        if self.pace < 4:
+            pace_tokens = int(self.quest.distance * 15)
+        elif self.pace < 5:
+            pace_tokens = int(self.quest.distance * 10)
+        elif self.pace < 6:
+            pace_bonus = int(self.quest.distance * 5)
+        elif self.pace < 7:
+            pace_bonus = int(self.quest.distance * 2)
         
         # add personal best bonus if true
         if self.is_personal_best:
@@ -88,6 +93,10 @@ class QuestRecord(models.Model):
             self.quest.difficulty.lower(), 
             1.0
         )
+        print(pace_tokens)
+        print(bonus_tokens)
+        print(multiplier)
+        print(base_tokens)
         
         # calculate final tokens    
         self.tokens_earned = round((base_tokens + pace_tokens + bonus_tokens) * multiplier)
