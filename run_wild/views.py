@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, reverse 
 from django.views import generic
 from django.contrib import messages
+from datetime import timedelta
 from django.http import HttpResponseRedirect
 from .models import QuestPost, QuestRecord
 from django.views.generic import TemplateView
@@ -49,6 +50,36 @@ def quest_post(request, slug):
     else:
         quest_form = QuestCompletionForm()
     
+    return render(
+        request,
+        "quests/quest_post.html",
+        {"quest": quest,
+         "quest_record": quest_record,
+         "quest_form": quest_form,
+         "quest_count": quest_count,
+         }
+    )
+    
+    quest = get_object_or_404(QuestPost, slug=slug)
+    quest_record = quest.quest_records.all().order_by("-tokens_earned")
+    quest_count = quest.quest_records.count()
+    
+    if request.method == "POST":
+        quest_form = QuestCompletionForm(data=request.POST)
+        if quest_form.is_valid():
+           run_upload = quest_form.save(commit=False)
+           run_upload.runner = request.user 
+           run_upload.quest = quest
+           run_upload.save()
+           messages.add_message(
+               request, messages.SUCCESS,
+               'Run successfully uploaded!'
+           )
+           
+        return HttpResponseRedirect(reverse('quest_post', args=[slug]))
+    else:
+        quest_form = QuestCompletionForm()
+    
             
     
     return render(
@@ -61,6 +92,9 @@ def quest_post(request, slug):
          }
     )
  
+ 
+ # run upload
+ 
  # adds view for editing run data       
 
 def record_edit(request, slug, quest_record_id):
@@ -68,7 +102,6 @@ def record_edit(request, slug, quest_record_id):
     run_upload = get_object_or_404(QuestRecord, pk=quest_record_id) 
     
     if request.method == "POST":
-        
         quest_form = QuestCompletionForm(data=request.POST, instance=run_upload)
 
         if quest_form.is_valid() and run_upload.runner == request.user:
