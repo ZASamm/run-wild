@@ -42,7 +42,6 @@ class QuestRecord(models.Model):
             pervious_best = QuestRecord.objects.filter(
                 runner=self.runner,
                 quest=self.quest,
-                approved=True
             ).order_by('completion_time').first()
 
             if pervious_best:
@@ -93,6 +92,7 @@ class QuestRecord(models.Model):
             self.quest.difficulty.lower(), 
             1.0
         )
+        # tests
         print(pace_tokens)
         print(bonus_tokens)
         print(multiplier)
