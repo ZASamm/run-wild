@@ -19,6 +19,7 @@ class RequestNewQuest(models.Model):
     lname = models.CharField(max_length=200)
     email = models.EmailField()
     message = models.TextField()
+    image = CloudinaryField('image', default='placeholder')
     read = models.BooleanField(default=False)
     
     def __str__(self):
