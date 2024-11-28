@@ -30,7 +30,13 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+if os.path.isfile('env.py'):
+    import env
+    DEBUG = True
+else:
+    DEBUG = False
+
+# 'DEBUG' in os.environ
 
 ALLOWED_HOSTS = ['8000-zasamm-runwild-iyf4ti37hrv.ws.codeinstitute-ide.net', '.herokuapp.com']
 

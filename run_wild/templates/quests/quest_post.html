@@ -15,23 +15,27 @@
         <img class="card-img-top" src="{{ quest.map_route.url }}" alt="{{ quest.title }}">
         {% endif %}
     </div>
-    <hr class="spliter">
+    <div class="footer-hr"></div>
     <div class="container-fluid stats-grid">
         <!-- First Row displaying data from QuestPost -->
-        <div class="row d-flex justify-content-center">
-            <div class="col-sm-4 col-lg-3 stat-card p-3 m-3">
+        <div class="row d-flex justify-content-center mt-3">
+            <div class="col-12 col-md-6 col-lg-3 stat-card p-3 m-3 d-flex flex-column justify-content-center align-items-center">
                 <h3>Total Distance</h3>
                 <p>{{ quest.distance }} km</p>
             </div>
-            <div class="col-sm-4 col-lg-3 stat-card p-3 m-3">
+            <div class="col-12 col-md-6 col-lg-3 stat-card p-3 m-3 d-flex flex-column justify-content-center align-items-center">
                 <h3>Elevation Max</h3>
                 <p>{{ quest.elevation_max }} m</p>
             </div>
-            <div class="col-sm-4 col-lg-3 stat-card p-3 m-3">
+            <div class="col-12 col-md-6 col-lg-3 stat-card p-3 m-3 d-flex flex-column justify-content-center align-items-center">
                 <h3>Elevation Gain</h3>
-                <p>{{ quest.elevation_gain }}</p>
+                <p>{{ quest.elevation_gain }} m</p>
             </div>
-            <div class="col-sm-4 col-lg-3 stat-card p-3 m-3">
+            <div class="col-12 col-md-6 col-lg-3 stat-card p-3 m-3 d-flex flex-column justify-content-center align-items-center">
+                <h3>Description</h3>
+                <p>{{ quest.description }}</p>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 stat-card p-3 m-3 d-flex flex-column justify-content-center align-items-center">
                 <h3>Total Quests Completed</h3>
                 <p>{{ quest_count }}</p>
             </div>
@@ -49,7 +53,7 @@
             {% endfor %}
 
         </div>
-        <div class="col-lg-4 col-md-3 stat-card m-2 upload-section">
+        <div class="col-lg-4 col-md-3 stat-card m-2 upload-section  d-flex flex-column justify-content-center align-items-center">
             <h2>Upload Your Run</h2>
             <p>Add your time and distance covered</p>
             <button class="btn btn-primary run-upload" data-bs-toggle="modal" data-bs-target="#uploadRunModal">Upload
@@ -117,12 +121,12 @@
 
 
 <!-- Completed QuestRecord Details -->
-<div class="container">
-    <div class="row">
-        <div class="col">
-            <h3>Completed Runs:</h3>
+<div class="container g-0 completed-runs">
+    <h3>Completed Runs:</h3>
+    <div class="row d-flex justify-content-between">
+        {% for run_upload in quest_record %}
+        <div class="col-sm-12 col-md-3 col-lg-3 run-upload-card m-4">
             <div>
-                {% for run_upload in quest_record %}
                 <div
                     class="{% if not run_upload.approved and run_upload.runner == user %}faded{% elif not run_upload.approved %}d-none{% endif %}">
                     <p>{{ run_upload.runner }} | {{ run_upload.completion_date }}</p>
@@ -139,9 +143,9 @@
                     <button class="btn btn-delete" data-comment_id="{{ run_upload.id }}">Delete</button>
                     {% endif %}
                 </div>
-                {% endfor %}
             </div>
         </div>
+        {% endfor %}
     </div>
 </div>
 

@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-
-
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
 /* General */
 * {
@@ -19,6 +18,9 @@
 
 body {
     background-color: var(--primary);
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 h1,
@@ -30,6 +32,7 @@ h5 {
     font-weight: 500;
     font-style: normal;
 }
+
 
 html {
     scroll-behavior: smooth;
@@ -330,21 +333,38 @@ footer {
     opacity: 0.7;
 }
 
-.btn-edit {
-    padding: 0.375rem 0.75rem;
-    margin: 0.25rem;
-    background-color: #6c757d;
-    color: white;
-    border: none;
-    border-radius: 0.25rem;
+.btn-edit, .btn-delete {
+    background-color: var(--text);
+    color: var(--white);
+    font-family: "Bebas Neue", sans-serif;
+    text-decoration: none;
 }
 
-.btn-edit:hover {
-    background-color: #5a6268;
+
+
+.run-upload {
+    background-color: var(--text);
+    color: var(--white);
+    font-family: "Bebas Neue", sans-serif;
+    text-decoration: none;
+    font-size: 1.5em;
 }
+
+.run-upload-card {
+    background: var(--primary);
+    padding: 1.5rem;
+    box-shadow: 12px 12px 32px rgba(0, 0, 0, 0.1),
+    -5px -5px 15px #ffffff;
+}
+
+.btn-edit:hover, .btn-delete:hover, .run-upload:hover {
+    background-color: var(--accent);
+    color: var(--text);
+}
+
 
 .approval {
-    color: #dc3545;
+    color: var(--accent);
     font-style: italic;
     margin-top: 0.5rem;
 }
