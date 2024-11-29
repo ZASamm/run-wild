@@ -50,11 +50,19 @@ html {
 }
 
 .logo {
-    height: 10vh;
+    height: 8vh;
 }
 
-.navbar-text {
+.navbar-text p {
     font-family: "Bebas Neue", sans-serif;
+    font-size: 0.8em;
+}
+
+.navbar-text h4,
+.navbar-text p {
+    display: inline;
+    vertical-align: top;
+    line-height: 28px;
 }
 
 /* Hero */
@@ -129,9 +137,16 @@ html {
 }
 
 .home_boxes{
-    box-shadow: 12px 12px 32px rgba(0, 0, 0, 0.1),
-    -5px -5px 15px #ffffff;
     width: 20vw;
+    padding: 2em;
+    border-radius: 4px;
+    box-shadow: none;
+    transition: 300ms ease;
+}
+
+.home_boxes:hover {
+    box-shadow: 12px 12px 32px rgba(0, 0, 0, 0.1),
+    -5px -5px 15px #ffffff; 
 }
 
 /* carousel */
@@ -218,9 +233,22 @@ footer {
     position: relative;
 }
 
+.quest-body {
+    padding: 2em;
+    border-radius: 4px;
+    box-shadow: none;
+    transition: 400ms ease;
+}
+
+.quest-body:hover {
+    box-shadow: 12px 12px 32px rgba(0, 0, 0, 0.1),
+    -5px -5px 15px #ffffff; 
+}
+
+
 .image-flash {
     position: absolute;
-    bottom: 90%;
+    bottom: 85%;
     min-width: 30%;
     background-color: var(--text);
     color: var(--white);
