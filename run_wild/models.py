@@ -73,9 +73,9 @@ class QuestRecord(models.Model):
         elif self.pace < 5:
             pace_tokens = int(self.quest.distance * 10)
         elif self.pace < 6:
-            pace_bonus = int(self.quest.distance * 5)
+            pace_tokens = int(self.quest.distance * 5)
         elif self.pace < 7:
-            pace_bonus = int(self.quest.distance * 2)
+            pace_tokens = int(self.quest.distance * 2)
         
         # add personal best bonus if true
         if self.is_personal_best:
@@ -97,6 +97,13 @@ class QuestRecord(models.Model):
         print(bonus_tokens)
         print(multiplier)
         print(base_tokens)
+        
+        self._calculation_values = {
+            'pace_tokens': pace_tokens,
+            'bonus_tokens': bonus_tokens,
+            'multiplier': multiplier,
+            'base_tokens': base_tokens
+        }
         
         # calculate final tokens    
         self.tokens_earned = round((base_tokens + pace_tokens + bonus_tokens) * multiplier)
