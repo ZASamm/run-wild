@@ -15,8 +15,8 @@ class About(models.Model):
 
 
 class RequestNewQuest(models.Model):
-    fname = models.CharField(max_length=200)
-    lname = models.CharField(max_length=200)
+    fname = models.CharField('First Name', max_length=200)
+    lname = models.CharField('Last Name', max_length=200)
     email = models.EmailField()
     message = models.TextField()
     image = CloudinaryField('image', default='placeholder')
