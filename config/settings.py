@@ -84,6 +84,9 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'config.urls'
 
+X_FRAME_OPTIONS = 'DENY'
+X_FRAME_OPTIONS = 'ALLOWALL'
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
