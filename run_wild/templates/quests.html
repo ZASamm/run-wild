@@ -8,7 +8,7 @@
             <div class="row d-flex justify-content-evenly">
                 {% for quest in quests %}
                 <div class="col-md-4">
-                    <div class="card-body my-2">
+                    <div class="card-body quest-body my-2">
                         <div class="image-container">
                             {% if "placeholder" in quest.featured_image.url %}
                             <img class="card-img-top" src="{% static 'media/images/logofinal.svg' %}"
