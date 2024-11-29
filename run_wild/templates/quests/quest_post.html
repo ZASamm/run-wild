@@ -19,23 +19,28 @@
     <div class="container-fluid stats-grid">
         <!-- First Row displaying data from QuestPost -->
         <div class="row d-flex justify-content-center mt-3">
-            <div class="col-12 col-md-6 col-lg-3 stat-card p-3 m-3 d-flex flex-column justify-content-center align-items-center">
+            <div
+                class="col-12 col-md-6 col-lg-3 stat-card p-3 m-3 d-flex flex-column justify-content-center align-items-center">
                 <h3>Total Distance</h3>
                 <p>{{ quest.distance }} km</p>
             </div>
-            <div class="col-12 col-md-6 col-lg-3 stat-card p-3 m-3 d-flex flex-column justify-content-center align-items-center">
+            <div
+                class="col-12 col-md-6 col-lg-3 stat-card p-3 m-3 d-flex flex-column justify-content-center align-items-center">
                 <h3>Elevation Max</h3>
                 <p>{{ quest.elevation_max }} m</p>
             </div>
-            <div class="col-12 col-md-6 col-lg-3 stat-card p-3 m-3 d-flex flex-column justify-content-center align-items-center">
+            <div
+                class="col-12 col-md-6 col-lg-3 stat-card p-3 m-3 d-flex flex-column justify-content-center align-items-center">
                 <h3>Elevation Gain</h3>
                 <p>{{ quest.elevation_gain }} m</p>
             </div>
-            <div class="col-12 col-md-6 col-lg-3 stat-card p-3 m-3 d-flex flex-column justify-content-center align-items-center">
+            <div
+                class="col-12 col-md-6 col-lg-3 stat-card p-3 m-3 d-flex flex-column justify-content-center align-items-center">
                 <h3>Description</h3>
                 <p>{{ quest.description }}</p>
             </div>
-            <div class="col-12 col-md-6 col-lg-3 stat-card p-3 m-3 d-flex flex-column justify-content-center align-items-center">
+            <div
+                class="col-12 col-md-6 col-lg-3 stat-card p-3 m-3 d-flex flex-column justify-content-center align-items-center">
                 <h3>Total Quests Completed</h3>
                 <p>{{ quest_count }}</p>
             </div>
@@ -53,7 +58,8 @@
             {% endfor %}
 
         </div>
-        <div class="col-lg-4 col-md-3 stat-card m-2 upload-section  d-flex flex-column justify-content-center align-items-center">
+        <div
+            class="col-lg-4 col-md-3 stat-card m-2 upload-section  d-flex flex-column justify-content-center align-items-center">
             <h2>Upload Your Run</h2>
             <p>Add your time and distance covered</p>
             <button class="btn btn-primary run-upload" data-bs-toggle="modal" data-bs-target="#uploadRunModal">Upload
@@ -76,17 +82,9 @@
                 {% if user.is_authenticated %}
                 <div class="modal-body">
                     <form id="uploadRunForm" method="post">
-                        {{ quest_form }}
+                        {{ quest_form | crispy }}
                         {% csrf_token %}
-                        <!-- <div class="mb-3">
-                            <label for="runTime" class="form-label">Time (minutes)</label>
-                            <input type="number" class="form-control" id="runTime" name="runTime" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="runDistance" class="form-label">Distance (km)</label>
-                            <input type="number" class="form-control" id="runDistance" name="runDistance" required>
-                        </div> -->
-                        <button id="submitButton" type="submit" class="btn btn-primary">Submit</button>
+                        <button id="submitButton" type="submit" class="btn btn-primary run-upload">Submit</button>
                     </form>
                 </div>
                 {% else %}
@@ -121,32 +119,30 @@
 
 
 <!-- Completed QuestRecord Details -->
-<div class="container g-0 completed-runs mb-4">
-    <h3>Completed Runs:</h3>
-    {% for run_upload in quest_record %}
-    <div class="row d-flex justify-content-between {% if not run_upload.approved and run_upload.runner == user %}faded{% elif not run_upload.approved %}d-none{% endif %} ">
-        <div class="col-sm-12 col-md-3 col-lg-3 run-upload-card m-4">
+ <section class="m-4">
+<h3 class="text-center">Completed Runs:</h3>
+<div class="container-fluid  completed-runs mb-4">
+    <div class="row d-flex justify-content-center">
+        {% for run_upload in quest_record %}
+        <div class="col-sm-12 col-md-6 col-lg-3 run-upload-card m-4 {% if not run_upload.approved and run_upload.runner == user %}faded{% elif not run_upload.approved %}d-none{% endif %}">
             <div>
-                <div
-                    class="{% if not run_upload.approved and run_upload.runner == user %}faded{% elif not run_upload.approved %}d-none{% endif %}">
-                    <p>{{ run_upload.runner }} | {{ run_upload.completion_date }}</p>
-                    <div id="run_upload{{ run_upload.id }}">
-                        Completed in: {{ run_upload.completion_time }} - Earning: {{ run_upload.tokens_earned }}
-                    </div>
-                    {% if not run_upload.approved and run_upload.runner == user %}
-                    <p class="approval">
-                        This quest completion is waiting for approval
-                    </p>
-                    {% endif %}
-                    {% if user.is_authenticated and run_upload.runner == user %}
-                    <button class="btn btn-edit" data-comment_id="{{ run_upload.id }}">Edit</button>
-                    <button class="btn btn-delete" data-comment_id="{{ run_upload.id }}">Delete</button>
-                    {% endif %}
+                <p>{{ run_upload.runner }} | {{ run_upload.completion_date }}</p>
+                <div id="run_upload{{ run_upload.id }}">
+                    Completed in: {{ run_upload.completion_time }} - Earning: {{ run_upload.tokens_earned }}
                 </div>
+                {% if not run_upload.approved and run_upload.runner == user %}
+                <p class="approval">
+                    This quest completion is waiting for approval
+                </p>
+                {% endif %}
+                {% if user.is_authenticated and run_upload.runner == user %}
+                <button class="btn btn-edit" data-comment_id="{{ run_upload.id }}">Edit</button>
+                <button class="btn btn-delete" data-comment_id="{{ run_upload.id }}">Delete</button>
+                {% endif %}
             </div>
         </div>
         {% endfor %}
     </div>
 </div>
-
+</section>
 {% endblock %}
