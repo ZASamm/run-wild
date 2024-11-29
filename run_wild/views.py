@@ -29,7 +29,6 @@ class QuestList(generic.ListView):
 
     
 def quest_post(request, slug):
-    
     quest = get_object_or_404(QuestPost, slug=slug)
     quest_record = quest.quest_records.all().order_by("-tokens_earned")
     quest_count = quest.quest_records.count()
@@ -37,27 +36,40 @@ def quest_post(request, slug):
     if request.method == "POST":
         quest_form = QuestCompletionForm(data=request.POST)
         if quest_form.is_valid():
-           run_upload = quest_form.save(commit=False)
-           run_upload.runner = request.user 
-           run_upload.quest = quest
-           run_upload.save()
-           messages.add_message(
-               request, messages.SUCCESS,
-               'Run successfully uploaded!'
-           )
+            run_upload = quest_form.save(commit=False)
+            run_upload.runner = request.user 
+            run_upload.quest = quest
+            run_upload.save()
+            
+            calc = run_upload._calculation_values
+            messages.success(
+                request,
+                f""" 
+                <div class='calculation-breakdown'>
+                    <h5>Quest Completed Successfully!</h5>
+                    <div class='token-details'>
+                        <div>Base Tokens: <span>{calc['base_tokens']}</span></div>
+                        <div>Pace Bonus: <span>+{calc['pace_tokens']}</span></div>
+                        <div>Personal Best Bonus: <span>+{calc['bonus_tokens']}</span></div>
+                        <div>Difficulty Multiplier: <span>{calc['multiplier']}x</span></div>
+                        <div class='total'>Total Tokens: <span>{run_upload.tokens_earned}</span></div>
+                    </div>
+                </div>
+                """
+            )
            
         return HttpResponseRedirect(reverse('quest_post', args=[slug]))
-    else:
-        quest_form = QuestCompletionForm()
-    
+
+    quest_form = QuestCompletionForm()
     return render(
         request,
         "quests/quest_post.html",
-        {"quest": quest,
-         "quest_record": quest_record,
-         "quest_form": quest_form,
-         "quest_count": quest_count,
-         }
+        {
+            "quest": quest,
+            "quest_record": quest_record,
+            "quest_form": quest_form,
+            "quest_count": quest_count,
+        }
     )
 
  
