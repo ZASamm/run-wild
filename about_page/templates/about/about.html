@@ -18,6 +18,7 @@
         </div>
         <div class="col-12">
             <h1>{{ about.title }}</h1>
+            <br>
             {{ about.content | safe }}
         </div>
     </div>
@@ -28,21 +29,34 @@
             <p class="text-end"><em>Updated on: {{ about.updated_on }}</em></p>
         </div>
     </div>
-    <div class="row justify-content-center">
-        <div class="col-12 col-md-6 my-5">
-            <h2>Design Your Adventure - Quest Submissions</h2>
-            <p>We believe the best adventures come from our community's imagination. Have an exciting running challenge
-                in mind? Whether it's a scenic coastal route you've discovered or a thrilling urban circuit you'd love
-                to share, we want to hear about it! Our team reviews each submission carefully, and your idea could
-                become the next thrilling addition to Run Wild's collection of challenges, complete with its own token
-                rewards and multipliers. Help us expand our running universe and inspire fellow adventurers to explore
-                new horizons.</p>
-            <form method="post">
-                {{ new_quest_form | crispy }}
-                {% csrf_token %}
-                <button class="btn btn-secondary" type="submit">Submit</button>
-            </form>
+    <section id="form-section">
+        <div class="container-fluid">
+            <div class="row ">
+                <div class="col-md-4 submission-header d-flex justify-content-center">
+                    <div class="align-self-center p-4">
+                    <h2>Design Your Adventure - Quest Submissions</h2>
+                    <p>We believe the best adventures come from our community's imagination. Have an exciting running
+                        challenge
+                        in mind? Whether it's a scenic coastal route you've discovered or a thrilling urban circuit
+                        you'd love
+                        to share, we want to hear about it! Our team reviews each submission carefully, and your idea
+                        could
+                        become the next thrilling addition to Run Wild's collection of challenges, complete with its own
+                        token
+                        rewards and multipliers. Help us expand our running universe and inspire fellow adventurers to
+                        explore
+                        new horizons.</p>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <form method="post">
+                        {{ new_quest_form | crispy }}
+                        {% csrf_token %}
+                        <button class="btn btn-secondary form-button" type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
 </div>
 {% endblock content %}
