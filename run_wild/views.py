@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, reverse 
 from django.views import generic
 from django.contrib import messages
+from django.db.models import Sum, Count
 from datetime import timedelta
 from django.http import HttpResponseRedirect
 from .models import QuestPost, QuestRecord
@@ -16,7 +17,36 @@ class HomePage(generic.ListView):
     template_name = 'index.html'
     context_object_name = 'quests'
     
-    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        
+        # get all the approved QuestRecord
+        approved_records = QuestRecord.objects.filter(approved=True)
+        
+        
+        # calc total kilometer
+        total_kilometers = approved_records.aggregate(
+            total_km=Sum('quest__distance'))['total_km'] or 0
+        
+        # Calc total time
+        total_time = approved_records.aggregate(
+            total_time=Sum('completion_time'))['total_time'] or timedelta()
+        
+        # Convert timedelta to hours
+        total_hours = total_time.total_seconds() / 3600
+        
+        # Count total approved completions
+        total_completions = approved_records.count()
+        
+        # Add to context
+        context.update({
+            'total_kilometers': round(total_kilometers, 0),
+            'total_hours': round(total_hours, 0),
+            'total_completions': total_completions,
+        })
+        
+        return context
+           
 class QuestRecordList(generic.ListView):
     model = QuestRecord
     context_object_name = 'quest_record'    
