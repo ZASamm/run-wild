@@ -92,12 +92,7 @@ class QuestRecord(models.Model):
             self.quest.difficulty.lower(), 
             1.0
         )
-        # tests
-        print(pace_tokens)
-        print(bonus_tokens)
-        print(multiplier)
-        print(base_tokens)
-        
+              
         self._calculation_values = {
             'pace_tokens': pace_tokens,
             'bonus_tokens': bonus_tokens,
