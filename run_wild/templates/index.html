@@ -32,17 +32,17 @@
         <div class="container-fluid">
             <div class="row wrapper_totals">
                 <div class="col-sm-12 col-md-4 container_totals d-flex justify-content-center align-items-center">
-                    <span class="num p-3" data-val="400">000</span>
+                    <span class="num p-3" data-val="{{ total_kilometers|floatformat:0 }}">000</span>
                     <h2 class="text">Kilometers<br>Run</h2>
                 </div>
 
                 <div class="col-sm-12 col-md-4 container_totals d-flex justify-content-center align-items-center">
-                    <span class="num p-3" data-val="340">000</span>
+                    <span class="num p-3" data-val="{{ total_hours|floatformat:0 }}">000</span>
                     <h2 class="text">Total<br>Time</h2>
                 </div>
 
                 <div class="col-sm-12 col-md-4 container_totals d-flex justify-content-center align-items-center">
-                    <span class="num p-3" data-val="225">000</span>
+                    <span class="num p-3" data-val="{{ total_completions }}">000</span>
                     <h2 class="text">Quests<br>Completed</h2>
                 </div>
             </div>
