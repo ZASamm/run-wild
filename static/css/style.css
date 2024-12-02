@@ -338,13 +338,17 @@ footer {
 
 /* Quest post */
 
-.main-container{
-    margin: 1rem;
-}
 
 .quest-header {
     display: flex;
     justify-content: center;
+}
+
+.quest-post-header {
+    width: 100%;
+    background-color: var(--text);
+    color: var(--white);
+    padding: 2em;
 }
 
 .map_wrapper {
@@ -496,6 +500,41 @@ footer {
     height: 100%;
     overflow: hidden;
 }
+
+#form-section {
+    padding: 40px 0;
+    width: 100%;
+    background-color: var(--primary);
+}
+
+.submission-header {
+    background-color: var(--text);
+}
+
+.submission-header h2 {
+    background-color: var(--text);
+    color: var(--white);
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.submission-header p {
+    color: var(--white);
+    margin: 0;
+}
+
+.form-button {
+    background-color: var(--text);
+    color: var(--white);
+    font-family: "Bebas Neue", sans-serif;
+    text-decoration: none;
+}
+
+.form-button:hover {
+    background-color: var(--accent);
+    color: var(--text);
+}
+
 
 /* media queries */
 
