@@ -185,6 +185,39 @@ html {
     margin: 0 4px;
 }
 
+
+/* Accordion */
+
+.accordion {
+    max-width: 70vw;
+    margin: 20px auto;
+}
+.accordion-button {
+    background-color: var(--primary);
+}
+
+.accordion-item {
+    background-color: var(--primary);
+}
+
+.speed-grid, .difficulty-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+.speed-card, .difficulty-card {
+    background: var(--text);
+    color: var(--white);
+    padding: 1rem;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+.icon-space {
+    color: var(--accent);
+    margin-right: 10px;
+}
+
 /* Footer */
 
 footer {
