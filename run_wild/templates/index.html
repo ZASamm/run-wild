@@ -122,6 +122,123 @@
             </button>
         </div>
     </section>
+
+    <section>
+        <div class="accordion" id="rewardsAccordion">
+            <!-- Distance Reward -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#distanceCollapse">
+                        <i class="fa-solid fa-person-running icon-space"></i>Distance Reward
+                    </button>
+                </h2>
+                <div id="distanceCollapse" class="accordion-collapse collapse show" data-bs-parent="#rewardsAccordion">
+                    <div class="accordion-body">
+                        <p>Every kilometer you complete earns you 10 tokens. The longer the quest, the more tokens you earn!</p>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Speed Bonus -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#speedCollapse">
+                        <i class="fa-solid fa-bolt-lightning icon-space"></i>Speed Bonus
+                    </button>
+                </h2>
+                <div id="speedCollapse" class="accordion-collapse collapse" data-bs-parent="#rewardsAccordion">
+                    <div class="accordion-body">
+                        <p>Running faster earns you extra tokens per kilometer:</p>
+                        <div class="speed-grid">
+                            <div class="speed-card">
+                                <h5>Super Fast</h5>
+                                <p>Under 4 min/km</p>
+                                <p class="mb-0">15 extra tokens</p>
+                            </div>
+                            <div class="speed-card">
+                                <h5>Very Fast</h5>
+                                <p>Under 5 min/km</p>
+                                <p class="mb-0">10 extra tokens</p>
+                            </div>
+                            <div class="speed-card">
+                                <h5>Fast</h5>
+                                <p>Under 6 min/km</p>
+                                <p class="mb-0">5 extra tokens</p>
+                            </div>
+                            <div class="speed-card">
+                                <h5>Good Pace</h5>
+                                <p>Under 7 min/km</p>
+                                <p class="mb-0">2 extra tokens</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Personal Best -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#bestCollapse">
+                        <i class="fa-solid fa-trophy icon-space"></i>Personal Best Bonus
+                    </button>
+                </h2>
+                <div id="bestCollapse" class="accordion-collapse collapse" data-bs-parent="#rewardsAccordion">
+                    <div class="accordion-body">
+                        <p>Beat your previous best time on a quest? You'll get 5 bonus tokens!</p>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Difficulty -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#difficultyCollapse">
+                        <i class="fa-solid fa-dumbbell icon-space"></i>Quest Difficulty
+                    </button>
+                </h2>
+                <div id="difficultyCollapse" class="accordion-collapse collapse" data-bs-parent="#rewardsAccordion">
+                    <div class="accordion-body">
+                        <p>Choosing harder quests gives you more tokens:</p>
+                        <div class="difficulty-grid">
+                            <div class="difficulty-card text-center">
+                                <h5>Easy</h5>
+                                <p class="mb-0">Normal rewards</p>
+                            </div>
+                            <div class="difficulty-card text-center">
+                                <h5>Medium</h5>
+                                <p class="mb-0">10% extra tokens</p>
+                            </div>
+                            <div class="difficulty-card text-center">
+                                <h5>Hard</h5>
+                                <p class="mb-0">20% extra tokens</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Example -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#exampleCollapse">
+                        <i class="fa-solid fa-calculator icon-space"></i>Example Calculation
+                    </button>
+                </h2>
+                <div id="exampleCollapse" class="accordion-collapse collapse" data-bs-parent="#rewardsAccordion">
+                    <div class="accordion-body">
+                        <p>If you complete a 5km medium quest at a very fast pace and set a personal best, you'll earn:</p>
+                        <ul>
+                            <li>50 tokens for distance</li>
+                            <li>50 tokens for speed</li>
+                            <li>5 tokens for personal best</li>
+                            <li>Plus 10% extra for medium difficulty</li>
+                        </ul>
+                        <p>Keep pushing yourself to run faster and tackle harder quests to earn more tokens!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </main>
 {% endblock %}
 
