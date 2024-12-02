@@ -1,11 +1,29 @@
 const editButtons = document.getElementsByClassName("btn-edit");
 const runForm = document.getElementById("uploadRunForm");
-const uploadModal = new bootstrap.Modal(document.getElementById("uploadRunModal"));
+const uploadModalElement = document.getElementById("uploadRunModal");
+const uploadModal = new bootstrap.Modal(uploadModalElement);
 const submitButton = document.getElementById("submitButton");
-const deleteModal = new bootstrap.Modal(document.getElementById("deleteModal"));
+const deleteModalElement = document.getElementById("deleteModal");
+const deleteModal = new bootstrap.Modal(deleteModalElement);
 const deleteButtons = document.getElementsByClassName("btn-delete");
 const deleteConfirm = document.getElementById("deleteConfirm");
 const modalTitle = document.getElementById("uploadRunModalLabel");
+
+
+
+/**
+ * Manages modal accessibility attributes
+ */
+function handleModalAccessibility(modalElement, isShowing) {
+  if (isShowing) {
+      modalElement.removeAttribute('inert');
+      modalElement.removeAttribute('aria-hidden');
+  } else {
+      modalElement.setAttribute('inert', '');
+      modalElement.removeAttribute('aria-hidden');
+  }
+}
+
 
 /**
  * Initializes edit functionality for the provided edit buttons.
@@ -20,28 +38,40 @@ const modalTitle = document.getElementById("uploadRunModalLabel");
  */
 for (let button of editButtons) {
   button.addEventListener("click", (e) => {
-    let runId = e.target.getAttribute("data-comment_id");
-    let runContent = document.getElementById(`run_upload${runId}`).innerText;
-    
-    // Extract data from run content
-    let timeMatch = runContent.match(/Completed in: ([\d.]+)/);
-    let tokensMatch = runContent.match(/Earning: (\d+)/);
-    
-    // Show modal and update form
-    uploadModal.show();
-    
-    const completionTimeInput = runForm.querySelector('input[name="completion_time"]');
-    const tokensEarnedInput = runForm.querySelector('input[name="tokens_earned"]');
-    
-    completionTimeInput.value = timeMatch[1];
-    tokensEarnedInput.value = tokensMatch[1];
-    
-    modalTitle.innerText = "Edit Your Run";
-    submitButton.innerText = "Update";
-    runForm.setAttribute("action", `${window.location.pathname}edit/${runId}/`);
-  });
-}
+      let runId = e.target.getAttribute("data-comment_id");
+      let runContent = document.getElementById(`run_upload${runId}`).innerText;
+      
+      // Extract time from run content
+      let timeMatch = runContent.match(/Completed in: ([\d.:]+)/);
+      
+      if (timeMatch) {
+          // Parse the time string (expecting format like "HH:MM:SS" or similar)
+          let timeStr = timeMatch[1];
+          let timeParts = timeStr.split(':');
+          
+          // Find the form inputs
+          const hoursInput = document.getElementById('id_hours');
+          const minutesInput = document.getElementById('id_minutes');
+          const secondsInput = document.getElementById('id_seconds');
+          
+          // Set the values based on time parts
+          if (timeParts.length === 3) {
+              if (hoursInput) hoursInput.value = parseInt(timeParts[0]);
+              if (minutesInput) minutesInput.value = parseInt(timeParts[1]);
+              if (secondsInput) secondsInput.value = parseInt(timeParts[2]);
+          }
+      }
+      
+      modalTitle.innerText = "Edit Your Run";
+      submitButton.innerText = "Update";
+      runForm.setAttribute("action", `${window.location.pathname}edit/${runId}/`);
+      
+      // Show modal
+        uploadModal.show();
+        handleModalAccessibility(uploadModalElement, true);
 
+    });
+}
 /**
  * Initializes deletion functionality for the provided delete buttons.
  * 
@@ -55,15 +85,22 @@ for (let button of deleteButtons) {
     let runId = e.target.getAttribute("data-comment_id");
     deleteConfirm.href = `${window.location.pathname}delete/${runId}/`;
     deleteModal.show();
+    handleModalAccessibility(deleteModalElement, true);
   });
 }
 
 /**
- * Reset form when modal is closed
+ * Modal event handlers
  */
-document.getElementById("uploadRunModal").addEventListener('hidden.bs.modal', function () {
-    runForm.reset();
-    modalTitle.innerText = "Upload Your Run";
-    submitButton.innerText = "Submit";
-    runForm.setAttribute("action", window.location.pathname);
+uploadModalElement.addEventListener('hidden.bs.modal', function () {
+  runForm.reset();
+  modalTitle.innerText = "Upload Your Run";
+  submitButton.innerText = "Submit";
+  runForm.setAttribute("action", window.location.pathname);
+  handleModalAccessibility(uploadModalElement, false);
 });
+
+deleteModalElement.addEventListener('hidden.bs.modal', function () {
+  handleModalAccessibility(deleteModalElement, false);
+});
+
