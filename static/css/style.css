@@ -188,6 +188,28 @@ html {
 
 /* Accordion */
 
+
+#accordion-section {
+    width: 100%;
+}
+
+.accordion-header-bg {
+    background-color: var(--text);
+}
+
+.accordion-header h1 {
+    color: var(--white);
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.accordion-header p {
+    color: var(--white);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
 .accordion {
     max-width: 70vw;
     margin: 20px auto;
@@ -476,6 +498,24 @@ footer {
 }
 
 /* media queries */
+
+@media (max-width: 768px) {
+
+    .accordion-header {
+        top: 20px;
+        
+    }
+
+    .accordion-header-bg {
+        padding: 20px;
+    }
+    .accordion {
+        margin: 0;
+        max-width: 100%;
+    }
+}
+
+
 
 @media (max-width: 960px) {
     .footer-hr {
