@@ -98,7 +98,7 @@ html {
     color: var(--text);
 }
 
-.spliter{
+.spliter {
     color: var(--primary);
     height: 10px;
     box-shadow: -1px 0px 3px 0px #3a3a3a;
@@ -184,6 +184,11 @@ html {
 
 #accordion-section {
     width: 100%;
+}
+
+.accordion {
+    --bs-accordion-active-color: var(--white);
+	--bs-accordion-active-bg: var(--text);
 }
 
 .accordion-header-bg {
