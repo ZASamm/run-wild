@@ -81,99 +81,176 @@ Run Wild is a web-based platform designed to gamify the running experience and f
 
 The aim of this web app is to specifically addresses the growing trend of gamification in fitness applications whilst maintaining a focus on simplicity and user engagement. By combining traditional run tracking with a reward system, Run Wild creates a unique value proposition for runners who are looking for additional motivation and structure in their running routine.
 
+## UX Design Process
+
+### Strategy Plane
+
 ## User Stories
 
-### Must-Have User Stories
-- **User Story 1:** Briefly describe the must-have feature.  
-  **Acceptance Criteria:** List the criteria that define the successful implementation of this user story.
-- **User Story 2:** Briefly describe the must-have feature.  
-  **Acceptance Criteria:** List the criteria that define the successful implementation of this user story.
+### Must Have Features
 
-(Include all prioritized must-have features)  
-**Guidance:** Draft the user stories during Phase 1: Ideation & Initial Setup and update them as you complete Phase 2: Must User Stories Implementation & Testing. Document each must-have feature here along with its acceptance criteria.
+### <u>Quest Management</u>
+**User Story:** As a site user, I can view a paginated list of quests so that I can select which run I want to view. 
 
-### Should-Have User Stories
-- **User Story 1:** Briefly describe the should-have feature.  
-  **Acceptance Criteria:** List the criteria that define the successful implementation of this user story.
-- **User Story 2:** Briefly describe the should-have feature.  
-  **Acceptance Criteria:** List the criteria that define the successful implementation of this user story.
+**Acceptance Criteria:** 
+- Given more than one quest in the database, these multiple quests are listed
+- When a user opens the main page a list of quests is seen
+- The user sees all quests titles with pagination to choose what to complete
 
-(Include all prioritized should-have features)  
-**Guidance:** Document the secondary features that you aim to implement in Phase 3: Should User Stories Implementation & Any Advanced Features. Include clear acceptance criteria for each.
+### <u>Run Tracking</u>
 
-### Could-Have User Stories
-- **User Story 1:** Briefly describe the could-have feature.  
-  **Acceptance Criteria:** List the criteria that define the successful implementation of this user story.
-- **User Story 2:** Briefly describe the could-have feature.  
-  **Acceptance Criteria:** List the criteria that define the successful implementation of this user story.
+**User Story:** As a user I can submit my run details so that I can earn tokens
 
-(Include any could-have features considered for future enhancements)  
-**Guidance:** Document any optional features that are nice to have but not essential.
+**Acceptance Criteria:** 
+  
+- User can input completion time
+- Submission process:
+  - Confirms submission success
+  - Displays tokens earned
+- User can update and delete runs
 
-## Design Decisions
+### <u>User Authentication</u>
 
-### Wireframes
+**User Story:** As a registered user I can log into my account so that I can access my running history and tokens
 
-### Desktop
+**Acceptance Criteria:** 
+  
+- User can log in using email/username and password
+
+**User Story:** As a new user I want to register for an account so that I can track my runs and earn tokens
+
+**Acceptance Criteria:** 
+  
+- User can create account using email and password
+- Profile is automatically created upon registration
+- Initial token balance is set to 0
+- Password must meet minimum security requirements:
+  - At least 8 characters
+  - Contains at least one number
+  - Contains at least one special character
+
+### <u>Responsive Design</u>
+
+**User Story:** As a user I want the site to be responsive so that I can use on any device
+
+**Acceptance Criteria:** 
+  
+- Site is usable on desktop, tablet, and mobile devices
+- Layout adjusts appropriately to different screen sizes
+
+### <u>Accessibility</u>
+
+**User Story:** As a User I require the site to be accessible so that I can utilise the website fully, regardless of potential visual impairments
+
+**Acceptance Criteria:** 
+  
+- Colour contrast, fonts, images and screen reading capabilities adhered to
+- Good use of semantic elements
+
+### <u>Token System</u>
+
+**User Story:** As a user I want to earn tokens so that can feel rewarded for my run
+
+**Acceptance Criteria:** 
+  
+- Token calculation:
+  - Base rate: 10 tokens per km
+
+- System must:
+  - Calculate tokens instantly
+  - Display calculation breakdown
+  - Update user's total balance
+
+- Transaction details include:
+  - Date and time
+  - Amount earned
+  - Running total
+
+- Notifications:
+  - Immediate token earning notification
+
+### Should Have Features
+
+### <u>Leaderboard</u>
+
+**User Story:** As a user I want a leaderboard so that I can see how I rank against others
+
+**Acceptance Criteria:** 
+  
+- Leaderboard shows:
+  - Total tokens earned
+
+- Privacy:
+  - Only shows display names
+
+### <u>Enhanced Token System</u>
+
+**User Story:** As a user I want to have more token bonus so that I can gain more tokens
+
+**Acceptance Criteria:** 
+  
+- Pace bonuses:
+  - Sub 4:00 min/km: +15 tokens/km
+  - Sub 5:00 min/km: +10 tokens/km
+  - Sub 6:00 min/km: +5 tokens/km
+
+
+- Personal best bonus:
+  - +5 tokens if personal best for route is achieved
+
+- Difficulty bonus:
+  - No bonus for easy
+  - +5 for medium
+  - +10 for hard
+
+### Scope Plane
+
+#### Core Features:
+
+- User authentication and profile management
+- Running activity tracking and logging
+- Token achievement system
+- Leaderboards
+
+### Structure Plane
+
+The application follows a logical structure where users can:
+
+- Register/Login to access their personal dashboard
+- Log and track running activities
+- Earn tokens based on activity completion
+- View their ranking on various leaderboards
+
+### Skeleton Plane
+
+#### Wireframes
+
+##### Desktop
 ![desktop wireframes](assets/README_images/WF_desktop_home.png)
 ![desktop wireframes](assets/README_images/WF_desktop_quest_about_leader.png)
 ![desktop wireframes](assets/README_images/WF_desktop_quest_page.png)
 
- ### Mobile
+##### Mobile
 ![mobile wireframes](assets/README_images/WF_mobile_index.png)
 ![mobile wireframes](assets/README_images/WF_mobile_quest_post.png)
 ![mobile wireframes](assets/README_images/WF_mobile_quest_page.png)
 ![mobile wireframes](assets/README_images/WF_mobile_about_leader.png)
 
-### Tablet
+##### Tablet
 ![tablet wireframes](assets/README_images/WF_tablet_home.png)
 ![tablet wireframes](assets/README_images/WF_tablet_quest_post.png)
 ![tablet wireframes](assets/README_images/WF_tablet_about_quest_leader.png)
 
 
+#### Database Schema
 
+![Database Schema](assets/README_images/ERD_Final.png)
 
-Briefly describe the design choices, including layout, colour schemes, and fonts.  
-**Guidance:** Start this section during Phase 1: Ideation & Initial Setup and update it throughout Phase 2 and Phase 3. Include digital wireframes created in Phase 1. Document the reasoning behind your layout choices, colour schemes, and font selections.
-
-### Accessibility Considerations
-Discuss how accessibility guidelines were adhered to, including colour contrast and alt text for images.  
-**Guidance:** Outline how you've incorporated accessibility into your design, ensuring that your project adheres to guidelines such as WCAG.
-
-## AI Tools Usage
-
-### DALL-E
-Describe how DALL-E was used for image generation, including examples of successes and challenges.  
-**Guidance:** Specifically mention how you used DALL-E for image generation and the impact this had on your design process.
-
-## Features Implementation
-
-### Core Features (Must-Haves)
-- **Feature 1:** Description of the implemented feature.
-- **Feature 2:** Description of the implemented feature.
-
-(Include all must-have features)  
-**Guidance:** Use this section as you complete Phase 2: Must User Stories Implementation & Testing. Document all the must-have features you implemented, explaining how they align with the user stories and acceptance criteria.
-
-### Advanced Features (Should-Haves)
-- **Feature 1:** Description of the implemented feature.
-- **Feature 2:** Description of the implemented feature.
-
-(Include all should-have features)  
-**Guidance:** Include any advanced features you implemented during Phase 3: Should User Stories Implementation & Any Advanced Features. Explain how these features enhance user experience and their alignment with the acceptance criteria.
-
-### Optional Features (Could-Haves)
-- **Feature 1:** Description of the implemented feature (if any).
-- **Feature 2:** Description of the implemented feature (if any).
 
 (Include any could-have features that were implemented or considered)  
 **Guidance:** If any could-have features were implemented, describe them here. This is an opportunity to showcase extra work done beyond the initial scope. But remember - keep it simple! Focus on the Must stories first. Could user story features are commonly earmarked for future project iterations.
 
-## AI Tools Usage
 
-### GitHub Copilot
-Describe how GitHub Copilot assisted in coding, including any challenges or adjustments needed.  
-**Guidance:** Reflect on how GitHub Copilot assisted in coding, particularly any challenges or adjustments that were needed to align with project goals.
 
 ## Testing and Validation
 
