@@ -1,12 +1,14 @@
 from django.shortcuts import render, get_object_or_404, reverse 
-from django.views import generic
+from django.views import generic, View
 from django.contrib import messages
 from django.db.models import Sum, Count
 from datetime import timedelta
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, JsonResponse
 from .models import QuestPost, QuestRecord
 from django.views.generic import TemplateView
 from .forms import QuestCompletionForm
+from django.contrib.auth.mixins import LoginRequiredMixin
+
 
 # Create your views here.
 class HomePage(generic.ListView):
@@ -157,3 +159,55 @@ def get_run_data(request, quest_record_id):
     }
     
     return JsonResponse(data)
+
+
+# Dashboard view
+
+class DashboardView(LoginRequiredMixin, TemplateView):
+    template_name = 'dashboard.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        user = self.request.user
+        approved_records = QuestRecord.objects.filter(runner=user, approved=True)
+        
+        context.update({
+            'total_kilometers': round(
+                approved_records.aggregate(
+                    total_km=Sum('quest__distance'))['total_km'] or 0, 0
+            ),
+            'total_tokens': QuestRecord.objects.filter(runner=user)\
+                .aggregate(Sum('tokens_earned'))['tokens_earned__sum'] or 0,
+            'total_completions': approved_records.count(),
+            'personal_bests': QuestRecord.objects.filter(
+                runner=user, 
+                is_personal_best=True
+            ).count(),
+        })
+        return context
+
+class DashboardDataView(LoginRequiredMixin, View):
+    def get(self, request):
+        user = request.user
+        recent_records = QuestRecord.objects.filter(runner=user)\
+            .select_related('quest')\
+            .order_by('-completion_date')[:10]
+
+        data = {
+            'recent_records': [{
+                'quest': {
+                    'title': record.quest.title,
+                    'difficulty': record.quest.difficulty,
+                    'slug': record.quest.slug,  # Added slug for edit/delete URLs
+                },
+                'id': record.id,  # Added id for edit/delete URLs
+                'completion_date': record.completion_date,
+                'completion_time': record.completion_time.total_seconds(),
+                'pace': record.pace,
+                'tokens_earned': record.tokens_earned,
+                'is_personal_best': record.is_personal_best,
+                'approved': record.approved,
+            } for record in recent_records]
+        }
+        
+        return JsonResponse(data)
