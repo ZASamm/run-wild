@@ -37,6 +37,8 @@ h5 {
 html {
     scroll-behavior: smooth;
 }
+
+
 /* BASE HTML */
 /* Nav */
 #navbarText {
@@ -195,7 +197,7 @@ html {
     background-color: var(--text);
 }
 
-.accordion-header h1 {
+.accordion-header h2 {
     color: var(--white);
     margin-bottom: 15px;
     font-weight: 500;
@@ -279,6 +281,110 @@ footer {
 .social-link:hover {
     color: var(--accent)
 }
+
+/* Dashboard */
+
+.dashboard-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.stats-overview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background-color: var(--primary);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 12px 12px 32px rgba(0, 0, 0, 0.1),
+    -5px -5px 15px #ffffff; 
+    text-align: center;
+}
+
+.stat-card {
+    margin: 0;
+    color: var(--text);
+    font-size: 0.9rem;
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--text);
+    margin-top: 0.5rem;
+}
+
+.recent-quests {
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 12px 12px 32px rgba(0, 0, 0, 0.1),
+    -5px -5px 15px #ffffff; 
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+th, td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+th {
+    background: #f5f5f5;
+    font-weight: 600;
+}
+
+table td, table th {
+    white-space: nowrap;
+    min-width: 100px;  /* Ensures columns don't get too narrow */
+}
+
+.difficulty-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.875rem;
+}
+
+.status-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.875rem;
+    margin-right: 0.5rem;  /* Add space between multiple badges */
+    display: inline-block;  /* Ensure badges line up properly */
+}
+
+.status-pb {
+    background: var(--accent);
+    color: white;
+}
+
+.status-approved {
+    background: #4ade80;
+    color: white;
+}
+
+.status-pending {
+    background: #fcd34d;
+    color: white;
+}
+
+.table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 1rem;
+    max-width: 100%;
+}
+
 
 /* Quest Page */
 
@@ -550,6 +656,7 @@ footer {
         margin: 0;
         max-width: 100%;
     }
+    
 }
 
 
@@ -587,7 +694,38 @@ footer {
     
 }
 
-@media (min-width: 1200px) {
 
+/* Add some visual indication of scrolling on mobile */
+@media screen and (max-width: 768px) {
+    .table-responsive {
+        position: relative;
+    }
+    
+    .table-responsive::after {
+        content: '→';
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 0 5px;
+        background: rgba(255,255,255,0.8);
+        color: #666;
+        font-size: 20px;
+        pointer-events: none;
+    }
+    
+    /* Hide the arrow when scrolled all the way */
+    .table-responsive::-webkit-scrollbar-thumb:horizontal {
+        background: #666;
+    }
+}
 
+/* Adjust the stat cards for mobile */
+@media screen and (max-width: 768px) {
+    .stats-overview {
+        grid-template-columns: repeat(2, 1fr);  /* Show 2 cards per row on mobile */
+    }
+    
+    .stat-value {
+        font-size: 1.5rem;  /* Slightly smaller font on mobile */
+    }
 }
