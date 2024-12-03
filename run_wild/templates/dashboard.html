@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="dashboard-container">
+    <!-- User Stats Summary -->
+    <div class="stats-overview">
+        <div class="stat-card">
+            <h3>Total Tokens</h3>
+            <div class="stat-value">{{ total_tokens }}</div>
+        </div>
+        <div class="stat-card">
+            <h3>Total Distance</h3>
+            <div class="stat-value">{{ total_kilometers }}km</div>
+        </div>
+        <div class="stat-card">
+            <h3>Quests Completed</h3>
+            <div class="stat-value">{{ total_completions }}</div>
+        </div>
+        <div class="stat-card">
+            <h3>Personal Bests</h3>
+            <div class="stat-value">{{ personal_bests }}</div>
+        </div>
+    </div>
+
+    <!-- Recent Completions Table -->
+    <div class="recent-quests">
+        <h2>Recent Quest Completions</h2>
+        <div class="table-responsive">
+            <table id="questTable">
+                <thead>
+                    <tr>
+                        <th>Quest</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Pace</th>
+                        <th>Tokens</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody id="questTableBody">
+                    <!-- JavaScript will populate this -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block extras %}
+<script>
+    // Pass the URL to a global variable
+    const DASHBOARD_DATA_URL = "{% url 'dashboard_data' %}";
+</script>
+<script src="{% static 'js/dashboard.js' %}"></script>
+{% endblock %}
