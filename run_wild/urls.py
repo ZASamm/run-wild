@@ -12,4 +12,6 @@ urlpatterns = [
         views.get_run_data, name='get_run_data'),
     path('quest/<slug:slug>/delete/<int:quest_record_id>/',
         views.record_delete, name='record_delete'),
+    path('dashboard/', views.DashboardView.as_view(), name='dashboard'),
+    path('api/dashboard/data/', views.DashboardDataView.as_view(), name='dashboard_data'),
 ]
