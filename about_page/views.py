@@ -9,7 +9,7 @@ from .forms import NewQuestForm
 def about_me(request):
     
     if request.method == "POST":
-        new_quest_form = NewQuestForm(data=request.POST)
+        new_quest_form = NewQuestForm(request.POST, request.FILES)
         if new_quest_form.is_valid():
             new_quest_form.save()
             messages.add_message(request, messages.SUCCESS, "Your new quest has been received! We endeavour to respond as soon as we can.")
