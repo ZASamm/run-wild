@@ -3,7 +3,7 @@
 {% block content %}
 
 <main class="flex-shrink-0 main-bg">
-
+<!-- Hero Section -->
     <section>
         <div class="container-fluid hero-section">
             <div class="row align-items-center">
@@ -28,6 +28,7 @@
             </div>
         </div>
     </section>
+<!-- Stats counter -->
     <section>
         <div class="container-fluid">
             <div class="row wrapper_totals">
@@ -48,6 +49,7 @@
             </div>
         </div>
     </section>
+<!-- Map carousel -->
     <section class="carousel-section d-flex justify-content-center">
         <div class="container-fluid">
             <div class="row mt-4 flex-wrap-reverse">
@@ -71,7 +73,7 @@
                                 <img src="{{ quest.map_route.url }}" class="d-block w-100" alt="{{ quest.title }}">
 
                                 <div class="carousel-caption d-md-block">
-                                    <h5>{{ quest.title }}</h5>
+                                    <h3>{{ quest.title }}</h3>
                                     <p class="hidden">{{ quest.description }}</p>
                                 </div>
                             </div>
@@ -99,13 +101,14 @@
         </div>
 
     </section>
+<!-- Info Cards -->
     <section>
         <div class="container-fluid info_cards">
 
             <div class="row">
                 <div class="col-sm-4 mb-2 d-flex justify-content-center">
                     <div class="p-4 home_boxes">
-                        <h2>Earn as You Run!</h2>
+                        <h4>Earn as You Run!</h4>
                         <p>For every kilometer you complete, you'll earn 10 tokens to celebrate your achievements. But
                             there's more—boost your earnings with bonus multipliers! Hit specific pace targets or
                             conquer challenging routes to multiply your tokens and make your efforts even more
@@ -115,7 +118,7 @@
 
                 <div class="col-sm-4 mb-4 d-flex justify-content-center">
                     <div class="p-4 home_boxes">
-                        <h2>Embark on Running Adventures!</h2>
+                        <h4>Embark on Running Adventures!</h4>
                         <p>Take on unique running routes across Cornwall, tailored for all skill levels. Complete these
                             quests to not only explore breathtaking landscapes but also earn rewards. Whether it's a
                             coastal sprint or a scenic trail jog, each quest adds a memorable chapter to your running
@@ -125,7 +128,7 @@
 
                 <div class="col-sm-4 mb-4 d-flex justify-content-center">
                     <div class="p-4 home_boxes">
-                        <h2>Rise to the Top!</h2>
+                        <h4>Rise to the Top!</h4>
                         <p>See how you rank among other runners! Our leaderboards spotlight the top performers and
                             inspire friendly competition. Compete with friends or strive for personal bests while
                             keeping the spirit of community alive. Who will be Cornwall's ultimate running champion?</p>
@@ -134,13 +137,14 @@
             </div>
         </div>
     </section>
+<!-- Accordion Section -->
     <section id="accordion-section">
 
         <div class="container-fluid">
             <div class="row mb-5">
                 <div class="col-md-4 accordion-header-bg d-flex justify-content-center">
                     <div class="accordion-header align-self-center">
-                        <h1>Quest Rewards Guide</h1>
+                        <h2>Quest Rewards Guide</h2>
                         <p>Discover how to maximize your token earnings on every run. From distance rewards to speed
                             bonuses, learn how each aspect of your performance contributes to your total rewards. Expand
                             each section to learn more.</p>
