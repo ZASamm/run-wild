@@ -62,7 +62,7 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'cloudinary',
     'django_summernote',
-    'run_wild',    
+    'run_wild',
     'about_page',
 ]
 
@@ -72,6 +72,12 @@ LOGOUT_REDIRECT_URL = '/'
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
+
+CLOUDINARY_URL = os.environ.get('CLOUDINARY_URL')
+
+CLOUDINARY = {
+    'secure': True,
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
