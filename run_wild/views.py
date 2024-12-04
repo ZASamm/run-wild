@@ -2,7 +2,6 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.contrib import messages
 from django.db.models import Sum
-from datetime import timedelta
 from django.http import HttpResponseRedirect, JsonResponse
 from .models import QuestPost, QuestRecord
 from django.views.generic import TemplateView
@@ -38,16 +37,12 @@ class HomePage(generic.ListView):
                 )["total_km"] or 0
         )
 
-        # Calc total time
-        total_time = (
+        # Calc total tokens
+        total_tokens = (
             approved_records.aggregate(
-                total_time=Sum("completion_time")
-                )["total_time"]
-            or timedelta()
+                total_tokens=Sum("tokens_earned")
+                )["total_tokens"] or 0
         )
-
-        # Convert timedelta to hours
-        total_hours = total_time.total_seconds() / 3600
 
         # Count total approved completions
         total_completions = approved_records.count()
@@ -56,8 +51,8 @@ class HomePage(generic.ListView):
         context.update(
             {
                 "total_kilometers": round(total_kilometers, 0),
-                "total_hours": round(total_hours, 0),
                 "total_completions": total_completions,
+                "total_tokens": round(total_tokens, 0),
             }
         )
 
