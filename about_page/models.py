@@ -9,7 +9,7 @@ class About(models.Model):
     profile_pic = CloudinaryField('image', default='placeholder')
     updated_on = models.DateTimeField(auto_now=True)
     content = models.TextField()
-    
+
     def __str__(self):
         return self.title
 
@@ -21,6 +21,8 @@ class RequestNewQuest(models.Model):
     message = models.TextField()
     image = CloudinaryField('image', default='placeholder')
     read = models.BooleanField(default=False)
-    
+
     def __str__(self):
-        return f"New quest request from {self.fname} {self.lname}"
+        return (
+            f"New quest request from {self.fname} {self.lname}"
+        )

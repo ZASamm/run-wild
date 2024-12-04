@@ -15,7 +15,7 @@ import os
 import dj_database_url
 
 if os.path.isfile("env.py"):
-   import env
+    import env
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -38,7 +38,10 @@ else:
 
 # 'DEBUG' in os.environ
 
-ALLOWED_HOSTS = ['8000-zasamm-runwild-iyf4ti37hrv.ws.codeinstitute-ide.net', '.herokuapp.com']
+ALLOWED_HOSTS = [
+        '8000-zasamm-runwild-iyf4ti37hrv.ws.codeinstitute-ide.net',
+        '.herokuapp.com'
+        ]
 
 
 # Application definition
