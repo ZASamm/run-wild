@@ -271,6 +271,11 @@ footer {
     background-color: var(--primary);
 }
 
+.accordion-button:focus {
+    border-color: none;
+    box-shadow: none;
+}
+
 .speed-grid, .difficulty-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
