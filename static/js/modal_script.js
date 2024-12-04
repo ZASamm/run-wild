@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Get all our elements
+  // Get all the elements
   const editButtons = document.getElementsByClassName("btn-edit");
   const deleteButtons = document.getElementsByClassName("btn-delete");
   const runForm = document.getElementById("uploadRunForm");
