@@ -115,6 +115,7 @@ def quest_post(request, slug):
         return HttpResponseRedirect(reverse('quest_post', args=[slug]))
 
     quest_form = QuestCompletionForm()
+    
     return render(
         request,
         "quests/quest_post.html",
@@ -136,7 +137,7 @@ def record_edit(request, slug, quest_record_id):
     
     """
     Handles the editing of a quest record.
-    
+
     Args:
         request: The HTTP request object.
         slug: The slug of the quest.
