@@ -8,6 +8,23 @@ from .forms import NewQuestForm
 
 def about_me(request):
 
+    """
+    Handle the about page view.
+
+    If the request method is POST, process the new quest form submission.
+    If the form is valid, save the form data and add a success message.
+
+    Retrieve the latest 'About' object and initialize a new quest form.
+
+    Args:
+        request (HttpRequest): The request object used to generate this view.
+
+    Returns:
+        HttpResponse:
+        The rendered about page with the latest 'About' object
+        and new quest form.
+    """
+
     if request.method == "POST":
         new_quest_form = NewQuestForm(request.POST, request.FILES)
         if new_quest_form.is_valid():
