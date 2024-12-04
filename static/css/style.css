@@ -27,7 +27,8 @@ h1,
 h2,
 h3,
 h4,
-h5 {
+h5,
+h6 {
     font-family: "Bebas Neue", sans-serif;
     font-weight: 500;
     font-style: normal;
@@ -50,7 +51,8 @@ html {
     color: var(--text);
 }
 
-/* BASE HTML */
+/* BASE  ------------------------------- */
+
 /* Nav */
 #navbarText {
     color: var(--text);
@@ -77,6 +79,50 @@ html {
     vertical-align: top;
     line-height: 28px;
 }
+
+/* Footer */
+
+footer {
+    color: var(--white);
+    background-color: var(--text);
+    bottom: 0;
+    width: 100%;
+    height: auto;
+}
+
+.footer-img-container {
+    display: flex;
+    justify-content: center;
+    overflow-x: hidden; 
+}
+
+.footer-hr {
+    width: 100%;
+    background-color: var(--accent);
+    display: block;
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    height: 10px;
+    margin-right: -50vw;
+    margin-left: -50vw;
+    margin-top: -5px;
+}
+
+.fab {
+    font-size: 2em;
+}
+
+.social-link {
+    text-decoration: none;
+    color: var(--white);
+}
+
+.social-link:hover {
+    color: var(--accent)
+}
+
+/* Index ------------------------------- */
 
 /* Hero */
 
@@ -243,49 +289,7 @@ html {
     margin-right: 10px;
 }
 
-/* Footer */
-
-footer {
-    color: var(--white);
-    background-color: var(--text);
-    bottom: 0;
-    width: 100%;
-    height: auto;
-}
-
-.footer-img-container {
-    display: flex;
-    justify-content: center;
-    overflow-x: hidden; 
-}
-
-.footer-hr {
-    width: 100%;
-    background-color: var(--accent);
-    display: block;
-    position: absolute;
-    left: 50%;
-    right: 50%;
-    height: 10px;
-    margin-right: -50vw;
-    margin-left: -50vw;
-    margin-top: -5px;
-}
-
-.fab {
-    font-size: 2em;
-}
-
-.social-link {
-    text-decoration: none;
-    color: var(--white);
-}
-
-.social-link:hover {
-    color: var(--accent)
-}
-
-/* Dashboard */
+/* Dashboard ------------------------------- */
 
 .dashboard-container {
     max-width: 1200px;
@@ -389,7 +393,7 @@ table td, table th {
 }
 
 
-/* Quest Page */
+/* Quest Page ------------------------------- */
 
 .image-container {
     position: relative;
@@ -434,7 +438,7 @@ table td, table th {
 }
 
 
-/* Quest post */
+/* Quest post ------------------------------- */
 
 
 .quest-header {
@@ -562,7 +566,7 @@ table td, table th {
   }
 /* End */
 
-/* account templates */
+/* account templates ------------------------------- */
 
 #account-container {
     height: 75vh;
@@ -570,7 +574,7 @@ table td, table th {
 }
 
 
-/* About page */
+/* About page ------------------------------- */
 
 .profile-pic-wrapper {
     width: 100%;
@@ -609,7 +613,7 @@ table td, table th {
 }
 
 
-/* media queries */
+/* media queries ------------------------------- */
 
 @media (max-width: 768px) {
 
