@@ -6,6 +6,19 @@ from cloudinary.models import CloudinaryField
 # Create your models here.
 
 class QuestPost(models.Model):
+    """
+    A model representing a quest post with details about the quest.
+    
+    Attributes:
+        title (CharField): The title of the quest.
+        slug (SlugField): A unique slug for the quest.
+        description (CharField): A description of the quest.
+        difficulty (CharField): The difficulty level of the quest.
+        map_route (CloudinaryField): The map route image for the quest.
+        distance (FloatField): The distance of the quest in kilometers.
+        elevation_max (IntegerField): The maximum elevation in the quest.
+        elevation_gain (IntegerField): The total elevation gain of the quest.
+    """
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=False)
     description = models.CharField(max_length=400)
@@ -16,9 +29,25 @@ class QuestPost(models.Model):
     elevation_gain = models.IntegerField()
     
     def __str__(self):
+        """
+        Returns a string representation of the QuestPost instance.
+        """
         return f"{self.title} | distance - {self.distance} km"
 
 class QuestRecord(models.Model):
+    """
+    A model representing a record of a quest completed by a user.
+    
+    Attributes:
+        runner (ForeignKey): Reference to the User who completed the quest.
+        quest (ForeignKey): Reference to the QuestPost that was completed.
+        completion_time (DurationField): The time it took to complete the quest.
+        tokens_earned (IntegerField): The total tokens earned for the quest.
+        completion_date (DateTimeField): The date and time when the quest was completed.
+        pace (FloatField): The pace of the runner in minutes per kilometer.
+        is_personal_best (BooleanField): Indicates if this is the runner's personal best time for the quest.
+        approved (BooleanField): Indicates if the quest record is approved.
+    """
     runner = models.ForeignKey(User, on_delete=models.CASCADE)
     quest = models.ForeignKey(QuestPost, on_delete=models.CASCADE, related_name='quest_records')
     completion_time = models.DurationField()
@@ -30,11 +59,13 @@ class QuestRecord(models.Model):
     
     def save(self, *args, **kwargs):
         """
-        Calculate the total tokens for a challange earned
-        - base token (10 per km)
-        - personal best bonus
-        - pace bonus
-        - difficulty multiplier
+        Calculate and save the total tokens earned for a quest completion.
+        
+        The calculation includes:
+        - Base tokens (10 per km)
+        - Personal best bonus
+        - Pace bonus
+        - Difficulty multiplier
         """
         
         # personal best checker before saving
@@ -107,4 +138,7 @@ class QuestRecord(models.Model):
         super().save(*args, **kwargs)
     
     def __str__(self):
+        """
+        Returns a string representation of the QuestRecord instance.
+        """
         return f"{self.runner} completed {self.quest.title} | total tokens earned: {self.tokens_earned}"
