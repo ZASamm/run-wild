@@ -16,9 +16,9 @@
                     <p class="introtext">Are you ready to transform your runs into legendary journeys?</p>
                     <br>
                     {% if user.is_authenticated %}
-                    <a class="sign-up-button" href="{% url 'quests' %}">To Quests</a>
+                    <a class="sign-up-button btn-global" href="{% url 'quests' %}">To Quests</a>
                     {% else %}
-                    <a class="sign-up-button" href="{% url 'account_signup' %}">Sign Up</a>
+                    <a class="sign-up-button btn-global" href="{% url 'account_signup' %}">Sign Up</a>
                     {% endif %}
                 </div>
 
