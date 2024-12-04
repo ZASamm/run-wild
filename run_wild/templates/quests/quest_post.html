@@ -64,7 +64,7 @@
                 class="col-lg-4 col-md-3 stat-card m-2 upload-section  d-flex flex-column justify-content-center align-items-center">
                 <h2>Upload Your Run</h2>
                 <p>Add your time:</p>
-                <button class="btn btn-primary run-upload" data-bs-toggle="modal"
+                <button class="btn run-upload btn-global" data-bs-toggle="modal"
                     data-bs-target="#uploadRunModal">Upload
                     Run</button>
             </div>
@@ -89,12 +89,12 @@
                     <form id="uploadRunForm" method="post">
                         {{ quest_form | crispy }}
                         {% csrf_token %}
-                        <button id="submitButton" type="submit" class="btn btn-primary run-upload">Submit</button>
+                        <button id="submitButton" type="submit" class="btn run-upload btn-global">Submit</button>
                     </form>
                 </div>
                 {% else %}
+                <p>Login to upload your run</p>
                 <div class="modal-body">
-                    <p>Login to upload your run</p>
                 </div>
                 {% endif %}
             </div>
@@ -116,9 +116,9 @@
                 This action cannot be undone!
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-global" data-bs-dismiss="modal">Close</button>
                 <a id="deleteConfirm" href="#" class="btn
-              btn-danger">Delete</a>
+                btn-global">Delete</a>
             </div>
         </div>
     </div>
