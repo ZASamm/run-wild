@@ -277,7 +277,7 @@ class DashboardView(LoginRequiredMixin, TemplateView):
                     or 0,
                     0,
                 ),
-                "total_tokens": 
+                "total_tokens":
                     QuestRecord.objects.filter(runner=user).aggregate(
                     Sum("tokens_earned")
                 )["tokens_earned__sum"]
@@ -322,7 +322,7 @@ class DashboardDataView(LoginRequiredMixin, View):
                         "difficulty": record.quest.difficulty,
                         "slug": record.quest.slug,
                     },
-                    "id": record.id,  # Added id for edit/delete URLs
+                    "id": record.id,
                     "completion_date": record.completion_date,
                     "completion_time": record.completion_time.total_seconds(),
                     "pace": record.pace,
