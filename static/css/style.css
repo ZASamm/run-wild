@@ -39,6 +39,17 @@ html {
 }
 
 
+.btn {
+    background-color: var(--text);
+    color: var(--white);
+    font-family: "Bebas Neue", sans-serif; 
+}
+
+.btn:hover {
+    background-color: var(--accent);
+    color: var(--text);
+}
+
 /* BASE HTML */
 /* Nav */
 #navbarText {
@@ -81,9 +92,6 @@ html {
 
 }
 .sign-up-button {
-    background-color: var(--text);
-    color: var(--white);
-    font-family: "Bebas Neue", sans-serif;
     text-decoration: none;
     font-size: 1.5em;
     padding-right: 1em;
@@ -93,11 +101,6 @@ html {
     margin-top: 1.5rem;
     border-radius: 5%;
     border: none;
-}
-
-.sign-up-button:hover {
-    background-color: var(--accent);
-    color: var(--text);
 }
 
 .spliter {
@@ -421,10 +424,6 @@ table td, table th {
 }
 
 .page-link {
-    background-color: var(--text);
-    color: var(--white);
-    font-family: "Bebas Neue", sans-serif;
-    font-size: 1.5em;
     padding-right: 1em;
     padding-left: 1em;
     padding-top: 10px;
@@ -432,11 +431,6 @@ table td, table th {
     margin-top: 1.2rem;
     border-radius: 10%;
     border: none;
-}
-
-.page-link:hover {
-    background-color: var(--accent);
-    color: var(--text);
 }
 
 
@@ -524,14 +518,6 @@ table td, table th {
     opacity: 0.7;
 }
 
-.btn-edit, .btn-delete {
-    background-color: var(--text);
-    color: var(--white);
-    font-family: "Bebas Neue", sans-serif;
-    text-decoration: none;
-}
-
-
 
 .run-upload {
     background-color: var(--text);
@@ -546,11 +532,6 @@ table td, table th {
     padding: 1.5rem;
     box-shadow: 12px 12px 32px rgba(0, 0, 0, 0.1),
     -5px -5px 15px #ffffff;
-}
-
-.btn-edit:hover, .btn-delete:hover, .run-upload:hover {
-    background-color: var(--accent);
-    color: var(--text);
 }
 
 
@@ -625,18 +606,6 @@ table td, table th {
 .submission-header p {
     color: var(--white);
     margin: 0;
-}
-
-.form-button {
-    background-color: var(--text);
-    color: var(--white);
-    font-family: "Bebas Neue", sans-serif;
-    text-decoration: none;
-}
-
-.form-button:hover {
-    background-color: var(--accent);
-    color: var(--text);
 }
 
 
