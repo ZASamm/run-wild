@@ -150,18 +150,27 @@
                 <div
                     class="col-sm-12 col-md-6 col-lg-3 run-upload-card m-4 {% if not run_upload.approved and run_upload.runner == user %}faded{% elif not run_upload.approved %}d-none{% endif %}">
                     <div>
-                        <p>{{ run_upload.runner }} | {{ run_upload.completion_date }}</p>
+                        <h4>{{ run_upload.runner }}</h4>
+                        <p><i>{{ run_upload.completion_date }}</i></p>
                         <div id="run_upload{{ run_upload.id }}">
-                            Completed in: {{ run_upload.completion_time }} - Earning: {{ run_upload.tokens_earned }}
+                            <p>Completed in: {{ run_upload.completion_time }}</p>
+                            <p>Pace <i>(mins per km)</i>: {{ run_upload.pace|floatformat:2 }}</p>
+                            <p>Earning <strong>{{ run_upload.tokens_earned }}</strong> tokens</p>
                         </div>
                         {% if not run_upload.approved and run_upload.runner == user %}
                         <p class="approval">
                             This quest completion is waiting for approval
                         </p>
+                        {% else %}
+                        <p class="approval">
+                            Approved by Admin!
+                        </p>
                         {% endif %}
                         {% if user.is_authenticated and run_upload.runner == user %}
                         <button class="btn btn-edit" data-comment_id="{{ run_upload.id }}">Edit</button>
                         <button class="btn btn-delete" data-comment_id="{{ run_upload.id }}">Delete</button>
+                        {% else %}
+                        <p><strong><i>This uplaod doesn't belong to you! <a href="{{ login_url }}">Sign in</a> to edit</i></strong></p>
                         {% endif %}
                     </div>
                 </div>
