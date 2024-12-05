@@ -35,15 +35,15 @@ function loadQuestRecords() {
             data.recent_records.forEach(record => {
                 const row = `
                     <tr>
-                        <td>${record.quest.title}</td>
-                        <td>${new Date(record.completion_date).toLocaleDateString()}</td>
-                        <td>${formatTime(record.completion_time)}</td>
-                        <td>${record.pace.toFixed(1)} min/km</td>
-                        <td>${record.tokens_earned}</td>
-                        <td>${getStatusBadge(record)}</td>
-                        <td>
-                            <button class="btn-edit" onclick="window.location.href='/quest/${record.quest.slug}/edit/${record.id}/'">Edit</button>
-                            <button class="btn-delete" onclick="if(confirm('Delete this record?')) window.location.href='/quest/${record.quest.slug}/delete/${record.id}/'">Delete</button>
+                        <td class="td-dashboard">${record.quest.title}</td>
+                        <td class="td-dashboard">${new Date(record.completion_date).toLocaleDateString()}</td>
+                        <td class="td-dashboard">${formatTime(record.completion_time)}</td>
+                        <td class="td-dashboard">${record.pace.toFixed(1)} min/km</td>
+                        <td class="td-dashboard">${record.tokens_earned}</td>
+                        <td class="td-dashboard">${getStatusBadge(record)}</td>
+                        <td class="td-dashboard">
+                            <button class="btn-edit btn btn-global" onclick="window.location.href='/quest/${record.quest.slug}/edit/${record.id}/'">Edit</button>
+                            <button class="btn-delete btn btn-global" onclick="if(confirm('Delete this record?')) window.location.href='/quest/${record.quest.slug}/delete/${record.id}/'">Delete</button>
                         </td>
                     </tr>
                 `;
