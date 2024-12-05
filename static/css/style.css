@@ -320,19 +320,6 @@ footer {
 
 /* Dashboard ------------------------------- */
 
-.dashboard-container {
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-}
-
-.stats-overview {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-    margin-bottom: 2rem;
-}
-
 .stat-card {
     background-color: var(--primary);
     padding: 1.5rem;
@@ -343,15 +330,12 @@ footer {
 }
 
 .stat-card {
-    margin: 0;
     color: var(--text);
-    font-size: 0.9rem;
 }
 
 .stat-value {
-    font-size: 2rem;
-    font-weight: bold;
     color: var(--text);
+    font-size: 0.8em;
     margin-top: 0.5rem;
 }
 
@@ -363,28 +347,26 @@ footer {
     -5px -5px 15px #ffffff; 
 }
 
-/* table {
+#questTable {
     width: 100%;
     border-collapse: collapse;
     margin-top: 1rem;
     
 }
 
-th, td {
+.th-dashboard, .td-dashboard {
     padding: 0.75rem;
     text-align: left;
     border-bottom: 1px solid #eee;
+    white-space: nowrap;
+    min-width: 100px;
 }
 
-th {
+.th-dashboard {
     background: #f5f5f5;
     font-weight: 600;
 }
 
-table td, table th {
-    white-space: nowrap;
-    min-width: 100px;
-} */
 
 .difficulty-badge {
     padding: 0.25rem 0.75rem;
