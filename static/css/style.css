@@ -363,10 +363,11 @@ footer {
     -5px -5px 15px #ffffff; 
 }
 
-table {
+/* table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 1rem;
+    
 }
 
 th, td {
@@ -382,8 +383,8 @@ th {
 
 table td, table th {
     white-space: nowrap;
-    min-width: 100px;  /* Ensures columns don't get too narrow */
-}
+    min-width: 100px;
+} */
 
 .difficulty-badge {
     padding: 0.25rem 0.75rem;
@@ -395,8 +396,8 @@ table td, table th {
     padding: 0.25rem 0.75rem;
     border-radius: 999px;
     font-size: 0.875rem;
-    margin-right: 0.5rem;  /* Add space between multiple badges */
-    display: inline-block;  /* Ensure badges line up properly */
+    margin-right: 0.5rem; 
+    display: inline-block; 
 }
 
 .status-pb {
@@ -544,17 +545,30 @@ table td, table th {
 
 
 .leaderboard {
-    background: var(--primary);
     padding: 1.5rem;
     box-shadow: 12px 12px 32px rgba(0, 0, 0, 0.1),
     -5px -5px 15px #ffffff;
 }
 
+
 .leaderboard-item {
-    display: flex;
-    justify-content: space-between;
-    padding: 0.8rem;
+    width: 100%;
+    background-color: var(--white);  
+}
+
+.leaderboard-item th,
+.leaderboard-item td {
+    padding: 0.75rem;
     border-bottom: 1px solid var(--text);
+    
+}
+
+.leaderboard-item tr {
+    display: table-row;
+}
+
+.leaderboard-item tbody tr:hover {
+    background-color: rgba(33, 33, 33, 0.05);
 }
 
 .faded {

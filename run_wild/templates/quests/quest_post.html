@@ -20,7 +20,7 @@
         </div>
         <div class=" stats-grid">
             <!-- First Row displaying data from QuestPost -->
-            <div class="row d-flex justify-content-center mt-3">
+            <div class="row d-flex justify-content-center m-2 mt-3">
                 <div
                     class="col-12 col-md-6 col-lg-3 stat-card p-3 m-3 d-flex flex-column justify-content-center align-items-center">
                     <h3>Total Distance</h3>
@@ -49,15 +49,29 @@
             </div>
         </div>
         <!-- Second Row displaying data form QuestRecord -->
-        <div class="row d-flex justify-content-center">
+        <div class="row d-flex justify-content-center m-2">
             <div class="col-lg-6 col-md-7 leaderboard m-3">
                 <h2>Leaderboard</h2>
-                {% for record in quest_record %}
-                <div class="leaderboard-item">
-                    <span>{{ record.runner }}</span>
-                    <span>{{ record.tokens_earned }}</span>
-                </div>
-                {% endfor %}
+
+                <table class="leaderboard-item">
+                    <thead>
+                        <tr>
+                            <th>User</th>
+                            <th>Tokens</th>
+                            <th>Pace</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for record in quest_record %}
+                        <tr>
+                            <td>{{ record.runner }}</td>
+                            <td>{{ record.tokens_earned }}</td>
+                            <td>{{ record.pace|floatformat:2 }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+
 
             </div>
             <div
