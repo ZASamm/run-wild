@@ -1,6 +1,13 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-<h1 class="text-center"> 404 - Page not found</h1>
-<p class="text-center"> Please return use the nav bar to return to different page</p>
+<div class="error-container">
+    <h1 class="error-code">404</h1>
+    <h2 class="error-title">Page Not Found</h2>
+    <p class="error-message">
+        Oops! The page you're looking for seems to have gone on vacation. 
+        Maybe it's sipping cocktails on a beach somewhere?
+    </p>
+    <a href="{% url 'home' %}" class="btn-global">Return Home</a>
+</div>
 {% endblock %}
