@@ -599,7 +599,7 @@ table td, table th {
 /* account templates ------------------------------- */
 
 .account-col {
-    background: var(--white);
+    background: var(--primary);
     box-shadow: 12px 12px 32px rgba(0, 0, 0, 0.1),
     -5px -5px 15px #ffffff;
 }
@@ -642,6 +642,14 @@ table td, table th {
     margin: 0;
 }
 
+/* Django messages stylilng */
+
+.message-popup {
+    background: var(--primary);
+    box-shadow: 12px 12px 32px rgba(0, 0, 0, 0.1),
+    -5px -5px 15px #ffffff;
+}
+
 
 /* media queries ------------------------------- */
 
@@ -657,6 +665,10 @@ table td, table th {
     .accordion {
         margin: 0;
         max-width: 100%;
+    }
+
+    .account-image {
+        display: none;
     }
 
     .card-img-top {
