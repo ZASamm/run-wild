@@ -15,9 +15,11 @@
             <img class="card-img-top" src="{{ quest.map_route.url }}" alt="{{ quest.title }}">
             {% endif %}
         </div>
-        <div class="quest-post-header">
-            <h3 class="text-center">The Details:</h3>
-        </div>
+    </div>
+    <div class="quest-post-header">
+        <h3 class="text-center">The Details:</h3>
+    </div>
+    <div class="container-fluid my-2">
         <div class=" stats-grid">
             <!-- First Row displaying data from QuestPost -->
             <div class="row d-flex justify-content-center m-2 mt-3">
@@ -51,7 +53,7 @@
         <!-- Second Row displaying data form QuestRecord -->
         <div class="row d-flex justify-content-center m-2">
             <div class="col-lg-6 col-md-7 leaderboard m-3">
-                <h2>Leaderboard</h2>
+                <h2>Top 5 Leaderboard</h2>
 
                 <table class="leaderboard-item">
                     <thead>
@@ -62,7 +64,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        {% for record in quest_record %}
+                        {% for record in quest_record|slice:"5" %}
                         <tr>
                             <td>{{ record.runner }}</td>
                             <td>{{ record.tokens_earned }}</td>
@@ -140,10 +142,11 @@
 
 <!-- Completed QuestRecord Details -->
 <section>
-    <div class="container-fluid">
-        <div class="quest-post-header">
-            <h3 class="text-center">Completed Runs:</h3>
-        </div>
+    <div class="quest-post-header">
+        <h3 class="text-center">Completed Runs:</h3>
+    </div>
+    <div class="container-fluid my-2">
+
         <div class="completed-runs m-4">
             <div class="row d-flex justify-content-center">
                 {% for run_upload in quest_record %}
@@ -170,7 +173,8 @@
                         <button class="btn btn-edit" data-comment_id="{{ run_upload.id }}">Edit</button>
                         <button class="btn btn-delete" data-comment_id="{{ run_upload.id }}">Delete</button>
                         {% else %}
-                        <p><strong><i>This uplaod doesn't belong to you! <a href="{{ login_url }}">Sign in</a> to edit</i></strong></p>
+                        <p><strong><i>This uplaod doesn't belong to you! <a href="{{ login_url }}">Sign in</a> to
+                                    edit</i></strong></p>
                         {% endif %}
                     </div>
                 </div>
