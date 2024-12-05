@@ -1,75 +1,119 @@
 # Run Wild
 
+![Am I responsive image]()
+
 ## Overview
 
 ### Purpose
 Run Wild is a web-based platform designed to gamify the running experience and foster a community of active runners through a token-based reward system. The platform transforms everyday runs into rewarding achievements by allowing runners to earn tokens based on their performance, creating an engaging and motivating environment for consistent physical activity.
 
-#### Objectives:
+<details>
+<summary>Objectives</summary>
 
 1. **Motivate Regular Exercise**: By implementing a token reward system, the platform encourages users to maintain consistent running haibits.
 2. **Foster Competition**: Create healthy competition through a global leaderboard system that recognises both dedication and performance.
 3. **Build Community**: Develop a space where runners can compete and compare their achievements with others, creating a sense of belonging and mutual motivation.
 
-#### Value Proposition:
+</details>
+
+<details>
+<summary>Value Proposition</summary>
 
 - Transforms routine running activities into rewarding experiences
+<br>
 - Provides immediate feedback and recognition for running achievements
+<br>
 - Creates a structured system for tracking progress and improvement
+<br>
 - Offers a competitive element that maintains long-term engagement
+<br>
 - Delivers a simple, streamlined experience focused on running metrics that matter
+
+</details>
 
 ### Target Audience
 
-#### Primary Audience: Recreational Runners
-
+<details>
+<summary>Recreational Runners</summary>
 - Age Range: 18+ years old
+<br>
 - Running Experience: Beginner to intermediate runners
+<br>
 - Motivation: Seeking additional motivation and structure in their running routine
 
-#### 1. Beginner Runners
+</details>
+
+<details>
+<summary>Beginner Runners</summary>
 - Looking for motivation to establish consistent running habits
+<br>
 - Interested in tracking progress and improvement
+<br>
 - Need positive reinforcement to maintain commitment
+<br>
 - Value clear metrics and achievable goals
   
-#### 2. Regular Runners
+</details>
+
+<details>
+<summary>Regular Runners</summary>
 - Seeking new ways to stay motivated
+<br>
 - Interested in competing with others
+<br>
 - Want to track their performance metrics
+<br>
 - Looking for recognition of their efforts
+</details>
 
-#### 3. Challenge-Driven Individuals
+<details>
+<summary>Challenge-Driven Individuals</summary>
 - Motivated by competition and achievements
+<br>
 - Enjoy collecting rewards and tracking statistics
+<br>
 - Like to compare their performance with others
+<br>
 - Appreciate structured goal systems
+</details>
 
-### Why They Will Benefit:
+### Why They Will Benefit?
 
-#### Motivation Through Rewards
+<details>
+<summary>Motivation Through Rewards</summary>
 
 - Immediate gratification through token earnings
 - Visual representation of progress
 - Clear connection between effort and rewards
 
-#### Progress Tracking
+</details>
+
+<details>
+<summary>Progress Tracking</summary>
 
 - Detailed run history
 - Performance metrics tracking
 - Clear visibility of improvement over time
 
-#### Community Engagement
+</details>
+
+<details>
+<summary>Community Engagement</summary>
 
 - Global leaderboard participation
 - Competitive element
 - Sense of belonging to a running community
 
-#### Accessibility
+</details>
+
+<details>
+<summary>Accessibility</summary>
 
 - Simple, user-friendly interface
 - Clear token earning structure
 - Easy submission process for runs
+
+</details>
 
 ### User Needs Addressed:
 
@@ -85,23 +129,30 @@ The aim of this web app is to specifically addresses the growing trend of gamifi
 
 ### Strategy Plane
 
-## User Stories
+<details>
+<summary>User Stories</summary>
 
 ### Must Have Features
 
-### <u>Quest Management</u>
+#### <u>Quest Management</u>
+
 **User Story:** As a site user, I can view a paginated list of quests so that I can select which run I want to view. 
 
-**Acceptance Criteria:** 
+<details>
+<summary>Acceptance Criteria:</summary>
+
 - Given more than one quest in the database, these multiple quests are listed
 - When a user opens the main page a list of quests is seen
 - The user sees all quests titles with pagination to choose what to complete
 
-### <u>Run Tracking</u>
+</details>
+
+#### <u>Run Tracking</u>
 
 **User Story:** As a user I can submit my run details so that I can earn tokens
 
-**Acceptance Criteria:** 
+<details>
+<summary>Acceptance Criteria:</summary>
   
 - User can input completion time
 - Submission process:
@@ -109,17 +160,23 @@ The aim of this web app is to specifically addresses the growing trend of gamifi
   - Displays tokens earned
 - User can update and delete runs
 
-### <u>User Authentication</u>
+</details>
+
+#### <u>User Authentication</u>
 
 **User Story:** As a registered user I can log into my account so that I can access my running history and tokens
 
-**Acceptance Criteria:** 
+<details>
+<summary>Acceptance Criteria:</summary>
   
 - User can log in using email/username and password
 
+</details>
+
 **User Story:** As a new user I want to register for an account so that I can track my runs and earn tokens
 
-**Acceptance Criteria:** 
+<details>
+<summary>Acceptance Criteria:</summary>
   
 - User can create account using email and password
 - Profile is automatically created upon registration
@@ -129,29 +186,38 @@ The aim of this web app is to specifically addresses the growing trend of gamifi
   - Contains at least one number
   - Contains at least one special character
 
-### <u>Responsive Design</u>
+</details>
+
+#### <u>Responsive Design</u>
 
 **User Story:** As a user I want the site to be responsive so that I can use on any device
 
-**Acceptance Criteria:** 
+<details>
+<summary>Acceptance Criteria:</summary>
   
 - Site is usable on desktop, tablet, and mobile devices
 - Layout adjusts appropriately to different screen sizes
 
-### <u>Accessibility</u>
+</details>
+
+#### <u>Accessibility</u>
 
 **User Story:** As a User I require the site to be accessible so that I can utilise the website fully, regardless of potential visual impairments
 
-**Acceptance Criteria:** 
+<details>
+<summary>Acceptance Criteria:</summary>
   
 - Colour contrast, fonts, images and screen reading capabilities adhered to
 - Good use of semantic elements
 
-### <u>Token System</u>
+</details>
+
+#### <u>Token System</u>
 
 **User Story:** As a user I want to earn tokens so that can feel rewarded for my run
 
-**Acceptance Criteria:** 
+<details>
+<summary>Acceptance Criteria:</summary>
   
 - Token calculation:
   - Base rate: 10 tokens per km
@@ -169,13 +235,16 @@ The aim of this web app is to specifically addresses the growing trend of gamifi
 - Notifications:
   - Immediate token earning notification
 
+</details>
+
 ### Should Have Features
 
-### <u>Leaderboard</u>
+#### <u>Leaderboard</u>
 
 **User Story:** As a user I want a leaderboard so that I can see how I rank against others
 
-**Acceptance Criteria:** 
+<details>
+<summary>Acceptance Criteria:</summary>
   
 - Leaderboard shows:
   - Total tokens earned
@@ -183,11 +252,14 @@ The aim of this web app is to specifically addresses the growing trend of gamifi
 - Privacy:
   - Only shows display names
 
-### <u>Enhanced Token System</u>
+</details>
+
+#### <u>Enhanced Token System</u>
 
 **User Story:** As a user I want to have more token bonus so that I can gain more tokens
 
-**Acceptance Criteria:** 
+<details>
+<summary>Acceptance Criteria:</summary>
   
 - Pace bonuses:
   - Sub 4:00 min/km: +15 tokens/km
@@ -203,16 +275,26 @@ The aim of this web app is to specifically addresses the growing trend of gamifi
   - +5 for medium
   - +10 for hard
 
+</details>
+
+</details>
+
 ### Scope Plane
 
-#### Core Features:
+<details>
+<summary>Core Features:</summary>
 
 - User authentication and profile management
 - Running activity tracking and logging
 - Token achievement system
 - Leaderboards
 
+</details>
+
 ### Structure Plane
+
+<details>
+<summary>Logical structure</summary>
 
 The application follows a logical structure where users can:
 
@@ -221,30 +303,53 @@ The application follows a logical structure where users can:
 - Earn tokens based on activity completion
 - View their ranking on various leaderboards
 
+</details>
+
 ### Skeleton Plane
 
 #### Wireframes
 
-##### Desktop
+<details>
+<summary>Desktop</summary>
+
 ![desktop wireframes](assets/README_images/WF_desktop_home.png)
 ![desktop wireframes](assets/README_images/WF_desktop_quest_about_leader.png)
 ![desktop wireframes](assets/README_images/WF_desktop_quest_page.png)
 
-##### Mobile
+</details>
+<br>
+<details>
+<summary>Mobile</summary> 
+
 ![mobile wireframes](assets/README_images/WF_mobile_index.png)
 ![mobile wireframes](assets/README_images/WF_mobile_quest_post.png)
 ![mobile wireframes](assets/README_images/WF_mobile_quest_page.png)
 ![mobile wireframes](assets/README_images/WF_mobile_about_leader.png)
 
-##### Tablet
+</details>
+<br>
+<details>
+<summary>Tablet</summary> 
+
 ![tablet wireframes](assets/README_images/WF_tablet_home.png)
 ![tablet wireframes](assets/README_images/WF_tablet_quest_post.png)
 ![tablet wireframes](assets/README_images/WF_tablet_about_quest_leader.png)
 
-
-#### Database Schema
+</details>
+<br>
+<details>
+<summary>Database Schema</summary> 
 
 ![Database Schema](assets/README_images/ERD_Final.png)
+
+</details>
+
+### Surface Plane
+
+#### Design Chocies
+
+
+To Be updated all below:
 
 
 (Include any could-have features that were implemented or considered)  
