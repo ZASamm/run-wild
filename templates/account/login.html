@@ -8,20 +8,21 @@
 {% block content %}
 <div class="container-fluid" id="account-container">
   <div class="row">
-    <div class="col-12 col-md-6 text-center">
+    <div class="col-12 col-md-6 text-center hidden">
       <img class="img-fluid account-image" src="{% static 'media/images/hero_image.png'%}" alt="Hero Image">
     </div>
-    <div class="col m-4 p-2 account-col">
+    <div class="col m-5 p-4 account-col">
       <h1 class="text-center">{% trans "Sign In" %}</h1>
-
+      <hr>
       <p>{% blocktrans %}Welcome back to RunWild. Please sign in with your account details to start completing quests!
         If you
         have not created an account yet, then <a class="link" href="{{ signup_url }}">sign up</a>
         first.{% endblocktrans %}</p>
+        <hr>
         <form class="login" method="POST" action="{% url 'account_login' %}">
         {% csrf_token %}
         {{ form.as_p }}
-        <br>
+        <hr>
         <button class="btn btn-global" type="submit">{% trans "Sign In" %}</button>
       </form>
     </div>

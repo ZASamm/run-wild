@@ -14,16 +14,19 @@
       <img class="img-fluid account-image" src="{% static 'media/images/hero_image.png'%}" alt="Hero Image">
     </div>
 
-    <div class="col account-col m-4 p-2">
+    <div class="col account-col m-5 p-4">
       <h1 class="text-center">{% trans "Sign Up" %}</h1>
+      <hr>
       <p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}
       </p>
+      <hr>
       <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
         {% csrf_token %}
         {{ form.as_p }}
         {% if redirect_field_value %}
         <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
         {% endif %}
+        <hr>
         <button class="btn btn-global" type="submit">{% trans "Sign Up" %} &raquo;</button>
       </form>
     </div>
