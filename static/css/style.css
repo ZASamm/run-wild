@@ -638,6 +638,16 @@ footer {
     margin: 0;
 }
 
+/* Global Leaderboard */
+
+.global-leaderboard-item {
+    width: 100%
+}
+
+.first-place {
+    background-color: green;
+}
+
 /* Django messages stylilng */
 
 .message-popup {
