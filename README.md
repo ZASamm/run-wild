@@ -1,6 +1,6 @@
 # Run Wild
 
-![Am I responsive image]()
+![Am I responsive image](assets/README_images/amiresponsive.png)
 
 ## Overview
 
@@ -348,12 +348,113 @@ The application follows a logical structure where users can:
 
 #### Design Chocies
 
+<details>
+<summary>Color Scheme</summary> 
 
-To Be updated all below:
+My color palette was chosen to reflect Run Wild's gamified running experience and token-based achievements, aiming to create a clean, modern and sporty user interface,
+To acheive only one accent colour has been chosen. 
+
+![Colour Pallet](assets/README_images/colour-pallet.png)
+
+Light Gray (#f1f1f1) - Primary Background
+
+- Creates a soft, clean canvas that reduces eye strain
+- Provides excellent contrast for text and interactive elements
+- Maintains readability across different screen sizes and lighting conditions
+
+Dark Gray (#212121) - Text Color
+
+- Ensures optimal readability against the light background
+- Softer than pure black, creating a more comfortable reading experience
+- Meets WCAG accessibility standards for contrast
+
+Vibrant Red (#ff1744) - Accent Color
+
+- Creates visual excitement and energy
+- Draws attention to important actions and achievements
+- Represents passion and motivation in fitness
+
+Pure White (#fff)
+
+- Used for contrast on Dark Gray elements
+
+</details>
+<br>
+<details>
+<summary>Typography:</summary> 
+The typography combines two distinctive fonts to create a modern and energetic aesthetic while maintaining readability
+
+![Bebas Font](assets/README_images/bebas_font.png)
+
+Used for:
+
+- Headlines
+- Section titles
+- Important numbers (statistics, achievements)
+
+Characteristics:
+
+- All-caps display font
+- Strong visual impact
+- Creates a bold, athletic feel
+- Excellent for hierarchy and emphasis
 
 
-(Include any could-have features that were implemented or considered)  
-**Guidance:** If any could-have features were implemented, describe them here. This is an opportunity to showcase extra work done beyond the initial scope. But remember - keep it simple! Focus on the Must stories first. Could user story features are commonly earmarked for future project iterations.
+![lato Font](assets/README_images/lato_font.png)
+
+Used for:
+
+- Body text
+- Navigation items
+- Form elements
+- Secondary headings
+
+Characteristics:
+
+- High readability at all sizes
+- Clean and modern sans-serif
+- Excellent for long-form content
+- Various weights for flexibility
+
+##### Font Awesome
+
+Icons: Font Awesome for intuitive navigation
+
+</details>
+
+#### Design Principles
+
+##### 1. Clarity
+
+- Clean layouts with ample white space
+- Clear visual hierarchy
+- Intuitive navigation
+
+
+##### 2. Consistency
+
+- Consistent colour usage across all pages
+- Standardised spacing and alignment
+- Uniform interactive elements
+
+
+##### 2. Accessibility
+
+- High contrast text-to-background ratios
+- Clear focus states for navigation
+- Readable font sizes and line heights
+
+
+##### 2. Responsiveness
+
+- Fluid typography scaling
+- Flexible grid system
+- Mobile-first approach to layout
+
+
+This design system creates an energetic, modern interface that motivates users while maintaining excellent usability and accessibility standards.
+
+
 
 
 
