@@ -40,7 +40,7 @@ function loadQuestRecords() {
                         <td class="td-dashboard">${formatTime(record.completion_time)}</td>
                         <td class="td-dashboard">${record.pace.toFixed(1)} min/km</td>
                         <td class="td-dashboard">${record.tokens_earned}</td>
-                        <td class="td-dashboard">${getStatusBadge(record)}</td>
+                        <td class="td-dashboard"><strong>${getStatusBadge(record)}</strong></td>
                         <td class="td-dashboard">
                             <button class="btn-edit btn btn-global" onclick="window.location.href='/quest/${record.quest.slug}/edit/${record.id}/'">Edit</button>
                             <button class="btn-delete btn btn-global" onclick="if(confirm('Delete this record?')) window.location.href='/quest/${record.quest.slug}/delete/${record.id}/'">Delete</button>
