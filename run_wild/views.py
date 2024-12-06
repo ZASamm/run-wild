@@ -127,6 +127,7 @@ def quest_post(request, slug):
                         </div>
                         <div class='total'>Total Tokens:
                         <span> {run_upload.tokens_earned}</span></div>
+                        <div> Smashed it! keep up the good work!</div>
                     </div>
                 </div>
                 """,
@@ -207,7 +208,6 @@ def record_delete(request, slug, quest_record_id):
         HttpResponseRedirect: Redirects to the quest post page after deletion.
     """
 
-    # quest = get_object_or_404(QuestPost, slug=slug)
     run_upload = get_object_or_404(QuestRecord, pk=quest_record_id)
 
     if run_upload.runner == request.user:
