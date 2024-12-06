@@ -11,41 +11,49 @@
                 <p>Welcome to the global leader board - checkout how your overall stats compare to others!</p>
             </div>
         </div>
-        <div class="row m-3">
-            <div class="col table-responsive p-2">
-                <table class="global-leaderboard-item">
-                    <thead>
-                        <tr>
-                            <th class="th-leaderboard"><h2>Place</h2></th>
-                            <th class="th-leaderboard"><h2>User</h2></th>
-                            <th class="th-leaderboard"><h2>Overall<br>Tokens</h2></th>
-                            <th class="th-leaderboard"><h2>Overall<br>Distance</h2></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for entry in leaderboard_data %}
-                        {% if forloop.first %}
-                        <tr class="first-place">
-                            <td class="td-leaderboard">{{ forloop.counter }}</td>
-                            <td class="td-leaderboard">{{ entry.runner__username }}</td>
-                            <td class="td-leaderboard">{{ entry.total_tokens }}</td>
-                            <td class="td-leaderboard">{{ entry.total_distance|floatformat:0 }}</td>
-                        </tr>
-                        {% else %}
-                        <tr>
-                            <td class="td-leaderboard" >{{ forloop.counter }}</td>
-                            <td class="td-leaderboard">{{ entry.runner__username }}</td>
-                            <td class="td-leaderboard">{{ entry.total_tokens }}</td>
-                            <td class="td-leaderboard">{{ entry.total_distance|floatformat:0 }}</td>
-                        </tr>
-                        {% endif %}
-                        {% endfor %}
-                    </tbody>
-                </table>
-            </div>
-
+    </div>
+    <div class="recent-quests m-5">
+        <div class="table-responsive">
+            <table class="global-leaderboard-item">
+                <thead>
+                    <tr>
+                        <th class="th-leaderboard">
+                            <h2>Place</h2>
+                        </th>
+                        <th class="th-leaderboard">
+                            <h2>User</h2>
+                        </th>
+                        <th class="th-leaderboard">
+                            <h2>Overall<br>Tokens</h2>
+                        </th>
+                        <th class="th-leaderboard">
+                            <h2>Overall<br>Distance</h2>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for entry in leaderboard_data %}
+                    {% if forloop.first %}
+                    <tr class="first-place">
+                        <td class="td-leaderboard"><strong>{{ forloop.counter }}</strong></td>
+                        <td class="td-leaderboard"><strong>{{ entry.runner__username }}</strong></td>
+                        <td class="td-leaderboard"><strong>{{ entry.total_tokens }}</strong></td>
+                        <td class="td-leaderboard"><strong>{{ entry.total_distance|floatformat:0 }}</strong></td>
+                    </tr>
+                    {% else %}
+                    <tr>
+                        <td class="td-leaderboard">{{ forloop.counter }}</td>
+                        <td class="td-leaderboard">{{ entry.runner__username }}</td>
+                        <td class="td-leaderboard">{{ entry.total_tokens }}</td>
+                        <td class="td-leaderboard">{{ entry.total_distance|floatformat:0 }}</td>
+                    </tr>
+                    {% endif %}
+                    {% endfor %}
+                </tbody>
+            </table>
         </div>
     </div>
+   
 </section>
 
 {% endblock %}
