@@ -338,5 +338,18 @@ class LeaderboardView(generic.ListView):
 
     model = QuestRecord
     template_name = "leaderboard.html"
-    context_object_name = "leaderboard"
+    context_object_name = "leaderboard_data"
 
+    def get_queryset(self):
+        
+        return (
+            QuestRecord.objects
+            .filter(approved=True)
+            .values('runner__username')
+            .annotate(
+                total_tokens=Sum('tokens_earned'), 
+                total_distance=Sum('quest__distance')
+                )
+            .order_by('-total_tokens')
+        )
+        
