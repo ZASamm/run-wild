@@ -74,12 +74,14 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link {% if request.path == leaderboard %}active"
-                                aria-current="page{% endif %}" href="{% url 'leaderboard' %}">Global Leaderboard</a>
+                                aria-current="page{% endif %}" href="{% url 'leaderboard' %}">Leaderboard</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link {% if request.path == about_url %}active" aria-current="page{% endif %}"
                                 href="{% url 'about' %}">About</a>
                         </li>
+
+                        <!-- distplay nav link to admin pannel if user is staff -->
 
                         {% if user.is_authenticated and user.is_staff %}
 
@@ -91,10 +93,9 @@
                             <a class="nav-link {% if request.path == logout_url %}active" aria-current="page{% endif %}"
                                 href="{% url 'account_logout' %}">Logout</a>
                         </li>
-                        
+
                         <li class="nav-item">
-                            <a class="nav-link"
-                            href="/admin/">Admin Panel</a>
+                            <a class="nav-link" href="/admin/">Admin Panel</a>
                         </li>
 
                         {% elif user.is_authenticated %}
@@ -126,10 +127,11 @@
 
                     <span class="navbar-text flex-row">
                         <h4>Run your story</h4>
+                        <br>
                         {% if user.is_authenticated %}
-                        <p class="text-end m-3">You are logged in as {{ user }}</p>
+                        <p class="text-end m-3">Logged in as {{ user }}</p>
                         {% else %}
-                        <p class="text-end m-3">You are not logged in</p>
+                        <p class="text-end m-2">You are not logged in</p>
                         {% endif %}
                     </span>
                 </div>
@@ -138,10 +140,10 @@
 
 
         <!-- displaying Django messages -->
-        <div class="container">
+        <div class="container-fluid">
             <div class="row message-popup">
-                <div class="col-md-8 offset-md-2">
-                    {% for message in messages %}
+                {% for message in messages %}
+                <div class="col-md-8 offset-md-2 ">
                     <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
                         {% if 'quest-record-success' in message.tags %}
                         <h5>{{ message }}</h5>
@@ -150,8 +152,8 @@
                         {% endif %}
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
-                    {% endfor %}
-                </div>
+                    </div>
+                {% endfor %}
             </div>
         </div>
     </header>
