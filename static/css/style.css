@@ -384,17 +384,14 @@ footer {
 
 .status-pb {
     background: var(--accent);
-    color: white;
 }
 
 .status-approved {
     background: #4ade80;
-    color: white;
 }
 
 .status-pending {
     background: #fcd34d;
-    color: white;
 }
 
 .table-responsive {
@@ -575,21 +572,21 @@ footer {
 .modal {
     text-align: center;
     padding: 0!important;
-  }
+}
   
-  .modal:before {
+.modal:before {
     content: '';
     display: inline-block;
     height: 100%;
     vertical-align: middle;
     margin-right: -4px; /* Adjusts for spacing */
-  }
+}
   
-  .modal-dialog {
+.modal-dialog {
     display: inline-block;
     text-align: left;
     vertical-align: middle;
-  }
+}
 /* End */
 
 /* account templates ------------------------------- */
@@ -638,22 +635,36 @@ footer {
     margin: 0;
 }
 
-/* Global Leaderboard */
+/* Global Leaderboard ------------------------------- */
 
 .global-leaderboard-item {
-    width: 100%
+    width: 100%;
+    background: var(--white);
+    box-shadow: 12px 12px 32px rgba(0, 0, 0, 0.1),
+    -5px -5px 15px #ffffff;
 }
 
 .first-place {
-    background-color: green;
+    background-color: #4ade80;
+}
+
+.th-leaderboard, .td-leaderboard {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+    white-space: nowrap;
+    min-width: 100px;
+}
+
+.th-leaderboard {
+    background: #f5f5f5;
+    font-weight: 600;
 }
 
 /* Django messages stylilng */
 
 .message-popup {
-    background: var(--primary);
-    box-shadow: 12px 12px 32px rgba(0, 0, 0, 0.1),
-    -5px -5px 15px #ffffff;
+    background: #4ade80;
 }
 
 
