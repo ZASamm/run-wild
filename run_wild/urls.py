@@ -23,6 +23,11 @@ urlpatterns = [
         name='quest_post'
         ),
     path(
+        'leaderboard/',
+        views.LeaderboardView.as_view(),
+        name='leaderboard'
+    ),
+    path(
         'quest/<slug:slug>/edit/<int:quest_record_id>/',
         views.record_edit,
         name='record_edit'
