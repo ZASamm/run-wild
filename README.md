@@ -20,13 +20,9 @@ Run Wild is a web-based platform designed to gamify the running experience and f
 <summary>Value Proposition</summary>
 
 - Transforms routine running activities into rewarding experiences
-<br>
 - Provides immediate feedback and recognition for running achievements
-<br>
 - Creates a structured system for tracking progress and improvement
-<br>
 - Offers a competitive element that maintains long-term engagement
-<br>
 - Delivers a simple, streamlined experience focused on running metrics that matter
 
 </details>
@@ -35,46 +31,41 @@ Run Wild is a web-based platform designed to gamify the running experience and f
 
 <details>
 <summary>Recreational Runners</summary>
+
 - Age Range: 18+ years old
-<br>
 - Running Experience: Beginner to intermediate runners
-<br>
 - Motivation: Seeking additional motivation and structure in their running routine
 
 </details>
 
 <details>
 <summary>Beginner Runners</summary>
+
 - Looking for motivation to establish consistent running habits
-<br>
 - Interested in tracking progress and improvement
-<br>
 - Need positive reinforcement to maintain commitment
-<br>
 - Value clear metrics and achievable goals
   
 </details>
 
 <details>
 <summary>Regular Runners</summary>
+
 - Seeking new ways to stay motivated
-<br>
 - Interested in competing with others
-<br>
 - Want to track their performance metrics
-<br>
 - Looking for recognition of their efforts
+
 </details>
 
 <details>
 <summary>Challenge-Driven Individuals</summary>
+
 - Motivated by competition and achievements
-<br>
 - Enjoy collecting rewards and tracking statistics
-<br>
 - Like to compare their performance with others
-<br>
 - Appreciate structured goal systems
+
 </details>
 
 ### Why They Will Benefit?
@@ -128,6 +119,7 @@ The aim of this web app is to specifically addresses the growing trend of gamifi
 ## UX Design Process
 
 ### Strategy Plane
+<hr>
 
 <details>
 <summary>User Stories</summary>
@@ -248,9 +240,10 @@ The aim of this web app is to specifically addresses the growing trend of gamifi
   
 - Leaderboard shows:
   - Total tokens earned
+  - Total distance
 
 - Privacy:
-  - Only shows display names
+  - Only shows display user names
 
 </details>
 
@@ -280,6 +273,7 @@ The aim of this web app is to specifically addresses the growing trend of gamifi
 </details>
 
 ### Scope Plane
+<hr>
 
 <details>
 <summary>Core Features:</summary>
@@ -292,6 +286,7 @@ The aim of this web app is to specifically addresses the growing trend of gamifi
 </details>
 
 ### Structure Plane
+<hr>
 
 <details>
 <summary>Logical structure</summary>
@@ -306,6 +301,7 @@ The application follows a logical structure where users can:
 </details>
 
 ### Skeleton Plane
+<hr>
 
 #### Wireframes
 
@@ -345,6 +341,7 @@ The application follows a logical structure where users can:
 </details>
 
 ### Surface Plane
+<hr>
 
 #### Design Chocies
 
@@ -356,7 +353,7 @@ To acheive only one accent colour has been chosen.
 
 ![Colour Pallet](assets/README_images/colour-pallet.png)
 
-Light Gray (#f1f1f1) - Primary Background
+Off White (#fafdfb) - Primary Background
 
 - Creates a soft, clean canvas that reduces eye strain
 - Provides excellent contrast for text and interactive elements
@@ -455,7 +452,22 @@ Icons: Font Awesome for intuitive navigation
 This design system creates an energetic, modern interface that motivates users while maintaining excellent usability and accessibility standards.
 
 
+## Technologies/Languages/Frameworks Used 
 
+
+**HTML5** - Structuring of the website<br>
+**CSS3** - Design, layout and visual aesthetics<br>
+**JavaScript** - For interactivity and DOM manipulation on the frontend<br>
+**Python (Django)** - Backend web framework for server-side logic and management<br>
+**PostgreSQL** - Database management system<br>
+**Cloudinary** - Cloud-based image storage<br>
+**Whitenoise** - For serving static files directly from Django<br>
+**Django** - Backend framework<br>
+**Django Crispy Forms** - Form rendering<br>
+**Whitenoise** - For serving static files<br>
+**GitHub Projects** - Project management and tracking<br>
+**Heroku** - Deployment and hosting<br>
+**Balsamiq** - Wireframes and design prototypes<br>
 
 
 ## Testing and Validation
