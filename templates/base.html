@@ -73,6 +73,10 @@
                                 href="{% url 'quests' %}">Quests</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link {% if request.path == leaderboard %}active"
+                                aria-current="page{% endif %}" href="{% url 'leaderboard' %}">Global Leaderboard</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link {% if request.path == about_url %}active" aria-current="page{% endif %}"
                                 href="{% url 'about' %}">About</a>
                         </li>
