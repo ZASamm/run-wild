@@ -4,20 +4,37 @@
 {% block content %}
 
 <section>
-    <div class="containter-fluid">
+    <div class="containter">
         <div class="row">
-            <div class="col">
+            <div class="col text-center">
                 <h1>Global Leaderboard</h1>
                 <p>Welcome to the global leader board - checkout how your overall stats compare to others!</p>
-            </div>
-            <div class="col">
-              
             </div>
         </div>
         <div class="row">
             <div class="col">
-
+                <table class="global-leaderboard-item table">
+                    <thead>
+                        <tr>
+                            <th>Postition</th>
+                            <th>User</th>
+                            <th>Overall Tokens</th>
+                            <th>Overall Distance</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for entry in leaderboard_data %}
+                        <tr>
+                            <td>{{ forloop.counter }}</td>
+                            <td>{{ entry.runner__username }}</td>
+                            <td>{{ entry.total_tokens }}</td>
+                            <td>{{ entry.total_distance|floatformat:0 }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
             </div>
+
         </div>
     </div>
 </section>
