@@ -330,3 +330,13 @@ class DashboardDataView(LoginRequiredMixin, View):
         }
 
         return JsonResponse(data)
+
+# leaderboard view
+
+
+class LeaderboardView(generic.ListView):
+
+    model = QuestRecord
+    template_name = "leaderboard.html"
+    context_object_name = "leaderboard"
+
