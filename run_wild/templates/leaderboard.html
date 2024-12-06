@@ -11,32 +11,32 @@
                 <p>Welcome to the global leader board - checkout how your overall stats compare to others!</p>
             </div>
         </div>
-        <div class="row m-2">
-            <div class="col">
+        <div class="row m-3">
+            <div class="col table-responsive p-2">
                 <table class="global-leaderboard-item">
                     <thead>
                         <tr>
-                            <th></th>
-                            <th><h2>User</h2></th>
-                            <th><h2>Overall<br>Tokens</h2></th>
-                            <th><h2>Overall<br>Distance</h2></th>
+                            <th class="th-leaderboard"><h2>Place</h2></th>
+                            <th class="th-leaderboard"><h2>User</h2></th>
+                            <th class="th-leaderboard"><h2>Overall<br>Tokens</h2></th>
+                            <th class="th-leaderboard"><h2>Overall<br>Distance</h2></th>
                         </tr>
                     </thead>
                     <tbody>
                         {% for entry in leaderboard_data %}
                         {% if forloop.first %}
                         <tr class="first-place">
-                            <td >{{ forloop.counter }}</td>
-                            <td>{{ entry.runner__username }}</td>
-                            <td>{{ entry.total_tokens }}</td>
-                            <td>{{ entry.total_distance|floatformat:0 }}</td>
+                            <td class="td-leaderboard">{{ forloop.counter }}</td>
+                            <td class="td-leaderboard">{{ entry.runner__username }}</td>
+                            <td class="td-leaderboard">{{ entry.total_tokens }}</td>
+                            <td class="td-leaderboard">{{ entry.total_distance|floatformat:0 }}</td>
                         </tr>
                         {% else %}
                         <tr>
-                            <td >{{ forloop.counter }}</td>
-                            <td>{{ entry.runner__username }}</td>
-                            <td>{{ entry.total_tokens }}</td>
-                            <td>{{ entry.total_distance|floatformat:0 }}</td>
+                            <td class="td-leaderboard" >{{ forloop.counter }}</td>
+                            <td class="td-leaderboard">{{ entry.runner__username }}</td>
+                            <td class="td-leaderboard">{{ entry.total_tokens }}</td>
+                            <td class="td-leaderboard">{{ entry.total_distance|floatformat:0 }}</td>
                         </tr>
                         {% endif %}
                         {% endfor %}
