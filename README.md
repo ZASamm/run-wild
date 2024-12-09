@@ -755,6 +755,32 @@ Mention any issues found and how they were resolved.
 
 </details>
 
+<details>
+<summary>CSS</summary>
+
+[Jigsaw](https://jigsaw.w3.org/css-validator/) - used for testing css, results as follows:
+
+![CSS validator results](assets/README_images/css-validator.png)
+
+- Fixes:
+    - Remove border-color as not in use
+    - Remove border-radius as not in use
+    - Remove pesudo-element
+
+</details>
+
+<details>
+<summary>JavaScript</summary>
+
+[JSLint] - used for testing JavaScript files, results as follows:
+
+1. index_scirpt.js
+
+![Index scirpt results]()
+
+</details>
+
+
 Include the results of the validation process.  
 **Guidance:** Document your use of W3C and Jigsaw validators to ensure your HTML and CSS meet web standards. Include any errors or warnings encountered and how they were resolved.
 
