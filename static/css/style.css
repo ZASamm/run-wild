@@ -295,11 +295,6 @@ footer {
     background-color: var(--primary);
 }
 
-.accordion-button:focus {
-    border-color: none;
-    box-shadow: none;
-}
-
 .speed-grid, .difficulty-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -364,7 +359,6 @@ footer {
 
 .th-dashboard {
     background: #f5f5f5;
-    font-weight: 600;
 }
 
 
@@ -646,7 +640,6 @@ th {
 .global-leaderboard-item {
     width: 100%;
     background: var(--white);
-    border-radius: 0.5;
 }
 
 .first-place {
@@ -662,10 +655,8 @@ th {
 }
 
 .th-leaderboard {
-    background: #f5f5f5;
-    font-weight: 500;
     font-family: "Bebas Neue", sans-serif;
-    font-size: 1.8em;
+    font-size: 1.6em;
 }
 
 /* Django messages stylilng */
@@ -760,10 +751,6 @@ th {
         pointer-events: none;
     }
     
-    /* Hide the arrow when scrolled all the way */
-    .table-responsive::-webkit-scrollbar-thumb:horizontal {
-        background: #666;
-    }
 }
 
 /* Adjust the stat cards for mobile */
