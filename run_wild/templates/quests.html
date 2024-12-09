@@ -4,9 +4,13 @@
 
 <section>
     <div class="container-fluid">
+        <!-- Row containing each instance of Quests -->
         <div class="row ">
             <div class="col-12 mt-3">
                 <div class="row d-flex justify-content-evenly">
+
+                    <!-- For Loop to pull in each quest -->
+                     
                     {% for quest in quests %}
                     <div class="col-md-4">
                         <div class="card-body quest-body my-2">
@@ -27,7 +31,7 @@
                                     <p class="card-text">{{ quest.description }}</p>
                                 </a>
 
-                                <hr />
+                                <hr>
                                 <p class="card-text h6">{{ quest.distance }} km
                                 </p>
                             </div>
@@ -42,6 +46,8 @@
                 </div>
             </div>
         </div>
+
+        <!-- Next and Previous controls for pagination -->
         {% if is_paginated %}
         <nav aria-label="Page navigation">
             <ul class="pagination justify-content-center">
