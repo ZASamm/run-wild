@@ -10,7 +10,7 @@
 <head>
     <title>RunWild</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- SEO -->
     <meta name="description"
@@ -52,6 +52,7 @@
 </head>
 
 <body>
+    <!-- Header -->
     <header>
         <!-- Navigation -->
         <nav class="navbar navbar-expand-lg navbar-light bg-white p-4">
@@ -125,7 +126,7 @@
                         {% endif %}
                     </ul>
 
-                    <span class="navbar-text flex-row">
+                    <div class="navbar-text flex-row">
                         <h4>Run your story</h4>
                         <br>
                         {% if user.is_authenticated %}
@@ -133,7 +134,7 @@
                         {% else %}
                         <p class="text-end m-2">You are not logged in</p>
                         {% endif %}
-                    </span>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -158,7 +159,7 @@
         </div>
     </header>
 
-
+    <!-- Main Content -->
     <main>
 
         {% block content %}
@@ -206,8 +207,10 @@
 
     </footer>
 
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
+    <!-- Extra for page specific JS -->
     {% block extras %}
     {% endblock %}
 
