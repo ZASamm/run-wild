@@ -449,6 +449,12 @@ footer {
 
 /* Quest post ------------------------------- */
 
+/* Validator fix */
+th {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 500;
+    font-size: 1.5em;
+}
 
 .quest-header {
     display: flex;
@@ -657,7 +663,9 @@ footer {
 
 .th-leaderboard {
     background: #f5f5f5;
-    font-weight: 600;
+    font-weight: 500;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 1.8em;
 }
 
 /* Django messages stylilng */
