@@ -745,7 +745,7 @@ Mention any issues found and how they were resolved.
         font-weight: 500;
         font-size: 1.5em;
       }
-      ```x
+      ```
 <hr>
 
 8. about.html
