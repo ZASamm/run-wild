@@ -15,6 +15,7 @@
                     <div class="col-md-4">
                         <div class="card-body quest-body my-2">
                             <div class="image-container">
+                                <a href="{% url 'quest_post' quest.slug %}" class="post-link">
                                 {% if "placeholder" in quest.featured_image.url %}
                                 <img class="card-img-top" src="{% static 'media/images/logofinal.svg' %}"
                                     alt="placeholder image">
@@ -26,14 +27,13 @@
                                     <h2 class="difficulty">{{ quest.difficulty}}
                                     </h2>
                                 </div>
-                                <a href="{% url 'quest_post' quest.slug %}" class="post-link">
                                     <h2 class="card-title">{{ quest.title }}</h2>
                                     <p class="card-text">{{ quest.description }}</p>
+                                    
+                                    <hr>
+                                    <p class="card-text h6">{{ quest.distance }} km
+                                    </p>
                                 </a>
-
-                                <hr>
-                                <p class="card-text h6">{{ quest.distance }} km
-                                </p>
                             </div>
 
                         </div>
