@@ -59,8 +59,8 @@
                             {% for quest in quests %}
                             <button type="button" data-bs-target="#questCarousel"
                                 data-bs-slide-to="{{ forloop.counter0 }}"
-                                class="{% if forloop.first %}active{% endif %}"
-                                aria-current="{% if forloop.first %}true{% endif %}"
+                                class="{% if forloop.first %}active{% else %}not-active{% endif %}" 
+                                aria-current="{% if forloop.first %}true{% else %}false{% endif %}"
                                 aria-label="Slide {{ forloop.counter }}">
                             </button>
                             {% endfor %}
