@@ -665,7 +665,96 @@ Mention any issues found and how they were resolved.
 **Guidance:** Summarize the results of your testing across various devices using tools like Chrome DevTools, as outlined in Phase 2. Mention any issues found and how they were resolved.
 
 ### Validation
-Discuss the validation process for HTML and CSS using W3C and Jigsaw validators.  
+
+<details>
+<summary>HTML</summary>
+
+[W3C](https://validator.w3.org/) - Used for HTML Validation - results as follows:
+
+1. index.html/base.html
+
+![Index and base html](assets/README_images/html_index.png)
+
+ - Fixes:
+    - Trailing backslash removed from line 14 (base.html)
+    - span tags changed to div - fixing errors 2 and 3.
+    - Carousel errors fixed by added else statments to ensure no empty attributes.
+<hr>
+
+2. about.html
+
+![About page](assets/README_images/about.png)
+- No errors
+<hr>
+
+3. Sign in, up and out
+
+![Sign up](assets/README_images/signup.png)
+
+- Sign up 
+    - The errors flagged are from allauth code and not something I can adjust - to note the opening takes for the span and p are present in the code as shown in the image below.
+    ![allauth code](assets/README_images/signup_allauth.png)
+
+![Sign up](assets/README_images/signin.png)
+- Sign in
+    - No Errors
+
+![Sign out](assets/README_images/signout.png)
+- Sign out
+    - No Errors
+<hr>   
+
+4. dashboard.html
+
+![Dashboard](assets/README_images/dashboard_val.png)
+- No errors
+<hr>
+
+5. leaderboard.html
+
+![Leaderboard](assets/README_images/leaderboard.png)
+- Fixes:
+    - Heading elements removed from table header, styling added to style.css to fix.
+      ```
+      .th-leaderboard {
+          background: #f5f5f5;
+          font-weight: 500;
+          font-family: "Bebas Neue", sans-serif;
+          font-size: 1.8em;
+      }
+      ```
+<hr>
+
+6. quests.html
+
+![Quest](assets/README_images/Quests.png)
+
+- Fixes:
+    - Remove trailing backlash from hard returns
+
+<hr>
+
+6. quest_post.html
+
+![Quest Post](assets/README_images/Quest_post.png)
+- Fixes:
+    - Heading elements removed from table header, styling added to style.css to fix.
+      ```
+      th {
+        font-family: "Bebas Neue", sans-serif;
+        font-weight: 500;
+        font-size: 1.5em;
+      }
+      ```x
+<hr>
+
+8. about.html
+
+![About](assets/README_images/about.png)
+- No errors
+
+</details>
+
 Include the results of the validation process.  
 **Guidance:** Document your use of W3C and Jigsaw validators to ensure your HTML and CSS meet web standards. Include any errors or warnings encountered and how they were resolved.
 
