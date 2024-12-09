@@ -4,6 +4,8 @@
 
 ## Overview
 
+[Live Project](https://run-wild-67c9460e78b3.herokuapp.com/)
+
 ### Purpose
 Run Wild is a web-based platform designed to gamify the running experience and foster a community of active runners through a token-based reward system. The platform transforms everyday runs into rewarding achievements by allowing runners to earn tokens based on their performance, creating an engaging and motivating environment for consistent physical activity.
 
@@ -313,7 +315,6 @@ The application follows a logical structure where users can:
 ![desktop wireframes](assets/README_images/WF_desktop_quest_page.png)
 
 </details>
-<br>
 <details>
 <summary>Mobile</summary> 
 
@@ -323,7 +324,6 @@ The application follows a logical structure where users can:
 ![mobile wireframes](assets/README_images/WF_mobile_about_leader.png)
 
 </details>
-<br>
 <details>
 <summary>Tablet</summary> 
 
@@ -332,7 +332,6 @@ The application follows a logical structure where users can:
 ![tablet wireframes](assets/README_images/WF_tablet_about_quest_leader.png)
 
 </details>
-<br>
 <details>
 <summary>Database Schema</summary> 
 
@@ -376,7 +375,7 @@ Pure White (#fff)
 - Used for contrast on Dark Gray elements
 
 </details>
-<br>
+
 <details>
 <summary>Typography</summary> 
 The typography combines two distinctive fonts to create a modern and energetic aesthetic while maintaining readability
@@ -450,6 +449,198 @@ Icons: Font Awesome for intuitive navigation
 
 
 This design system creates an energetic, modern interface that motivates users while maintaining excellent usability and accessibility standards.
+
+## Features
+
+<details>
+<summary>Home Page</summary>
+
+1. Welcome Section
+   - Introduces the platform, emphasising gamified running and exploring Cornwall's scenic routes.
+2. Call-to-Action
+    - Encourages visitors to sign up or log in to start their running journey.
+2. Number counters
+    - provding a overview of all the completed quests so far.
+3. About Us
+    - Highlights the mission of turning running into an engaging and rewarding adventure.
+4. Featured Routes
+    - Bootstrap carosuaul used to showcases avaliable quests.
+5. Key Benefits
+    - Explains tokens, challenges, and leaderboards for motivation and fun.
+
+![Home Page](assets/README_images/home_page.png)
+![Current Quests and About](assets/README_images/current_quests_about.png)
+![Token Caculation](assets/README_images/run_upload_caculation.png)
+
+</details>
+
+<hr>
+<details>
+<summary>User Authentication</summary>
+
+1. Sign-Up Functionality
+    - Users can create accounts to access features like their dashboard, and Run Tracking functionality.
+2. Login System
+    - Secure login allows users to resume their progress and view completed quests.
+3. Login in Status
+    - In the top right, the status of user is displayed.
+4. Role Based functionality
+    - Admin pannel link only availible when you are signed in as a superuser.
+5. User Messages
+    - Message pop ups giving user further claification on action completed for all user Authentication actions
+
+![Sign Up](assets/README_images/sign_up.png)
+![Sign In](assets/README_images/sign_in.png)
+![Sign Out](assets/README_images/sign_out.png)
+![User Dashboard](assets/README_images/dashboard.png)
+![Message](assets/README_images/user_message.png)
+
+</details>
+<hr>
+<details>
+<summary>Quest Management</summary>
+
+1. Avalibale Quest
+    - Pagination for avalible quests for the user to select, reachable in the navigation.
+2. Quest Details
+    - Quest overview - breif descirption of route and image showing markers for route.
+    - Difficulity, Distance, Elevation gain and Max displayed so user can assess if they are able to acheive.
+    - Total Quests complete and Top 5 uploads displayed on each Quest Post.
+    - Details of Completed runs shown, authenticated users can also access CRUD functionality here.
+     
+
+![Pagination of Quests](assets/README_images/quest_post_pagination.png)
+![Quest View and Details](assets/README_images/quest_view_and_details.png)
+![Completed Quests](assets/README_images/completed_runs.png)
+
+
+</details>
+<hr>
+<details>
+<summary>Run Tracking</summary>
+
+CRUD functionality - The user is able to upload, edit and delete their uploads on the quest page.
+
+![Upload Run](assets/README_images/run_upload.png)
+![Delete Run](assets/README_images/run_delete.png)
+![Update Run](assets/README_images/run_update.png)
+
+</details>
+<hr>
+
+<details>
+<summary>Leaderboards</summary>
+Pagination for avalible quests for the user to select, reachable in the navigation.
+
+![Global Leaderboard](assets/README_images/global_leaderboard.png)
+![Top 5](assets/README_images/top-5.png)
+
+</details>
+<hr>
+
+<details>
+<summary>Token Stystem</summary>
+
+The token system is designed to reward runners based on multiple factors:
+- Base distance completed
+- Running pace
+- Personal best achievements
+- Quest difficult
+
+**Token caculation Components**
+1. Base Tokens
+
+    ```base_tokens = round(quest.distance * 10)```
+
+- 10 Tokens awarded per kilometer
+    - Example: 5km run = 50 base tokens
+
+2. Pace Bonus System
+Rewards faster runners with additional tokens based on pace (minutes per kilometer):
+
+    | Pace (min/km) | Bonus Tokens per km | Example for 5km |
+    |---------------|---------------|---------------|
+    | Under 4:00 | +15 tokens | +75 tokens |
+    | Under 5:00 | +10 tokens | +50 tokens |
+    | Under 6:00 | +5 tokens | +25 tokens |
+    | Under 7:00 | +2 tokens | +10 tokens |
+
+3. Personal Best Bonus
+- +5 tokens for achieving a personal best time on a quest
+- System automatically tracks and updates personal best status
+- Only one run per quest can hold personal best status
+
+4. Difficulty Multiplier 
+Final token amounts is mulitplied based on quest difficulty:
+- Easy: 1.0x (no change)
+- Medium: 1.1x (10% bonus)
+- Hard: 1.2x (20% bonus)
+
+5. Caculation examples
+The user inputs their completion time as:
+    - Hours
+    - Minutes
+    - Seconds
+
+    Example 1: Casual 5km Run
+    ```
+    Distance: 5km
+    Time Input: 0:32:30 (32 minutes, 30 seconds)
+
+    Time Conversion:
+    - Total seconds: (0 * 3600) + (32 * 60) + 30 = 1,950 seconds
+    - Minutes: 1,950 / 60 = 32.5 minutes
+    - Pace: 32.5 / 5 = 6.5 min/km
+
+    Calculations:
+    Base tokens: 5km × 10 = 50 tokens
+    Pace bonus: 5km × 2 = 10 tokens (under 7:00 pace)
+    Personal best bonus: 0 tokens
+    Subtotal: 60 tokens
+    Difficulty: Easy (1.0×)
+    Final tokens: 60 tokens
+    ```
+    Example 2: Fast 5km Run with Personal Best
+    ```
+    Distance: 5km
+    Time Input: 0:19:30 (19 minutes, 30 seconds)
+
+    Time Conversion:
+    - Total seconds: (0 * 3600) + (19 * 60) + 30 = 1,170 seconds
+    - Minutes: 1,170 / 60 = 19.5 minutes
+    - Pace: 19.5 / 5 = 3.9 min/km
+
+    Calculations:
+    Base tokens: 5km × 10 = 50 tokens
+    Pace bonus: 5km × 15 = 75 tokens (under 4:00 pace)
+    Personal best bonus: 5 tokens
+    Subtotal: 130 tokens
+    Difficulty: Hard (1.2×)
+    Final tokens: 156 tokens
+    ```
+    Example 3: Long Distance Run
+    ```
+    Distance: 10km
+    Time Input: 1:05:00 (1 hour, 5 minutes)
+
+    Time Conversion:
+    - Total seconds: (1 * 3600) + (5 * 60) + 0 = 3,900 seconds
+    - Minutes: 3,900 / 60 = 65 minutes
+    - Pace: 65 / 10 = 6.5 min/km
+
+    Calculations:
+    Base tokens: 10km × 10 = 100 tokens
+    Pace bonus: 10km × 2 = 20 tokens (under 7:00 pace)
+    Personal best bonus: 0 tokens
+    Subtotal: 120 tokens
+    Difficulty: Medium (1.1×)
+    Final tokens: 132 tokens
+    ```
+
+![User Completed Run Message](assets/README_images/upload_message.png)
+
+</details>
+<hr>
 
 
 ## Technologies/Languages/Frameworks Used 
