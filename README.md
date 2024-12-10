@@ -721,13 +721,104 @@ The user inputs their completion time as:
 
 <details>
 <summary>Manual Testing</summary>
+# Manual Testing
 
+## Quest Management
+**User Story: As a site user, I can view a paginated list of quests so that I can select which run I want to view.**
+
+| Test | Steps | Expected Result | Actual Result |
+|------|-------|-----------------|---------------|
+| View Quest List | 1. Navigate to Quests page | Multiple quests are displayed | Pass |
+| | 2. Check for pagination | Pagination controls visible when more than one page of quests | Pass |
+| | 3. Click through pagination | Different quests shown on each page | Pass |
+
+## Run Management
+**User Story: As a user I can submit my run details so that I can earn tokens**
+
+| Test | Steps | Expected Result | Actual Result |
+|------|-------|-----------------|---------------|
+| Submit Run | 1. Click 'Upload Run' | Form opens | Pass |
+| | 2. Enter completion time | Time input accepted | Pass |
+| | 3. Submit form | Success message shown | Pass |
+| Token Calculation | 1. Submit run with known distance | Token calculation displayed | Pass |
+| | 2. Verify base rate (10 tokens/km) | Correct token amount shown | Pass |
+| Update Run | 1. Navigate to run Quest Post or Dashboard | Previous runs displayed | Pass |
+| | 2. Click edit on a run | Edit form opens | Pass |
+| | 3. Update time | Run updated successfully | Pass |
+| Delete Run | 1.  Navigate to run Quest Post or Dashboard | Previous runs displayed | Pass |
+| | 2. Click delete on a run | Confirmation prompt shown | Pass |
+| | 3. Confirm deletion | Run removed from history | Pass |
+
+## User Authentication
+**User Story: As a registered user I can log into my account**
+
+| Test | Steps | Expected Result | Actual Result |
+|------|-------|-----------------|---------------|
+| Login | 1. Click login button | Login form displayed | Pass |
+| | 2. Enter credentials | Form accepts input | Pass |
+| | 3. Submit form | Redirected to dashboard | Pass |
+| View History | 1. Navigate to profile | Running history displayed | Pass |
+| | 2. Check token balance | Current token balance shown | Pass |
+
+## Registration
+**User Story: As a new user I want to register for an account**
+
+| Test | Steps | Expected Result | Actual Result |
+|------|-------|-----------------|---------------|
+| Register Account | 1. Click Sign Up | Sign Up form shown | Pass |
+| | 2. Enter email and password | Form accepts input | Pass |
+| | 3. Submit form | Account created | Pass |
+| Password Security | 1. Try password < 8 chars | Error message shown | Pass |
+| | 2. Try password without number | Error message shown | Pass |
+| | 3. Try password without special char | Error message shown | Pass |
+| Initial Setup | 1. Complete registration | Dashboard auto-created | Pass |
+| | 2. Check initial tokens | Balance shows 0 | Pass |
+
+## Responsive Design
+**User Story: As a user I want the site to be responsive**
+
+| Test | Steps | Expected Result | Actual Result |
+|------|-------|-----------------|---------------|
+| Desktop View | 1. Open site on desktop | Full layout displayed | Pass |
+| | 2. Check all features | All elements properly sized | Pass |
+| Tablet View | 1. Open site on tablet/768px | Responsive layout shown | Pass |
+| | 2. Test all features | All elements properly adjusted | Pass |
+| Mobile View | 1. Open site on mobile/375px | Mobile layout displayed | Pass |
+| | 2. Test all features | All elements properly stacked | Pass |
+
+## Accessibility
+**User Story: As a User I require the site to be accessible**
+
+| Test | Steps | Expected Result | Actual Result |
+|------|-------|-----------------|---------------|
+| Color Contrast | 1. Check text contrast | Meets WCAG standards | Fail |
+| | 2. Check button contrast | Meets WCAG standards | Pass |
+| Semantic HTML | 1. Inspect page structure | Proper semantic elements used | Pass |
+| | 2. Check headings hierarchy | Logical heading structure | Fail |
+
+## Token System
+**User Story: As a user I want to earn tokens for my run**
+
+| Test | Steps | Expected Result | Actual Result |
+|------|-------|-----------------|---------------|
+| Base Rate | 1. Complete 5km run | 50 base tokens earned | Pass |
+| | 2. Verify calculation | Calculation shown correctly | Pass |
+| User Dashboard | 1. Check run history | Date and time shown | Pass |
+| | 2. View token history | Amount earned displayed | Pass |
+| | 3. Check total balance | Running total accurate | Pass |
+| Notifications | 1. Complete run | Token notification shown | Pass |
+| | 2. Check notification content | Shows amount earned | Pass |
+
+## Leaderboard
+**User Story: As a user I want to see how I rank against others**
+
+| Test | Steps | Expected Result | Actual Result |
+|------|-------|-----------------|---------------|
+| View Rankings | 1. Open leaderboard | Top 5 shown on individual quests and overall shows all | Pass |
+| | 2. Verify metrics shown | Tokens and distance shown | Pass |
+| Privacy | 1. Check display names | Only usernames shown | Pass |
 
 </details>
-
-Summarize the results of testing across different devices and screen sizes.  
-Mention any issues found and how they were resolved.  
-**Guidance:** Summarize the results of your testing across various devices using tools like Chrome DevTools, as outlined in Phase 2. Mention any issues found and how they were resolved.
 
 ### Validation
 
