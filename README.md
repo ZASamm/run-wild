@@ -671,6 +671,60 @@ The user inputs their completion time as:
 ## Testing and Validation
 
 ### Testing Results
+
+
+<details>
+<summary>Lighthouse</summary>
+
+### Desktop
+
+![Home Page](assets/README_images/home_lighthouse_desktop.png)
+![About Page](assets/README_images/about_lighthouse_desktop.png)
+![Quest](assets/README_images/quests_lighthouse_desktop.png)
+![Quest Post](assets/README_images/quest_post_lighthouse_desktop.png)
+![Leaderboard](assets/README_images/leaderboard_desktop.png)
+![Dashboard](assets/README_images/dashboard_lighthouse_desktop.png)
+<hr>
+
+### Mobile
+
+![Home Page](assets/README_images/home_lighthouse_mobile.png)
+![About Page](assets/README_images/about_lighthouse_mobile.png)
+![Quest](assets/README_images/quests_lighthouse_mobile.png)
+![Quest Post](assets/README_images/quest_post_lighthouse_mobile.png)
+![Leaderboard](assets/README_images/leaderboar_mobile.png)
+![Dashboard](assets/README_images/dashboard_lighthouse_mobile.png)
+
+### Results Summary
+
+1. Preformance 
+    - Overall no real concerns.   
+    - Image sizes - reducing resolution of images would improve prefromance issues across the site, however part of a future improvment plan would be to swap the images of the routes to actual maps, which would resolve this issue across several of the pages.
+
+2. Accessibility 
+    - Overall no real concerns.   
+    - A few minor improvements could be made to quest_post.html and dashboard.html - Heading elements not in sequentially-deccending order and minor colour contrast issues flagged.
+    ![Quest Post Accessability](assets/README_images/quest_post_lighthouse_Access.png)
+    ![Quest Post contrast](assets/README_images/Quest_post_lighthouse_A.png)
+
+3. Best Practices
+    - Overall no real concerns.  
+    - Pages where less than 100 was scored is due to Cloudinary - this is something that I could look to reslove in future releases.
+    ![Best Practices results](assets/README_images/home_lighthouse_mobile_BP.png)
+
+4. SEO
+    - 100 scored across all pages.
+
+</details>
+
+<hr>
+
+<details>
+<summary>Manual Testing</summary>
+
+
+</details>
+
 Summarize the results of testing across different devices and screen sizes.  
 Mention any issues found and how they were resolved.  
 **Guidance:** Summarize the results of your testing across various devices using tools like Chrome DevTools, as outlined in Phase 2. Mention any issues found and how they were resolved.
