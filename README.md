@@ -332,6 +332,7 @@ The application follows a logical structure where users can:
 ![tablet wireframes](assets/README_images/WF_tablet_about_quest_leader.png)
 
 </details>
+<hr>
 <details>
 <summary>Database Schema</summary> 
 
@@ -345,10 +346,12 @@ The application follows a logical structure where users can:
 #### Design Chocies
 
 <details>
-<summary>Color Scheme</summary> 
-
+<summary>Colour Scheme</summary> 
+<br>
 My color palette was chosen to reflect Run Wild's gamified running experience and token-based achievements, aiming to create a clean, modern and sporty user interface,
 To acheive only one accent colour has been chosen. 
+<br>
+<br>
 
 ![Colour Pallet](assets/README_images/colour-pallet.png)
 
@@ -378,10 +381,12 @@ Pure White (#fff)
 
 <details>
 <summary>Typography</summary> 
+<br>
 The typography combines two distinctive fonts to create a modern and energetic aesthetic while maintaining readability
+<br>
 
 ![Bebas Font](assets/README_images/bebas_font.png)
-
+<br>
 Used for:
 
 - Headlines
@@ -395,8 +400,11 @@ Characteristics:
 - Creates a bold, athletic feel
 - Excellent for hierarchy and emphasis
 
+<hr>
+<br>
 
 ![lato Font](assets/README_images/lato_font.png)
+<br>
 
 Used for:
 
@@ -418,7 +426,8 @@ Icons: Font Awesome for intuitive navigation
 
 </details>
 
-#### Design Principles
+<details>
+<summary>Design Principles</summary>
 
 ##### 1. Clarity
 
@@ -446,9 +455,11 @@ Icons: Font Awesome for intuitive navigation
 - Fluid typography scaling
 - Flexible grid system
 - Mobile-first approach to layout
-
-
+<br>
+<br>
 This design system creates an energetic, modern interface that motivates users while maintaining excellent usability and accessibility standards.
+
+</details>
 
 ## Features
 
@@ -772,7 +783,7 @@ Mention any issues found and how they were resolved.
 <details>
 <summary>JavaScript</summary>
 
-[JSLint] - used for testing JavaScript files, results as follows:
+[JSLint](https://www.jslint.com/) - used for testing JavaScript files, results as follows:
 
 1. index_scirpt.js
 
