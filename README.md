@@ -784,32 +784,193 @@ Mention any issues found and how they were resolved.
 Include the results of the validation process.  
 **Guidance:** Document your use of W3C and Jigsaw validators to ensure your HTML and CSS meet web standards. Include any errors or warnings encountered and how they were resolved.
 
-## AI Tools Usage
-
-### GitHub Copilot
-Brief reflection on the effectiveness of using AI tools for debugging and validation.  
-**Guidance:** Reflect on how GitHub Copilot assisted with debugging and validation, particularly any issues it helped resolve.
-
 ## Deployment
 
+Live project can be found on Heroku - [Run Wild](https://run-wild-67c9460e78b3.herokuapp.com/)
+
 ### Deployment Process
-Briefly describe the deployment process to GitHub Pages or another cloud platform.  
-Mention any specific challenges encountered during deployment.  
-**Guidance:** Describe the steps you took to deploy your website during Phase 4: Final Testing, Debugging & Deployment, including any challenges encountered.
 
-## AI Tools Usage
+<details>
+<summary>Part 1: Django Installation & Initial Setup</summary>
 
-### Reflection
-Describe the role AI tools played in the deployment process, including any benefits or challenges.  
-**Guidance:** Reflect on how AI tools assisted with the deployment process, particularly how they streamlined any tasks or presented challenges.
+1. Install Django:
+```
+pip3 install Django~=4.2.1
+pip3 freeze --local > requirements.txt
+django-admin startproject run_wild .
+python3 manage.py migrate
+```
+2. Add to ```settings.py```:
+```
+CSRF_TRUSTED_ORIGINS = [
+    'https://*.codeinstitute-ide.net',
+    'https://*.herokuapp.com'
+]
+```
+</details>
+<hr>
+<details>
+<summary>Part 2: PostgreSQL Database Setup</summary>
 
-## Reflection on Development Process
+I used Code Institutes PostgreSQL Database - [PostgreSQL Database](https://dbs.ci-dbs.net/)
 
-### Successes
-Effective use of AI tools, including GitHub Copilot and DALL-E, and how they contributed to the development process.
+Steps for CI Students 
+1. Signed-in to the CI LMS
+2. Use Code Institute credentials
+3. Receive database credentials via email
 
-### Challenges
-Describe any challenges faced when integrating AI-generated content and how they were addressed.
+**Important Notes**
+- Limited to CI students
+- Maximum 8 databases per student
+- Databases deleted after 18 months
+- Regular backups recommended
+
+</details>
+<hr>
+<details>
+<summary>Part 3: Environment & Database Configuration</summary>
+
+1. Install required packages:
+```
+pip3 install dj-database-url~=0.5 psycopg2
+pip3 install gunicorn~=20.1
+pip3 freeze --local > requirements.txt
+```
+2. Create ```env.py```:
+```
+import os
+os.environ["DATABASE_URL"] = "your-database-url"
+os.environ["SECRET_KEY"] = "your-secret-key"
+os.environ["CLOUDINARY_URL"] = "your-cloudinary-url"
+```
+3. Update ```settings.py```:
+```
+import os
+import dj_database_url
+from pathlib import Path
+
+if os.path.isfile('env.py'):
+    import env
+    DEBUG = True
+else:
+    DEBUG = False
+
+DATABASES = {
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+}
+```
+
+</details>
+<hr>
+<details>
+<summary>Part 4: Cloudinary Setup</summary>
+
+1. Install Cloudinary packages:
+```
+pip3 install dj3-cloudinary-storage~=0.0.6 urllib3~=1.26.15
+pip3 freeze --local > requirements.txt
+``` 
+2. Add to ```settings.py```:
+```
+INSTALLED_APPS = [
+    ...
+    'cloudinary_storage',
+    'cloudinary',
+    'django.contrib.staticfiles',
+    ...
+]
+
+STATIC_URL = 'static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
+TEMPLATES = [
+    {
+        ...
+        'DIRS': [TEMPLATES_DIR],
+        ...
+    },
+]
+```
+</details>
+<hr>
+<details>
+<summary>Part 5: Whitenoise Setup</summary>
+
+1. Install Whitenoise:
+```
+pip3 install whitenoise~=5.3.0
+pip3 freeze --local > requirements.txt
+```
+2. Add to ```settings.py``` MIDDLEWARE:
+```
+MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # Add after SecurityMiddleware
+    ...
+]
+```
+</details>
+<hr>
+<details>
+<summary>Part 6: Heroku Configuration</summary>
+
+1. Create Heroku app
+
+2. Create ```Procfile```:
+```
+web: gunicorn run_wild.wsgi
+```
+
+3. Heroku Config Vars:
+
+- SECRET_KEY
+- DATABASE_URL
+- CLOUDINARY_URL
+- DISABLE_COLLECTSTATIC = 1 (temporary)
+
+4. Create folders:
+```
+media/
+static/
+templates/
+```
+
+5. Deploy:
+```
+git add .
+git commit -m "Deployment commit"
+git push
+```
+
+6. Connect GitHub repository in Heroku dashboard
+
+7. Deploy from main branch
+
+</details>
+<hr>
+<details>
+<summary>Part 7: Final Steps</summary>
+
+1. Create superuser:
+```
+python3 manage.py createsuperuser
+```
+2. Remove DISABLE_COLLECTSTATIC from Heroku config vars
+3. Run collectstatic
+```
+python3 manage.py collectstatic
+```
+</details>
+
+#### Security Notes
+- Verify DEBUG is False in production
+- Keep ```env.py``` in ```.gitignore```
+- Ensure sensitive data is not in version control
+- Use strong, unique secret key
+- Never commit sensitive information
+
 
 ### Final Thoughts
 Provide any additional insights gained during the project and thoughts on the overall process.  
