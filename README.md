@@ -721,7 +721,6 @@ The user inputs their completion time as:
 
 <details>
 <summary>Manual Testing</summary>
-# Manual Testing
 
 ## Quest Management
 **User Story: As a site user, I can view a paginated list of quests so that I can select which run I want to view.**
@@ -817,6 +816,12 @@ The user inputs their completion time as:
 | View Rankings | 1. Open leaderboard | Top 5 shown on individual quests and overall shows all | Pass |
 | | 2. Verify metrics shown | Tokens and distance shown | Pass |
 | Privacy | 1. Check display names | Only usernames shown | Pass |
+
+## Results Summary
+
+### Fail Fixes
+- Colour changes
+- Heading elements not in sequentially-deccending order
 
 </details>
 
