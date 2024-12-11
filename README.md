@@ -801,6 +801,16 @@ To manage the Project and keep track of the required tasks, Agile methodologies 
     }
     ```
 
+3. Navbar text breaking awkwardly on large tables with admin login.
+
+    ![Navbar bug](assets/README_images/xltablet_break.png)
+    
+    - Fix 
+        - Bootstrap class change to xl devices
+    ```
+    <nav class="navbar navbar-expand-xl navbar-light bg-white p-4">
+    ```
+
 </details>
 
 ### Testing Results
@@ -953,7 +963,9 @@ To manage the Project and keep track of the required tasks, Agile methodologies 
 
 ### Fail Fixes
 - Colour changes
+    - Quest post completed run text updated to ensure contrast standards are meet.
 - Heading elements not in sequentially-deccending order
+    - All html files reviewed and updated to ensure heading elements are in sequentially-deccending.
 
 </details>
 
