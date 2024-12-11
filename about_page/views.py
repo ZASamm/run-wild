@@ -32,7 +32,11 @@ def about_me(request):
             messages.add_message(
                 request,
                 messages.SUCCESS,
-                "Your new quest has been received!"
+                """
+                <p>Your new quest has been received!</p>
+                <p>Admin is reviewing your submission.</p>
+                <p>We aim to respond to you within 3 working days.</p>
+                """
                 )
 
     about = About.objects.all().order_by('-updated_on').first()
