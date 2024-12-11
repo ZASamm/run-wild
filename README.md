@@ -678,6 +678,15 @@ The user inputs their completion time as:
 </details>
 <hr>
 
+### Porject Planning
+
+To manage the Project and keep track of the required tasks, Agile methodologies were adopted throughout the project by utilising User Stories, a KanBan board and stand up and downs held by our course fasilitator.
+
+![Project Board](assets/README_images/project_board.png)
+
+
+
+
 
 ## Technologies/Languages/Frameworks Used 
 
@@ -1312,3 +1321,5 @@ As a runner myself, developing Run Wild has been more than just a capstone proje
 These improvements reflect my vision of creating not just a running app, but a motivating platform that encourages people to explore new routes, challenge themselves, and connect with fellow runners. As someone who understands both the solitary joy of a long run and the motivation that comes from community support, I'm particularly excited about implementing the social and achievement features.
 
 The journey of developing Run Wild has only just begun, and I look forward to gradually implementing these features to create an even more engaging and useful platform for the running community.
+
+![README Footer](assets/README_images/readme_footer.png)
