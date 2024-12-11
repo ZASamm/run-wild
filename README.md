@@ -1372,16 +1372,24 @@ Looking back, my biggest takeaway isn't just the technical skills I've gained - 
 
 I'm keen to continue developing Run Wild and see where this journey takes me next. The world of web development feels less intimidating now, and I'm excited to tackle new challenges with the confidence and skills I've gained from this experience.
 
-## Code Attribution
+## Attributions
 - AI used to assist with text for content generation, bug fixes, coding assitance and user stories. [Chat GPT](https://chatgpt.com/) & [Claude](https://claude.ai/)
 
 - Font awesome used for any icons present and fonts used from google fonts
 
 - Images used from [Pexels](https://www.pexels.com/)
 
+- [Canva](https://www.canva.com/en_gb/) used for logo and hero image design.
+
 - Inspiration for some elements take from [Code Institute](https://codeinstitute.net/) walkthrough project [I think therefore I blog](https://github.com/ZASamm/i-think-therefore-i-blog)
 
-- Troubleshooting through Code Institutes Slack channels and Coding Coach and fellow students enrolled on the Bootcamp.
+- Troubleshooting through Code Institutes Slack channels, Coding Coach and fellow students enrolled on the Bootcamp.
+
+- [Lucidchart](https://www.lucidchart.com/pages/database-diagram/database-schema) used for Database Schema.
+
+- [Stackoverflow](https://stackoverflow.co/), [W3Schools](https://www.w3schools.com/) and relevent technlogoy documentation used for bug and issue look ups.
+
+- Githut copilot used for assistance in doc strings.
 
 # Future Improvements
 
