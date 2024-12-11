@@ -272,6 +272,56 @@ The aim of this web app is to specifically addresses the growing trend of gamifi
 
 </details>
 
+### Could Have Features
+
+#### <u>Social Features</u>
+
+**User Story:** As a User I want a social board so that I can interact with other runners
+
+<details>
+<summary>Acceptance Criteria:</summary>
+
+- Users can:
+    - Follow other runners
+    - Like runs
+    - Comment on runs
+    - Share achievements
+- Notification options:
+    - New followers
+    - Likes and comments
+    - Achievement shares
+- Feed features:
+    - Customisable feed
+    - Activity filtering
+    - Recent activity display
+- Notifications for:
+    - Badge unlocks
+    - Near achievements
+    - New badge availability
+</details>
+
+#### <u>Achievement System</u>
+
+**User Story:** As a user I want to earn badges so that I receive accomplishments for my runs
+
+<details>
+<summary>Acceptance Criteria:</summary>
+
+- Badge categories:
+    - Distance milestones
+    - Pace achievements
+    - Consistency streaks
+    - Special events
+- System tracks:
+    - Progress towards badges
+    - Unlock dates
+    - Badge rarity
+- Display features:
+    - Badge showcase on profile
+    - Progress indicators
+    - Badge details
+</details>
+
 </details>
 
 ### Scope Plane
@@ -280,9 +330,9 @@ The aim of this web app is to specifically addresses the growing trend of gamifi
 <details>
 <summary>Core Features:</summary>
 
-- User authentication and profile management
-- Running activity tracking and logging
-- Token achievement system
+- User authentication - Role based login and features
+- Running activity tracking and logging - CRUD Functionality
+- Token achievement system and notificaitons
 - Leaderboards
 
 </details>
@@ -301,6 +351,7 @@ The application follows a logical structure where users can:
 - View their ranking on various leaderboards
 
 </details>
+
 
 ### Skeleton Plane
 <hr>
