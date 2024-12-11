@@ -1240,9 +1240,17 @@ What started as a challenging capstone project became a passion project. Of cour
 Looking back, my biggest takeaway isn't just the technical skills I've gained - it's the realisation that I can create something meaningful from scratch. This project has reinforced my passion for development and shown me that with persistence and creativity, complex problems become exciting challenges to solve.
 
 I'm keen to continue developing Run Wild and see where this journey takes me next. The world of web development feels less intimidating now, and I'm excited to tackle new challenges with the confidence and skills I've gained from this experience.
+
 ## Code Attribution
-Properly attribute any external code sources used in the project (excluding GitHub Copilot-generated code).  
-**Guidance:** Document any external code sources used throughout the entire project, especially during Phase 2 and Phase 3. Exclude GitHub Copilot-generated code from attribution.
+- AI used to assist with text for content generation, bug fixes, coding assitance and user stories. [Chat GPT](https://chatgpt.com/) & [Claude](https://claude.ai/)
+
+- Font awesome used for any icons present and fonts used from google fonts
+
+- Images used from [Pexels](https://www.pexels.com/)
+
+- Inspiration for some elements take from [Code Institute](https://codeinstitute.net/) walkthrough project [I think therefore I blog](https://github.com/ZASamm/i-think-therefore-i-blog)
+
+- Troubleshooting through Code Institutes Slack channels and Coding Coach and fellow students enrolled on the Bootcamp.
 
 # Future Improvements
 
