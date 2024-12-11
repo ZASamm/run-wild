@@ -508,6 +508,31 @@ This design system creates an energetic, modern interface that motivates users w
 
 </details>
 <hr>
+
+<details>
+<summary>About Page</summary>
+
+1. Platform Mission
+
+- Highlights the goal of turning running into an adventurous and rewarding experience.
+
+2. Community Focus
+
+- Emphasizes building a network of runners who share routes and challenges.
+
+3. Inspiration
+
+- Explains the origins and purpose behind the creation of RunWild.
+
+4. Route Submission Form
+
+- Provides a form for users to contribute new running routes, fostering collaboration.
+
+![About Page](assets/README_images/about_page.png)
+![User Form](assets/README_images/user_form.png)
+
+</details>
+<hr>
 <details>
 <summary>Quest Management</summary>
 
@@ -664,14 +689,19 @@ The user inputs their completion time as:
 **Cloudinary** - Cloud-based image storage<br>
 **Whitenoise** - For serving static files directly from Django<br>
 **Django Crispy Forms** - Form rendering<br>
-**Whitenoise** - For serving static files<br>
 **GitHub Projects** - Project management and tracking<br>
 **Balsamiq** - Wireframes and design prototypes<br>
 
 ## Testing and Validation
 
-### Testing Results
+<details>
+<summary>Bugs</summary>
 
+1. 
+
+</details>
+
+### Testing Results
 
 <details>
 <summary>Lighthouse</summary>
