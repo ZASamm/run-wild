@@ -697,7 +697,49 @@ The user inputs their completion time as:
 <details>
 <summary>Bugs</summary>
 
-1. 
+1. HTTP vs HTTPs 
+
+![Cloudinary Mixed content](assets/README_images/cloudinary.png)
+
+
+ - Fix 
+
+    The secure parameter isn't passed directly to the CloudinaryField constructor. Instead, I modified this in the Cloudinary configuration settings. 
+    ```
+    # settings.py
+    CLOUDINARY_URL = os.environ.get('CLOUDINARY_URL')
+
+    CLOUDINARY = {
+    'secure': True,
+    }
+    ```
+
+2. Sumbit Modal double submitting
+ - whilst testing the site, I had one instance where the submit modal double uploaded after clicking away and reopening the modal before submission. I cannot, however, recreate the error to fix or review the error.
+
+
+3. Tables not being resposive on smaller screens.
+ 
+    ```
+    @media screen and (max-width: 768px) {
+        .table-responsive {
+            position: relative;
+        }
+        
+        .table-responsive::after {
+            content: '→';
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 0 5px;
+            background: rgba(255,255,255,0.8);
+            color: #666;
+            font-size: 20px;
+            pointer-events: none;
+        }
+        
+    }
+    ```
 
 </details>
 
