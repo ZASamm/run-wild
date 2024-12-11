@@ -55,7 +55,7 @@
     <!-- Header -->
     <header>
         <!-- Navigation -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-white p-4">
+        <nav class="navbar navbar-expand-xl navbar-light bg-white p-4">
             <div class="container-fluid">
                 <a class="navbar-brand" href="{% url 'home' %}"><span class="brand"><img class="logo"
                             src="{% static 'media/images/logofinal.svg' %}" alt="logo"></span></a>
@@ -126,9 +126,8 @@
                         {% endif %}
                     </ul>
 
-                    <div class="navbar-text flex-row">
+                    <div class="navbar-text">
                         <h4>Run your story</h4>
-                        <br>
                         {% if user.is_authenticated %}
                         <p class="text-end m-3">Logged in as {{ user }}</p>
                         {% else %}
