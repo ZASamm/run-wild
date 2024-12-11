@@ -21,8 +21,7 @@ class HomePage(generic.ListView):
 
     def get_context_data(self, **kwargs):
         """
-        Adds total kilometers
-        total hours
+        Adds total kilometers, total hours,
         and total completions to the context.
         """
         context = super().get_context_data(**kwargs)
@@ -225,6 +224,16 @@ def record_delete(request, slug, quest_record_id):
 
 
 def get_run_data(request, quest_record_id):
+    """
+    Retrieves run data for editing.
+
+    Args:
+        request: The HTTP request object.
+        quest_record_id: The ID of the quest record.
+
+    Returns:
+        JsonResponse: A JSON response containing the run data.
+    """
     run_upload = get_object_or_404(QuestRecord, pk=quest_record_id)
 
     if run_upload.runner != request.user:
@@ -335,13 +344,19 @@ class DashboardDataView(LoginRequiredMixin, View):
 
 
 class LeaderboardView(generic.ListView):
-
+    """
+    Displays the leaderboard with aggregated
+    statistics for approved quest records.
+    """
     model = QuestRecord
     template_name = "leaderboard.html"
     context_object_name = "leaderboard_data"
 
     def get_queryset(self):
-
+        """
+        Retrieves the leaderboard data, aggregating total tokens
+        and total distance for each runner.
+        """
         return (
             QuestRecord.objects
             .filter(approved=True)
