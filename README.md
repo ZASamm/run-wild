@@ -1014,17 +1014,48 @@ To manage the Project and keep track of the required tasks, Agile methodologies 
 <details>
 <summary>JavaScript</summary>
 
+
 [JSLint](https://www.jslint.com/) - used for testing JavaScript files, results as follows:
 
 1. index_scirpt.js
 
-![Index scirpt results]()
+![Index scirpt results](assets/README_images/index_js_validater.png)
+
+
+2. modal_script.js
+
+![Modal scirpt results](assets/README_images/modal_scirpt.validater.png)
+
+3. dashboard.js
+
+![Dashboard scirpt results](assets/README_images/dashboard_js_validator.png)
+
+## Results Summary
+
+ - As all three scripts could not call the elments to run correctly all 3 failed to finish - this has been validated in manual testing.
 
 </details>
 
+<details>
+<summary>Python</summary>
 
-Include the results of the validation process.  
-**Guidance:** Document your use of W3C and Jigsaw validators to ensure your HTML and CSS meet web standards. Include any errors or warnings encountered and how they were resolved.
+[CI Python Linter](https://pep8ci.herokuapp.com/) to check code meets PEP8 standards.
+
+Flake8 extenstion used throughout development process as well.
+
+![About admin.py](assets/README_images/about_admin_linter.png)
+![About form.py](assets/README_images/about_forms_linter.png)
+![About models.py](assets/README_images/about_models_linter.png)
+![About urls.py](assets/README_images/about_urls_linter.png)
+![About views.py](assets/README_images/about_views_linter.png)
+![config urls.py](assets/README_images/config_urls_linter.png)
+![RunWild admin.py](assets/README_images/run_wild_admin_linter.png)
+![RunWild forms.py](assets/README_images/run_wild_forms_linter.png)
+![RunWild models.py](assets/README_images/run_wild_models_python_linter.png)
+![RunWild urls.py](assets/README_images/run_wild_urls_python_linter.png)
+![Runwild views.py](assets/README_images/Run_wild_views_linter_py.png)
+
+</details>
 
 ## Deployment
 
