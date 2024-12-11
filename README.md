@@ -1205,10 +1205,38 @@ python3 manage.py collectstatic
 - Never commit sensitive information
 
 
-### Final Thoughts
-Provide any additional insights gained during the project and thoughts on the overall process.  
-**Guidance:** Begin drafting reflections during Phase 1 and update throughout the project. Finalize this section after Phase 4. Highlight successes and challenges, particularly regarding the use of AI tools, and provide overall insights into the project.
+# Final Reflection
 
+## Reflection on Development Process
+
+### Successes
+* **Token System Implementation**: I'm particularly proud of the token calculation system I developed. Creating a system that fairly rewards runners based on their performance whilst keeping it engaging was a rewarding challenge. When I first saw users earning tokens based on their pace and achieving personal bests, it felt like a real achievement.
+
+* **Database Design**: Coming from a non-technical background, grasping database relationships was initially daunting. However, I managed to create a clean, efficient structure that handles all the quest and user data smoothly. Seeing it all work together seamlessly was incredibly satisfying.
+
+* **Community Features**: The leaderboard system turned out better than I'd expected. It was brilliant to see how a simple competitive element could make the running experience more engaging whilst maintaining user privacy - something I was concerned about from the start.
+
+* **Problem Solving**: Each time I encountered a bug or unexpected behaviour, especially with the personal best tracking, I found myself getting better at debugging and problem-solving. The moment when I finally got the personal best system working correctly was genuinely exciting.
+
+### Challenges
+* **Learning Curve**: Django's complexity initially overwhelmed me. There were moments when I felt lost in the documentation, but breaking problems down into smaller pieces helped me push through. The "aha" moments when concepts finally clicked made it all worthwhile.
+
+* **Token Mathematics**: I spent countless hours tweaking the token calculation formula. Finding the right balance between rewarding fast runners and keeping it achievable for beginners was trickier than I'd expected. There were many late nights of testing different scenarios and adjusting values.
+
+* **Time Management**: I often found myself going down "rabbit holes" trying to perfect features. Learning when to step back and focus on core functionality was a valuable lesson. I had to remind myself that perfect is the enemy of good.
+
+* **Testing Patience**: Initially, I underestimated the importance of testing. Writing tests felt tedious at first, but after they caught several critical bugs, I gained a new appreciation for test-driven development. It was a humbling experience that changed my approach to coding.
+
+## Final Thoughts
+Creating Run Wild has been more than just a technical project - it's been a journey of personal growth. As someone who enjoys running, building a platform that might inspire others to get active and challenge themselves has been incredibly fulfilling.
+
+The project taught me that web development isn't just about writing code - it's about creating experiences that people enjoy using. Every bug I fixed and every feature I implemented helped build my confidence as a developer.
+
+What started as a challenging capstone project became a passion project. Of course, there are things I'd do differently now, and there's always room for improvement, but I'm proud of what I've created. The excitement of seeing the token system work for the first time, or receiving positive feedback about the user interface, made all the challenging moments worthwhile.
+
+Looking back, my biggest takeaway isn't just the technical skills I've gained - it's the realisation that I can create something meaningful from scratch. This project has reinforced my passion for development and shown me that with persistence and creativity, complex problems become exciting challenges to solve.
+
+I'm keen to continue developing Run Wild and see where this journey takes me next. The world of web development feels less intimidating now, and I'm excited to tackle new challenges with the confidence and skills I've gained from this experience.
 ## Code Attribution
 Properly attribute any external code sources used in the project (excluding GitHub Copilot-generated code).  
 **Guidance:** Document any external code sources used throughout the entire project, especially during Phase 2 and Phase 3. Exclude GitHub Copilot-generated code from attribution.
