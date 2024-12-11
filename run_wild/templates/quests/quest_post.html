@@ -17,7 +17,7 @@
         </div>
     </div>
     <div class="quest-post-header">
-        <h3 class="text-center">The Details:</h3>
+        <h2 class="text-center">The Details:</h2>
     </div>
     <div class="container-fluid my-2">
         <div class=" stats-grid">
@@ -53,7 +53,7 @@
         <!-- Second Row displaying data form QuestRecord -->
         <div class="row d-flex justify-content-center m-2">
             <div class="col-lg-6 col-md-7 leaderboard m-3">
-                <h2>Top 5 Leaderboard</h2>
+                <h3>Top 5 Leaderboard</h3>
 
                 <table class="leaderboard-item">
                     <thead>
@@ -78,10 +78,56 @@
             </div>
             <div
                 class="col-lg-4 col-md-3 stat-card m-2 upload-section  d-flex flex-column justify-content-center align-items-center">
-                <h2>Upload Your Run</h2>
+                <h3>Upload Your Run</h3>
                 <p>Add your time:</p>
                 <button class="btn run-upload btn-global" data-bs-toggle="modal" data-bs-target="#uploadRunModal">Upload
                     Run</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Completed QuestRecord Details -->
+<section>
+    <div class="quest-post-header">
+        <h3 class="text-center">Completed Runs:</h3>
+    </div>
+    <div class="container-fluid my-2">
+
+        <div class="completed-runs m-4">
+            <div class="row d-flex justify-content-center">
+                {% for run_upload in quest_record %}
+                <div
+                    class="col-sm-12 col-md-6 col-lg-3 run-upload-card m-4 {% if not run_upload.approved and run_upload.runner == user %}faded{% elif not run_upload.approved %}d-none{% endif %}">
+                    <div>
+                        <h4>{{ run_upload.runner }}</h4>
+                        <p><i>{{ run_upload.completion_date }}</i></p>
+                        <div id="run_upload{{ run_upload.id }}">
+                            <p>Completed in: {{ run_upload.completion_time }}</p>
+                            <p>Pace <i>(mins per km)</i>: {{ run_upload.pace|floatformat:2 }}</p>
+                            <p>Earning <strong>{{ run_upload.tokens_earned }}</strong> tokens</p>
+                        </div>
+                        {% if not run_upload.approved and run_upload.runner == user %}
+                        <p class="approval">
+                            This quest completion is waiting for approval
+                        </p>
+                        {% else %}
+                        <p class="approval">
+                            Approved by Admin!
+                        </p>
+                        {% endif %}
+                        {% if user.is_authenticated and run_upload.runner == user %}
+                        <button class="btn btn-edit" data-comment_id="{{ run_upload.id }}">Edit</button>
+                        <button class="btn btn-delete" data-comment_id="{{ run_upload.id }}">Delete</button>
+                        {% else %}
+                        <p><strong><i>This uplaod doesn't belong to you! <a href="{{ login_url }}">Sign in</a> to
+                                    edit</i></strong></p>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endfor %}
             </div>
         </div>
     </div>
@@ -140,52 +186,9 @@
 </div>
 
 
-<!-- Completed QuestRecord Details -->
-<section>
-    <div class="quest-post-header">
-        <h3 class="text-center">Completed Runs:</h3>
-    </div>
-    <div class="container-fluid my-2">
-
-        <div class="completed-runs m-4">
-            <div class="row d-flex justify-content-center">
-                {% for run_upload in quest_record %}
-                <div
-                    class="col-sm-12 col-md-6 col-lg-3 run-upload-card m-4 {% if not run_upload.approved and run_upload.runner == user %}faded{% elif not run_upload.approved %}d-none{% endif %}">
-                    <div>
-                        <h4>{{ run_upload.runner }}</h4>
-                        <p><i>{{ run_upload.completion_date }}</i></p>
-                        <div id="run_upload{{ run_upload.id }}">
-                            <p>Completed in: {{ run_upload.completion_time }}</p>
-                            <p>Pace <i>(mins per km)</i>: {{ run_upload.pace|floatformat:2 }}</p>
-                            <p>Earning <strong>{{ run_upload.tokens_earned }}</strong> tokens</p>
-                        </div>
-                        {% if not run_upload.approved and run_upload.runner == user %}
-                        <p class="approval">
-                            This quest completion is waiting for approval
-                        </p>
-                        {% else %}
-                        <p class="approval">
-                            Approved by Admin!
-                        </p>
-                        {% endif %}
-                        {% if user.is_authenticated and run_upload.runner == user %}
-                        <button class="btn btn-edit" data-comment_id="{{ run_upload.id }}">Edit</button>
-                        <button class="btn btn-delete" data-comment_id="{{ run_upload.id }}">Delete</button>
-                        {% else %}
-                        <p><strong><i>This uplaod doesn't belong to you! <a href="{{ login_url }}">Sign in</a> to
-                                    edit</i></strong></p>
-                        {% endif %}
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-    </div>
-</section>
-
 {% endblock %}
 
+<!-- Page Specific Javascirpt -->
 {% block extras %}
 <script src="{% static 'js/modal_script.js' %}"></script>
 {% endblock %}
