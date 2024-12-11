@@ -128,7 +128,7 @@ The aim of this web app is to specifically addresses the growing trend of gamifi
 
 ### Must Have Features
 
-#### <u>Quest Management</u>
+#### <ins>Quest Management</ins>
 
 **User Story:** As a site user, I can view a paginated list of quests so that I can select which run I want to view. 
 
@@ -141,7 +141,7 @@ The aim of this web app is to specifically addresses the growing trend of gamifi
 
 </details>
 
-#### <u>Run Tracking</u>
+#### <ins>Run Tracking</ins>
 
 **User Story:** As a user I can submit my run details so that I can earn tokens
 
@@ -156,7 +156,7 @@ The aim of this web app is to specifically addresses the growing trend of gamifi
 
 </details>
 
-#### <u>User Authentication</u>
+#### <ins>User Authentication</ins>
 
 **User Story:** As a registered user I can log into my account so that I can access my running history and tokens
 
@@ -182,7 +182,7 @@ The aim of this web app is to specifically addresses the growing trend of gamifi
 
 </details>
 
-#### <u>Responsive Design</u>
+#### <ins>Responsive Design</ins>
 
 **User Story:** As a user I want the site to be responsive so that I can use on any device
 
@@ -194,7 +194,7 @@ The aim of this web app is to specifically addresses the growing trend of gamifi
 
 </details>
 
-#### <u>Accessibility</u>
+#### <ins>Accessibility</ins>
 
 **User Story:** As a User I require the site to be accessible so that I can utilise the website fully, regardless of potential visual impairments
 
@@ -206,7 +206,7 @@ The aim of this web app is to specifically addresses the growing trend of gamifi
 
 </details>
 
-#### <u>Token System</u>
+#### <ins>Token System</ins>
 
 **User Story:** As a user I want to earn tokens so that can feel rewarded for my run
 
@@ -233,7 +233,7 @@ The aim of this web app is to specifically addresses the growing trend of gamifi
 
 ### Should Have Features
 
-#### <u>Leaderboard</u>
+#### <ins>Leaderboard</ins>
 
 **User Story:** As a user I want a leaderboard so that I can see how I rank against others
 
@@ -249,7 +249,7 @@ The aim of this web app is to specifically addresses the growing trend of gamifi
 
 </details>
 
-#### <u>Enhanced Token System</u>
+#### <ins>Enhanced Token System</ins>
 
 **User Story:** As a user I want to have more token bonus so that I can gain more tokens
 
@@ -274,7 +274,7 @@ The aim of this web app is to specifically addresses the growing trend of gamifi
 
 ### Could Have Features
 
-#### <u>Social Features</u>
+#### <ins>Social Features</ins>
 
 **User Story:** As a User I want a social board so that I can interact with other runners
 
@@ -300,7 +300,7 @@ The aim of this web app is to specifically addresses the growing trend of gamifi
     - New badge availability
 </details>
 
-#### <u>Achievement System</u>
+#### <ins>Achievement System</ins>
 
 **User Story:** As a user I want to earn badges so that I receive accomplishments for my runs
 
