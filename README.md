@@ -729,7 +729,7 @@ The user inputs their completion time as:
 </details>
 <hr>
 
-### Porject Planning
+### Project Planning
 
 To manage the Project and keep track of the required tasks, Agile methodologies were adopted throughout the project by utilising User Stories, a KanBan board and stand up and downs held by our course fasilitator.
 
