@@ -514,6 +514,8 @@ This design system creates an energetic, modern interface that motivates users w
 
 ## Features
 
+![Run Wild Logo](assets/README_images/logo_readme.svg)
+
 <details>
 <summary>Home Page</summary>
 
