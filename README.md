@@ -1244,6 +1244,63 @@ I'm keen to continue developing Run Wild and see where this journey takes me nex
 Properly attribute any external code sources used in the project (excluding GitHub Copilot-generated code).  
 **Guidance:** Document any external code sources used throughout the entire project, especially during Phase 2 and Phase 3. Exclude GitHub Copilot-generated code from attribution.
 
-## Future Improvements
-Briefly discuss potential future improvements or features that could be added to the project.  
-**Guidance:** Reflect on potential enhancements that could be made to the project after Phase 4: Final Testing, Debugging & Deployment. These could be Could user story features you didn’t have time to implement or improvements based on testing feedback.
+# Future Improvements
+
+As a runner myself, developing Run Wild has been more than just a capstone project - it's become a genuine passion project that I'm keen to continue developing. Whilst the current version provides core functionality for tracking runs and earning tokens, I have many ideas for enhancing the user experience and building a more comprehensive platform for the running community. Here are the improvements I'd love to implement:
+
+## Enhanced Route Mapping
+* **Real Map Integration**: Replace current route images with interactive maps utilising services like Google Maps or Strava API
+* **Route Navigation**: Add turn-by-turn directions and elevation profiles
+* **GPS Track Downloads**: Allow users to download route files for their GPS devices
+
+## Mobile Application
+* **Real-time Run Tracking**: Develop a mobile app for tracking runs directly
+* **Live Progress Updates**: Show real-time pace, distance, and token earnings
+* **Offline Capabilities**: Allow route downloads for offline access
+* **GPS Integration**: Automatic route validation and completion verification
+
+## Run Validation Enhancement
+* **GPS Data Integration**: Implement GPS track validation
+* **Pace Consistency Checking**: Analyse pace patterns for verification
+* **Strava Integration**: Allow direct import from Strava for automatic validation
+* **Community Verification**: Implement peer review system for runs
+
+## Community Features
+* **Runner Profiles**: Detailed user profiles with achievements and statistics
+* **Social Interaction**: Allow runners to follow, support, and interact with each other
+* **Group Challenges**: Create group-based competitions and challenges
+* **Event Organisation**: Enable community-organised running events
+
+## Interface Improvements
+* **Pagination Implementation**: Add pagination to completed runs on quest pages
+* **Performance Optimisation**: Improve page load times for large datasets
+* **Filter Options**: Add filtering by date, distance, and difficulty
+
+## Expanded Leaderboards
+* **Time-based Rankings**: Implement daily, weekly, and monthly leaderboards
+* **Category-specific Boards**: Add leaderboards for different running categories
+* **Local Rankings**: Create area-specific leaderboards
+* **Achievement-based Rankings**: Special leaderboards for specific achievements
+
+## Achievement System
+* **Distance Milestones**: Bronze, silver, and gold badges for distance achievements
+* **Token Milestones**: Special recognition for token accumulation
+* **Consistency Awards**: Rewards for maintaining regular running schedules
+* **Special Event Badges**: Unique achievements for participating in events
+
+## Token Economy
+* **Rewards Shop**: Create a marketplace for spending earned tokens
+* **Virtual Items**: Offer profile customisations and badges
+* **Real Rewards**: Partner with running brands for actual merchandise
+* **Community Perks**: Special features unlocked with tokens
+
+## Personalised Dashboard
+* **User Preferences**: Allow users to set running preferences and goals
+* **Route Recommendations**: Suggest quests based on user capability
+* **Progress Tracking**: Enhanced visualisation of personal achievements
+* **Customisable Interface**: Let users choose which statistics to highlight
+* **Training Plans**: Generate personalised training recommendations
+
+These improvements reflect my vision of creating not just a running app, but a motivating platform that encourages people to explore new routes, challenge themselves, and connect with fellow runners. As someone who understands both the solitary joy of a long run and the motivation that comes from community support, I'm particularly excited about implementing the social and achievement features.
+
+The journey of developing Run Wild has only just begun, and I look forward to gradually implementing these features to create an even more engaging and useful platform for the running community.
