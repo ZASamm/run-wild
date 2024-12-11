@@ -122,7 +122,7 @@
                         <button class="btn btn-edit" data-comment_id="{{ run_upload.id }}">Edit</button>
                         <button class="btn btn-delete" data-comment_id="{{ run_upload.id }}">Delete</button>
                         {% else %}
-                        <p><strong><i>This uplaod doesn't belong to you! <a href="{{ login_url }}">Sign in</a> to
+                        <p><strong><i>This uplaod doesn't belong to you! <a class="sign-in-link" href="{{ login_url }}">Sign in</a> to
                                     edit</i></strong></p>
                         {% endif %}
                     </div>

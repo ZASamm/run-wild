@@ -561,9 +561,16 @@ th {
     -5px -5px 15px #ffffff;
 }
 
+.sign-in-link {
+    color: var(--text);
+}
+
+.sign-in-link:hover {
+    color: var(--accent);
+}
 
 .approval {
-    color: var(--accent);
+    color: var(--text);
     font-style: italic;
     margin-top: 0.5rem;
 }
