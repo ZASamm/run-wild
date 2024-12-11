@@ -1218,14 +1218,17 @@ python3 manage.py collectstatic
 
 * **Problem Solving**: Each time I encountered a bug or unexpected behaviour, especially with the personal best tracking, I found myself getting better at debugging and problem-solving. The moment when I finally got the personal best system working correctly was genuinely exciting.
 
+* **Front-end Design**: The user interface was a particular triumph for me. Using Bootstrap and custom CSS, I created a clean, intuitive design that works seamlessly across all devices. I'm especially pleased with the quest cards and leaderboard layout, which present complex information in an easily digestible format. The colour scheme and typography choices help create an energetic, motivating atmosphere that really captures the spirit of the running community.
+
 ### Challenges
 * **Learning Curve**: Django's complexity initially overwhelmed me. There were moments when I felt lost in the documentation, but breaking problems down into smaller pieces helped me push through. The "aha" moments when concepts finally clicked made it all worthwhile.
 
-* **Token Mathematics**: I spent countless hours tweaking the token calculation formula. Finding the right balance between rewarding fast runners and keeping it achievable for beginners was trickier than I'd expected. There were many late nights of testing different scenarios and adjusting values.
+* **Token Mathematics**: I spent countless hours tweaking the token calculation formula. Finding the right balance between rewarding fast runners and keeping it achievable for beginners was trickier than I'd expected.
 
-* **Time Management**: I often found myself going down "rabbit holes" trying to perfect features. Learning when to step back and focus on core functionality was a valuable lesson. I had to remind myself that perfect is the enemy of good.
+* **Database Migrations**: Wrestling with database migrations proved particularly challenging, especially when updating model fields and relationships. Learning to handle these migrations properly whilst maintaining data integrity was a steep learning curve, but it taught me valuable lessons about database management.
 
 * **Testing Patience**: Initially, I underestimated the importance of testing. Writing tests felt tedious at first, but after they caught several critical bugs, I gained a new appreciation for test-driven development. It was a humbling experience that changed my approach to coding.
+
 
 ## Final Thoughts
 Creating Run Wild has been more than just a technical project - it's been a journey of personal growth. As someone who enjoys running, building a platform that might inspire others to get active and challenge themselves has been incredibly fulfilling.
