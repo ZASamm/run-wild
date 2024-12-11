@@ -4,7 +4,7 @@
 
 ## Overview
 
-[Live Project](https://run-wild-67c9460e78b3.herokuapp.com/)
+To View the live project click here - [Run Wild](https://run-wild-67c9460e78b3.herokuapp.com/)
 
 ### Purpose
 Run Wild is a web-based platform designed to gamify the running experience and foster a community of active runners through a token-based reward system. The platform transforms everyday runs into rewarding achievements by allowing runners to earn tokens based on their performance, creating an engaging and motivating environment for consistent physical activity.
@@ -966,6 +966,32 @@ To manage the Project and keep track of the required tasks, Agile methodologies 
     - Quest post completed run text updated to ensure contrast standards are meet.
 - Heading elements not in sequentially-deccending order
     - All html files reviewed and updated to ensure heading elements are in sequentially-deccending.
+
+### A Few final UI updates
+- Form Help text
+    - Help text added to the run upload form for clear insturctions for the users when uploading
+    ![Upload Form](assets/README_images/upload_form_refactor.png)
+    ```
+    hours = forms.IntegerField(
+        min_value=0,
+        help_text="Enter the number of hours (0+)."
+        )
+    minutes = forms.IntegerField(
+        min_value=0,
+        max_value=59,
+        help_text="Enter the number of minutes (0-59)."
+        )
+    seconds = forms.IntegerField(
+        min_value=0,
+        max_value=59,
+        help_text="Enter the number of seconds (0-59)."
+        )
+    ```
+    
+- Quest post anchor tags
+    - The anchor tags have been moved to allow the whole of the card on the quests page to be selectable to enter the quests.
+    it was not previously intuative to only be able to select the text.
+
 
 </details>
 
