@@ -32,7 +32,7 @@
 
     <!-- Recent Completions Table -->
     <div class="recent-quests m-5">
-        <h2>Recent Quest Completions</h2>
+        <h4>Recent Quest Completions</h4>
         <div class="table-responsive">
             <table id="questTable">
                 <thead>
@@ -48,7 +48,7 @@
                 </thead>
 
                 <tbody id="questTableBody">
-                    <!-- JavaScript will populate this -->
+                    <!-- dashboard.js will populate this -->
                 </tbody>
             </table>
         </div>
@@ -58,6 +58,7 @@
 {% endblock %}
 
 {% block extras %}
+<!-- Page Specific Javascirpt -->
 <script>
     // Pass the URL to a global variable
     const DASHBOARD_DATA_URL = "{% url 'dashboard_data' %}";
