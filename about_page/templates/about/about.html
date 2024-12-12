@@ -8,6 +8,7 @@
 <div class="container mt-3">
     <div class="row">
         <div class="col-sm-12 text-center">
+            <!-- Pulls in profile picture from about model -->
             <div class="profile-pic-wrapper">
                 {% if "placeholder" in about.profile_pic.url %}
                 <img src="{% static 'media/images/hero_image.png' %}" class="profile-image" alt="placeholder image">
@@ -17,6 +18,7 @@
             </div>
         </div>
         <div class="col-12">
+            <!-- About content -->
             <h1>{{ about.title }}</h1>
             <br>
             {{ about.content | safe }}
@@ -47,6 +49,7 @@
                     </div>
                 </div>
                 <div class="col-md-8 p-2">
+                    <!-- Run Submission form -->
                     <form method="post" enctype="multipart/form-data">
                         {{ new_quest_form | crispy }}
                         {% csrf_token %}
