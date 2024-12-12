@@ -512,6 +512,14 @@ This design system creates an energetic, modern interface that motivates users w
 
 </details>
 
+### Project Planning
+
+To manage the Project and keep track of the required tasks, Agile methodologies were adopted throughout the project by utilising User Stories, a KanBan board and stand up and downs held by our course fasilitator.
+
+Project board can be found here - [Project Board](https://github.com/users/ZASamm/projects/5)
+
+![Project Board](assets/README_images/project_board.png)
+
 ## Features
 
 ![Run Wild Logo](assets/README_images/logo_readme.svg)
@@ -731,16 +739,6 @@ The user inputs their completion time as:
 </details>
 <hr>
 
-### Project Planning
-
-To manage the Project and keep track of the required tasks, Agile methodologies were adopted throughout the project by utilising User Stories, a KanBan board and stand up and downs held by our course fasilitator.
-
-![Project Board](assets/README_images/project_board.png)
-
-
-
-
-
 ## Technologies/Languages/Frameworks Used 
 
 
@@ -893,7 +891,7 @@ To manage the Project and keep track of the required tasks, Agile methodologies 
 | | 3. Confirm deletion | Run removed from history | Pass |
 
 ## User Authentication
-**User Story: As a registered user I can log into my account**
+**User Story:  As a registered user I can log into my account so that I can access my running history and tokens**
 
 | Test | Steps | Expected Result | Actual Result |
 |------|-------|-----------------|---------------|
@@ -903,8 +901,7 @@ To manage the Project and keep track of the required tasks, Agile methodologies 
 | View History | 1. Navigate to profile | Running history displayed | Pass |
 | | 2. Check token balance | Current token balance shown | Pass |
 
-## Registration
-**User Story: As a new user I want to register for an account**
+**User Story: As a new user I want to register for an account so that I can track my runs and earn tokens**
 
 | Test | Steps | Expected Result | Actual Result |
 |------|-------|-----------------|---------------|
@@ -918,7 +915,7 @@ To manage the Project and keep track of the required tasks, Agile methodologies 
 | | 2. Check initial tokens | Balance shows 0 | Pass |
 
 ## Responsive Design
-**User Story: As a user I want the site to be responsive**
+**User Story: As a user I want the site to be responsive so that I can use on any device**
 
 | Test | Steps | Expected Result | Actual Result |
 |------|-------|-----------------|---------------|
@@ -930,7 +927,7 @@ To manage the Project and keep track of the required tasks, Agile methodologies 
 | | 2. Test all features | All elements properly stacked | Pass |
 
 ## Accessibility
-**User Story: As a User I require the site to be accessible**
+**User Story: As a User I require the site to be accessible so that I can utilise the website fully, regardless of potential visual impairments**
 
 | Test | Steps | Expected Result | Actual Result |
 |------|-------|-----------------|---------------|
@@ -940,7 +937,7 @@ To manage the Project and keep track of the required tasks, Agile methodologies 
 | | 2. Check headings hierarchy | Logical heading structure | Fail |
 
 ## Token System
-**User Story: As a user I want to earn tokens for my run**
+**User Story: As a user I want to earn tokens so that can feel rewarded for my run**
 
 | Test | Steps | Expected Result | Actual Result |
 |------|-------|-----------------|---------------|
@@ -953,7 +950,7 @@ To manage the Project and keep track of the required tasks, Agile methodologies 
 | | 2. Check notification content | Shows amount earned | Pass |
 
 ## Leaderboard
-**User Story: As a user I want to see how I rank against others**
+**User Story: As a user I want a leaderboard so that I can see how I rank against others**
 
 | Test | Steps | Expected Result | Actual Result |
 |------|-------|-----------------|---------------|
@@ -1327,6 +1324,7 @@ python3 manage.py createsuperuser
 python3 manage.py collectstatic
 ```
 </details>
+<hr>
 
 #### Security Notes
 - Verify DEBUG is False in production
@@ -1388,6 +1386,10 @@ I'm keen to continue developing Run Wild and see where this journey takes me nex
 - [Lucidchart](https://www.lucidchart.com/pages/database-diagram/database-schema) used for Database Schema.
 
 - [Stackoverflow](https://stackoverflow.co/), [W3Schools](https://www.w3schools.com/) and relevent technlogoy documentation used for bug and issue look ups.
+
+- Modals centered to the page - [Stackoverflow](https://stackoverflow.com/questions/18422223/bootstrap-3-modal-vertical-position-center)
+
+- Number count up in index.html - [Link here](https://dev.to/codingcss/responsive-number-counting-animation-with-javascript-project-with-source-code-2m5)
 
 - Githut copilot used for assistance in doc strings.
 
